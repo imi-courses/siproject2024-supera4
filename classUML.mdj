@@ -3311,7 +3311,7 @@
 									"hostEdge": {
 										"$ref": "AAAAAAGSfl/H1Qych/Y="
 									},
-									"text": "1"
+									"text": "*"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -3492,7 +3492,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSWrxR+hKMwgw="
 							},
-							"name": "disk list"
+							"name": "disk list",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3717,7 +3718,7 @@
 								"reference": {
 									"$ref": "AAAAAAGSWrxR+hKMwgw="
 								},
-								"multiplicity": "1"
+								"multiplicity": "*"
 							}
 						}
 					],
