@@ -1,0 +1,14 @@
+D:\DVD-rent\DVD-rent\bin\Debug\DVD-rent.exe.config
+D:\DVD-rent\DVD-rent\bin\Debug\DVD-rent.exe
+D:\DVD-rent\DVD-rent\bin\Debug\DVD-rent.pdb
+D:\DVD-rent\DVD-rent\bin\Debug\EntityFramework.dll
+D:\DVD-rent\DVD-rent\bin\Debug\EntityFramework.SqlServer.dll
+D:\DVD-rent\DVD-rent\bin\Debug\EntityFramework.xml
+D:\DVD-rent\DVD-rent\bin\Debug\EntityFramework.SqlServer.xml
+D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.AssemblyReference.cache
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Properties.Resources.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.GenerateResource.cache
+D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.CoreCompileInputs.cache
+D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.CopyComplete
+D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.exe
+D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.pdb
