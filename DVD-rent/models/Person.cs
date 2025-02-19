@@ -12,6 +12,6 @@ namespace DVD_rent.models
     public abstract class Person
     {
         [MaxLength(100)]
-        public string fullName { get; set; }
+        public string FullName { get; set; }
     }
 }

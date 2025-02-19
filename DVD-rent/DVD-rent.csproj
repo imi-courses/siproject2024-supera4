@@ -62,6 +62,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502190215252_add migration.cs" />
+    <Compile Include="Migrations\202502190215252_add migration.designer.cs">
+      <DependentUpon>202502190215252_add migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\DVD.cs" />
     <Compile Include="models\Movie.cs" />
     <Compile Include="models\Rent.cs" />
@@ -69,8 +74,12 @@
     <Compile Include="models\Client.cs" />
     <Compile Include="models\Context.cs" />
     <Compile Include="models\Person.cs" />
+    <Compile Include="Pledge.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202502190215252_add migration.resx">
+      <DependentUpon>202502190215252_add migration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

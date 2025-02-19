@@ -11,8 +11,8 @@ namespace DVD_rent.models
 {
     public class DVD
     {
-        [MaxLength(100)]
-        public int quantity { get; set; }
-        public float price { get; set; }
+        public int Id { get; set; }
+        public int Quantity { get; set; }
+        public float Price { get; set; }
     }
 }

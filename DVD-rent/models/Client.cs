@@ -11,11 +11,11 @@ namespace DVD_rent.models
 {
     public class Client : Person
     {
+        public int Id { get; set; }
+        public int PhoneNumber { get; set; }
         [MaxLength(100)]
-        public int phoneNumber { get; set; }
-        [MaxLength(100)]
-        public string address { get; set; }
-        public bool inBlackList { get; set; }
+        public string Address { get; set; }
+        public bool InBlackList { get; set; }
 
     }
 }

@@ -9,15 +9,19 @@ using DVD_rent.models;
 
 namespace DVD_rent.models
 {
+    public enum State
+    {
+        closed,
+        active
+    }
     public class Rent
     {
-        public DateTime rentDate { get; set; }
-        public DateTime returnDate { get; set; }
-        [MaxLength(100)]
-        public string state { get; set; }
-        [MaxLength(100)]
-        public string pledge { get; set; }
-        public float money { get; set; }
+        public int Id { get; set; }
+        public DateTime RentDate { get; set; }
+        public DateTime ReturnDate { get; set; }
+        public State State { get; set; }
+        public Pledge Pledge { get; set; }
+        public float Money { get; set; }
 
     }
 }

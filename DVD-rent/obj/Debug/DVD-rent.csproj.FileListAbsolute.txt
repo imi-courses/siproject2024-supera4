@@ -12,3 +12,4 @@ D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.CoreCompileInputs.cache
 D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.CopyComplete
 D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.exe
 D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.pdb
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Migrations.addmigration.resources

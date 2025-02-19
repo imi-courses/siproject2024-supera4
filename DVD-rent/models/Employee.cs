@@ -9,13 +9,19 @@ using DVD_rent.models;
 
 namespace DVD_rent.models
 {
+    public enum Position
+    {
+        director,
+        cashier
+    }
     public class Employee : Person
     {
-        public string position { get; set; }
+        public int Id { get; set; }
+        public Position Position { get; set; }
         [MaxLength(100)]
-        public string login { get; set; }
+        public string Login { get; set; }
         [MaxLength(100)]
-        public string password { get; set; }
+        public string Password { get; set; }
 
     }
 }
