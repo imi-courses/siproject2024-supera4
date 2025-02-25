@@ -1,9 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DVD_rent.models;
+using DVD_rent.Models;
+using DVD_rent.Services;
 
 namespace DVD_rent
 {
@@ -18,11 +20,6 @@ namespace DVD_rent
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-            Movie movie = new Movie();
-            movie.Name = "Титаник";
-
-            MessageBox.Show(movie.Name);
         }
     }
 }

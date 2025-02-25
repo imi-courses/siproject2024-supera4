@@ -67,16 +67,20 @@
       <DependentUpon>202502190215252_add migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="models\DVD.cs" />
-    <Compile Include="models\Movie.cs" />
-    <Compile Include="models\Rent.cs" />
-    <Compile Include="models\Employee.cs" />
-    <Compile Include="models\Client.cs" />
-    <Compile Include="models\Context.cs" />
-    <Compile Include="models\Person.cs" />
-    <Compile Include="Pledge.cs" />
+    <Compile Include="Models\DVD.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rent.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Pledge.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DVDService.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190215252_add migration.resx">
       <DependentUpon>202502190215252_add migration.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +107,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DVD_rent.models;
+using DVD_rent.Models;
 
-namespace DVD_rent.models
+namespace DVD_rent.Models
 {
     public enum Position
     {
