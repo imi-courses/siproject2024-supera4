@@ -14,3 +14,4 @@ D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.exe
 D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.pdb
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Migrations.addmigration.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Form1.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.authorization.resources

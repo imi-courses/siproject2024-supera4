@@ -18,14 +18,12 @@ namespace DVD_rent
         {
             InitializeComponent();
         }
-
         private void execute_Click(object sender, EventArgs e)
         {
-            DVDController.Add(100, 2);
-            DVDController.Add(10, 129);
-            DVDController.Add(200, 29);
-            DVDController.Add(134, 9);
-            testingBox.Text = DVDController.ShowAll();
+            DVDController.EditDVD(1, 99, 9999999);
+            foreach (DVD dvd in DVDController.GetAllDVDs()){
+                testingBox.Text += dvd.Id + " " + dvd.Quantity + " " + dvd.Price + "\n";
+            }
         }
     }
 }
