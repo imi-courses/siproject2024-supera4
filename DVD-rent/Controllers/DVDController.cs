@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using DVD_rent.Models;
@@ -49,7 +48,7 @@ namespace DVD_rent.Controllers
                 {
                     throw new Exception("incorrect quantity");
                 }
-                db.Entry(dvd).State = EntityState.Modified;
+                db.Entry(dvd).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception ex)

@@ -19,7 +19,13 @@ namespace DVD_rent
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new authorization());
+            authorization authForm = new authorization();
+            Application.Run(authForm);
+
+            if (authForm.UserSuccessfullyAuthenticated)
+            {
+                Application.Run(new Form1());
+            }
         }
     }
 }

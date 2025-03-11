@@ -12,6 +12,8 @@ namespace DVD_rent
 {
     public partial class authorization : Form
     {
+        public bool UserSuccessfullyAuthenticated { get; private set; } = false;
+
         public authorization()
         {
             InitializeComponent();
@@ -19,9 +21,16 @@ namespace DVD_rent
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1(); // Create a new instance of Form2
-            form1.Show();              // Display Form1
-            this.Close();
+            if (login.Text == "admin" && password.Text == "admin")
+            {
+                UserSuccessfullyAuthenticated = true;
+                this.Close();
+            }
+            else
+            {
+                password.Text = "";
+                MessageBox.Show("Incorrect password or login");
+            }
         }
     }
 }
