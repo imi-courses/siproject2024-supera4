@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DVD_rent.Models;
 
-namespace DVD_rent.Services
+namespace DVD_rent.Controllers
 {
-    class DVDService
+    class DVDController
     {
         public static void Add(int quantity, float price)
         {

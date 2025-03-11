@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVD_rent.Models;
-using DVD_rent.Services;
+using DVD_rent.Controllers;
 
 namespace DVD_rent
 {
@@ -21,11 +21,11 @@ namespace DVD_rent
 
         private void execute_Click(object sender, EventArgs e)
         {
-            DVDService.Add(100, 2);
-            DVDService.Add(10, 129);
-            DVDService.Add(200, 29);
-            DVDService.Add(134, 9);
-            testingBox.Text = DVDService.ShowAll();
+            DVDController.Add(100, 2);
+            DVDController.Add(10, 129);
+            DVDController.Add(200, 29);
+            DVDController.Add(134, 9);
+            testingBox.Text = DVDController.ShowAll();
         }
     }
 }
