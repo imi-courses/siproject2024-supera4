@@ -12,24 +12,12 @@ namespace DVD_rent.Controllers
     {
         public static void AddDVD(int quantity, float price)
         {
-            try
+            using (Context db = new Context())
             {
-                using (Context db = new Context())
-                {
-                    if (price <= 0)
-                    {
-                        throw new Exception("incorrect price");
-                    }
-                    if (quantity < 1)
-                    {
-                        throw new Exception("incorrect quantity");
-                    }
-                    db.DVDs.Add(new DVD { Price = price, Quantity = quantity });
-                    db.SaveChanges();
-                }
-            }catch(Exception ex){
-                MessageBox.Show($"Caught an exception: {ex.Message}");
+                db.DVDs.Add(new DVD { Price = price, Quantity = quantity });
+                db.SaveChanges();
             }
+
         }
         public static void EditDVD(int id, int quantity, float price)
         {

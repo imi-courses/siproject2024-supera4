@@ -20,8 +20,23 @@ namespace DVD_rent
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text));
-            this.Close();
+            try
+            {
+                if (Convert.ToInt32(price.Text) <= 0)
+                {
+                    throw new Exception("incorrect price");
+                }
+                if (Convert.ToInt32(quantity.Text) < 1)
+                {
+                    throw new Exception("incorrect quantity");
+                }
+                DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text));
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Caught an exception: {ex.Message}");
+            }
         }
     }
 }
