@@ -51,6 +51,16 @@ namespace DVD_rent.Controllers
                 return db.DVDs.Find(id);
             }
         }
+        public static void DeleteDVDById(int id)
+        {
+            using (Context db = new Context())
+            {
+                DVD dvd = GetDVDById(id);
+                db.DVDs.Attach(dvd);
+                db.DVDs.Remove(dvd);
+                db.SaveChanges();
+            }
+        }
         public static List<DVD> GetAllDVDs()
         {
             using (Context db = new Context())

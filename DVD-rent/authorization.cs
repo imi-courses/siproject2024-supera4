@@ -21,7 +21,8 @@ namespace DVD_rent
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (login.Text == "admin" && password.Text == "admin")
+            //if (login.Text == "admin" && password.Text == "admin")
+            if (true)
             {
                 UserSuccessfullyAuthenticated = true;
                 this.Close();

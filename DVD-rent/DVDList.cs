@@ -18,15 +18,21 @@ namespace DVD_rent
             InitializeComponent();
         }
 
-        private void DVDList_Load(object sender, EventArgs e)
+        public void ReloadGridView()
         {
             dataGridView1.DataSource = DVDController.GetAllDVDs();
+        }
+
+        private void DVDList_Load(object sender, EventArgs e)
+        {
+            ReloadGridView();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             AddDVD addDVD = new AddDVD();
             addDVD.ShowDialog();
+            ReloadGridView();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,7 +42,20 @@ namespace DVD_rent
 
         private void button3_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DVDController.GetAllDVDs();
+            ReloadGridView();
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+                    DVDController.DeleteDVDById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                }
+            }
+            ReloadGridView();
         }
     }
 }
