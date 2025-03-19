@@ -17,3 +17,4 @@ D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Form1.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.authorization.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.DVDList.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.AddDVD.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Migrations.addMoviesToDVDclass.resources

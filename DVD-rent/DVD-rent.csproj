@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202502190215252_add migration.designer.cs">
       <DependentUpon>202502190215252_add migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503171224370_addMoviesToDVDclass.cs" />
+    <Compile Include="Migrations\202503171224370_addMoviesToDVDclass.designer.cs">
+      <DependentUpon>202503171224370_addMoviesToDVDclass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DVD.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190215252_add migration.resx">
       <DependentUpon>202502190215252_add migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503171224370_addMoviesToDVDclass.resx">
+      <DependentUpon>202503171224370_addMoviesToDVDclass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
