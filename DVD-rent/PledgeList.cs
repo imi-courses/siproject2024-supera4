@@ -32,5 +32,22 @@ namespace DVD_rent
             PledgeController.AddPledge(PledgeType.passport, 312, 21512, 25534125);
             PledgeController.AddPledge(PledgeType.passport, 2522, 21515232, 25534125);
         }
+        public void ReloadGridView()
+        {
+            dataGridView1.DataSource = PledgeController.GetAllPledges();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+                    PledgeController.DeletePledgeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                }
+            }
+            ReloadGridView();
+        }
     }
 }
