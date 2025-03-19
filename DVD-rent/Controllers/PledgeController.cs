@@ -67,5 +67,15 @@ namespace DVD_rent.Controllers
                 return db.Pledges.ToList();
             }
         }
+        public static void DeletePledgeById(int id)
+        {
+            using (Context db = new Context())
+            {
+                Pledge pledge = GetPledgeById(id);
+                db.Pledges.Attach(pledge);
+                db.Pledges.Remove(pledge);
+                db.SaveChanges();
+            }
+        }
     }
 }
