@@ -27,8 +27,8 @@ namespace DVD_rent
 
         private void залогToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_List Pledge_form = new Form_List();
-            Pledge_form.ShowDialog();
+            PledgeList PledgeForm = new PledgeList();
+            PledgeForm.ShowDialog();
         }
     }
 }

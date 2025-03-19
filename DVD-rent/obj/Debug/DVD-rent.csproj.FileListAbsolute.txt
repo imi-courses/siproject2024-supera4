@@ -22,7 +22,6 @@ C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Add
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.authorization.resources
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.DVDList.resources
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Form1.resources
-C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Form_List.resources
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Migrations.addmigration.resources
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Properties.Resources.resources
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.GenerateResource.cache
@@ -37,3 +36,4 @@ C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramew
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramework.xml
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.CopyComplete
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.PledgeList.resources

@@ -13,9 +13,9 @@ using DVD_rent.Controllers;
 namespace DVD_rent
 {
 
-    public partial class Form_List : Form
+    public partial class PledgeList : Form
     {
-        public Form_List()
+        public PledgeList()
         {
             InitializeComponent();
         }

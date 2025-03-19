@@ -1,7 +1,7 @@
 ﻿
 namespace DVD_rent
 {
-    partial class Form_List
+    partial class PledgeList
     {
         /// <summary>
         /// Required designer variable.

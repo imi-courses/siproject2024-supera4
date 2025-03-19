@@ -81,11 +81,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_List.cs">
+    <Compile Include="PledgeList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_List.designer.cs">
-      <DependentUpon>Form_List.cs</DependentUpon>
+    <Compile Include="PledgeList.designer.cs">
+      <DependentUpon>PledgeList.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202502190215252_add migration.cs" />
     <Compile Include="Migrations\202502190215252_add migration.designer.cs">
@@ -115,8 +115,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_List.resx">
-      <DependentUpon>Form_List.cs</DependentUpon>
+    <EmbeddedResource Include="PledgeList.resx">
+      <DependentUpon>PledgeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190215252_add migration.resx">
       <DependentUpon>202502190215252_add migration.cs</DependentUpon>
