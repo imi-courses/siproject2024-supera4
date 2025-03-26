@@ -47,5 +47,10 @@ namespace DVD_rent
             }
             ReloadGridView();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReloadGridView();
+        }
     }
 }
