@@ -30,6 +30,7 @@ namespace DVD_rent.Controllers
                 MessageBox.Show($"Caught an exception: {ex.Message}");
             }
         }
+
         public static void EditPledge(int id, PledgeType pledgetype, int series, int number, float money)
         {
             try
