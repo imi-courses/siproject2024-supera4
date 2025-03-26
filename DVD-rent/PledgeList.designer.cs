@@ -31,7 +31,7 @@ namespace DVD_rent
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,14 +55,15 @@ namespace DVD_rent
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnEdit
+            // btnExit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(618, 296);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(170, 40);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Редактировать";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(618, 296);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(170, 40);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Назад";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // button1
             // 
@@ -91,7 +92,7 @@ namespace DVD_rent
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PledgeList";
@@ -106,7 +107,7 @@ namespace DVD_rent
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

@@ -27,8 +27,9 @@ namespace DVD_rent
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddPledge addpl = new AddPledge();
-            addpl.Show();
+            AddPledge addPledge = new AddPledge();
+            addPledge.ShowDialog();
+            ReloadGridView();
         }
         public void ReloadGridView()
         {
@@ -51,6 +52,16 @@ namespace DVD_rent
         private void button2_Click(object sender, EventArgs e)
         {
             ReloadGridView();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
