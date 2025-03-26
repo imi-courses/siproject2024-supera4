@@ -62,12 +62,19 @@
     <Compile Include="AddDVD.Designer.cs">
       <DependentUpon>AddDVD.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPledge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPledge.Designer.cs">
+      <DependentUpon>AddPledge.cs</DependentUpon>
+    </Compile>
     <Compile Include="authorization.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="authorization.Designer.cs">
       <DependentUpon>authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\PledgeController.cs" />
     <Compile Include="DVDList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +86,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PledgeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PledgeList.designer.cs">
+      <DependentUpon>PledgeList.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202502190215252_add migration.cs" />
     <Compile Include="Migrations\202502190215252_add migration.designer.cs">
@@ -103,6 +116,9 @@
     <EmbeddedResource Include="AddDVD.resx">
       <DependentUpon>AddDVD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPledge.resx">
+      <DependentUpon>AddPledge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="authorization.resx">
       <DependentUpon>authorization.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PledgeList.resx">
+      <DependentUpon>PledgeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190215252_add migration.resx">
       <DependentUpon>202502190215252_add migration.cs</DependentUpon>

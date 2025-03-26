@@ -17,4 +17,28 @@ D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Form1.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.authorization.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.DVDList.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.AddDVD.resources
+<<<<<<< HEAD
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Migrations.addMoviesToDVDclass.resources
+=======
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.AssemblyReference.cache
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.AddDVD.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.authorization.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.DVDList.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Form1.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Migrations.addmigration.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.Properties.Resources.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.GenerateResource.cache
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.exe
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.pdb
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\DVD-rent.exe.config
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\DVD-rent.exe
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\DVD-rent.pdb
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramework.dll
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramework.xml
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.CopyComplete
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.PledgeList.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.AddPledge.resources
+>>>>>>> pledge
