@@ -27,10 +27,8 @@ namespace DVD_rent
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            PledgeController.AddPledge(PledgeType.passport, 522, 21512, 25125);
-            PledgeController.AddPledge(PledgeType.passport, 1662, 215423512, 25125);
-            PledgeController.AddPledge(PledgeType.passport, 312, 21512, 25534125);
-            PledgeController.AddPledge(PledgeType.passport, 2522, 21515232, 25534125);
+            AddPledge addpl = new AddPledge();
+            addpl.Show();
         }
         public void ReloadGridView()
         {

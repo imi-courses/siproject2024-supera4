@@ -38,9 +38,10 @@ namespace DVD_rent
             // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(188, 107);
+            this.ButtonSave.Location = new System.Drawing.Point(141, 87);
+            this.ButtonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(99, 23);
+            this.ButtonSave.Size = new System.Drawing.Size(74, 19);
             this.ButtonSave.TabIndex = 0;
             this.ButtonSave.Text = "Сохранить";
             this.ButtonSave.UseVisualStyleBackColor = true;
@@ -49,47 +50,53 @@ namespace DVD_rent
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 54);
+            this.label1.Location = new System.Drawing.Point(34, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 17);
+            this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Количество";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 84);
+            this.label2.Location = new System.Drawing.Point(67, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Цена";
             // 
             // quantity
             // 
-            this.quantity.Location = new System.Drawing.Point(138, 51);
+            this.quantity.Location = new System.Drawing.Point(104, 41);
+            this.quantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(149, 22);
+            this.quantity.Size = new System.Drawing.Size(113, 20);
             this.quantity.TabIndex = 3;
             // 
             // price
             // 
-            this.price.Location = new System.Drawing.Point(138, 79);
+            this.price.Location = new System.Drawing.Point(104, 64);
+            this.price.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(149, 22);
+            this.price.Size = new System.Drawing.Size(113, 20);
             this.price.TabIndex = 4;
             // 
             // AddDVD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 192);
+            this.ClientSize = new System.Drawing.Size(270, 156);
             this.Controls.Add(this.price);
             this.Controls.Add(this.quantity);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonSave);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddDVD";
             this.Text = "AddDVD";
+            this.Load += new System.EventHandler(this.AddDVD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

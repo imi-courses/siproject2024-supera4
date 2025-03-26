@@ -37,3 +37,4 @@ C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramew
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.CopyComplete
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.PledgeList.resources
+C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.AddPledge.resources
