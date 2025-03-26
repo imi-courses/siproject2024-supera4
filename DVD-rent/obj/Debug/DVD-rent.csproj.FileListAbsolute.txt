@@ -42,3 +42,5 @@ C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csp
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.PledgeList.resources
 C:\Users\student\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.AddPledge.resources
 >>>>>>> pledge
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.AddPledge.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.PledgeList.resources
