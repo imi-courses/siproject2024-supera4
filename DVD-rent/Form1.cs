@@ -24,5 +24,11 @@ namespace DVD_rent
             DVDList DVDform = new DVDList();
             DVDform.ShowDialog();
         }
+
+        private void залогToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PledgeList PledgeForm = new PledgeList();
+            PledgeForm.ShowDialog();
+        }
     }
 }
