@@ -42,34 +42,55 @@ namespace DVD_rent
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem != null && comboBox1.SelectedItem.ToString() != "cash")
+            string selectedPledgeType = comboBox1.SelectedItem?.ToString();
+
+            try
             {
-                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
+                int series = 0;
+                int number = 0;
+                int money = 0;
+
+                if (selectedPledgeType != "cash")
                 {
-                    MessageBox.Show("Series and Number are required unless 'cash' is selected.");
-                    return;
+                    if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
+                    {
+                        MessageBox.Show("Series and Number are required unless 'cash' is selected.");
+                        return;
+                    }
+
+                    if (!int.TryParse(textBox1.Text, out series))
+                    {
+                        MessageBox.Show("Invalid Series. Please enter a number.");
+                        return;
+                    }
+                    if (!int.TryParse(textBox2.Text, out number))
+                    {
+                        MessageBox.Show("Invalid Number. Please enter a number.");
+                        return;
+                    }
+                }
+                if (selectedPledgeType == "cash")
+                {
+                    if (string.IsNullOrEmpty(textBox3.Text))
+                    {
+                        MessageBox.Show("Money is required.");
+                        return;
+                    }
+
+                    if (!int.TryParse(textBox3.Text, out money))
+                    {
+                        MessageBox.Show("Invalid Money value. Please enter a number.");
+                        return;
+                    }
                 }
 
-                if (!int.TryParse(textBox1.Text, out int series))
-                {
-                    MessageBox.Show("Invalid Series.  Please enter a number.");
-                    return;
-                }
-                if (!int.TryParse(textBox2.Text, out int number))
-                {
-                    MessageBox.Show("Invalid Number. Please enter a number.");
-                    return;
-                }
-
-                PledgeController.AddPledge(ToPledgeType(comboBox1.Text), series, number, Convert.ToInt32(textBox3.Text));
+                PledgeController.AddPledge(ToPledgeType(comboBox1.Text), series, number, money);
+                this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                PledgeController.AddPledge(ToPledgeType(comboBox1.Text), 0, 0, Convert.ToInt32(textBox3.Text));
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
-
-
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,10 +100,13 @@ namespace DVD_rent
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem != null && comboBox1.SelectedItem.ToString() == "cash")
+            string selectedPledgeType = comboBox1.SelectedItem?.ToString();
+
+            if (selectedPledgeType == "cash")
             {
                 textBox1.Enabled = false;
                 textBox2.Enabled = false;
+                textBox3.Enabled = true;
                 textBox1.Text = "";
                 textBox2.Text = "";
             }
@@ -90,6 +114,8 @@ namespace DVD_rent
             {
                 textBox1.Enabled = true;
                 textBox2.Enabled = true;
+                textBox3.Enabled = false;
+                textBox3.Text = "";
             }
         }
     }

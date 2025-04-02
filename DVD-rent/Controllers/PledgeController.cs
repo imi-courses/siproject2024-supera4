@@ -17,7 +17,7 @@ namespace DVD_rent.Controllers
             {
                 using (Context db = new Context())
                 {
-                    if (money <= 0)
+                    if (money < 0)
                     {
                         throw new Exception("incorrect price");
                     }
