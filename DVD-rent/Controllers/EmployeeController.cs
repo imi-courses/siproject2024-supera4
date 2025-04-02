@@ -19,7 +19,7 @@ namespace DVD_rent.Controllers
                 db.SaveChanges();
             }
         }
-        public static void EditEmployee(int id, Position position, string login, string password)
+        public static void EditEmployee(int id, Position position, string login, string password, string fullname)
         {
             try
             {
@@ -27,6 +27,7 @@ namespace DVD_rent.Controllers
                 employee.Position = position;
                 employee.Login = login;
                 employee.Password = password;
+                employee.FullName = fullname;
 
                 Context db = new Context();
                 //if ()

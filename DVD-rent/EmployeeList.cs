@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVD_rent.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,31 +8,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DVD_rent.Controllers;
 
 namespace DVD_rent
 {
-    public partial class DVDList : Form
+    public partial class EmployeeList : Form
     {
-        public DVDList()
+        public EmployeeList()
         {
             InitializeComponent();
         }
 
-        public void ReloadGridView()
+        private void Form2_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DVDController.GetAllDVDs();
+
         }
 
-        private void DVDList_Load(object sender, EventArgs e)
+        public void ReloadGridView()
+        {
+            dataGridView1.DataSource = EmployeeController.GetAllEmployees();
+        }
+        private void EmployeeList_Load(object sender, EventArgs e)
         {
             ReloadGridView();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddDVD addDVD = new AddDVD();
-            addDVD.ShowDialog();
+            AddEmployee addEmployee = new AddEmployee();
+            addEmployee.ShowDialog();
             ReloadGridView();
         }
 
@@ -56,11 +60,6 @@ namespace DVD_rent
                 }
             }
             ReloadGridView();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

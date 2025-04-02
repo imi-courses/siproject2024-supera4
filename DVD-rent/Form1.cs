@@ -30,5 +30,16 @@ namespace DVD_rent
             PledgeList PledgeForm = new PledgeList();
             PledgeForm.ShowDialog();
         }
+
+        private void кассировToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmployeeList Employeeform = new EmployeeList();
+            Employeeform.ShowDialog();
+        }
+
+        private void клиентовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
