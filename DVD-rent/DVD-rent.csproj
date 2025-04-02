@@ -74,6 +74,13 @@
     <Compile Include="authorization.Designer.cs">
       <DependentUpon>authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientList.Designer.cs">
+      <DependentUpon>ClientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\PledgeController.cs" />
     <Compile Include="DVDList.cs">
       <SubType>Form</SubType>
@@ -121,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="authorization.resx">
       <DependentUpon>authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientList.resx">
+      <DependentUpon>ClientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DVDList.resx">
       <DependentUpon>DVDList.cs</DependentUpon>

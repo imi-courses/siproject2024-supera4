@@ -88,3 +88,4 @@ C:\Users\user\Documents\a44\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.cs
 C:\Users\user\Documents\a44\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.csproj.Up2Date
 C:\Users\user\Documents\a44\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.exe
 C:\Users\user\Documents\a44\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.pdb
+C:\Users\user\Documents\a44\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.ClientList.resources
