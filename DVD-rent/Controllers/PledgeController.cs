@@ -17,10 +17,6 @@ namespace DVD_rent.Controllers
             {
                 using (Context db = new Context())
                 {
-                    if (money < 0)
-                    {
-                        throw new Exception("incorrect price");
-                    }
                     db.Pledges.Add(new Pledge { PledgeType = pledgetype, Series = series, Number = number, Money = money });
                     db.SaveChanges();
                 }

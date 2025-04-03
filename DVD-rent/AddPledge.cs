@@ -44,53 +44,77 @@ namespace DVD_rent
         {
             string selectedPledgeType = comboBox1.SelectedItem?.ToString();
 
-            try
+            int series = 0;
+            int number = 0;
+            int money = 0;
+
+            if (selectedPledgeType != "cash")
             {
-                int series = 0;
-                int number = 0;
-                int money = 0;
+                string seriesText = textBox1.Text;
+                string numberText = textBox2.Text;
 
-                if (selectedPledgeType != "cash")
+                if (string.IsNullOrEmpty(seriesText) || string.IsNullOrEmpty(numberText))
                 {
-                    if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
-                    {
-                        MessageBox.Show("Series and Number are required unless 'cash' is selected.");
-                        return;
-                    }
-
-                    if (!int.TryParse(textBox1.Text, out series))
-                    {
-                        MessageBox.Show("Invalid Series. Please enter a number.");
-                        return;
-                    }
-                    if (!int.TryParse(textBox2.Text, out number))
-                    {
-                        MessageBox.Show("Invalid Number. Please enter a number.");
-                        return;
-                    }
+                    MessageBox.Show("Введите серию и номер документа!");
+                    return;
                 }
-                if (selectedPledgeType == "cash")
-                {
-                    if (string.IsNullOrEmpty(textBox3.Text))
-                    {
-                        MessageBox.Show("Money is required.");
-                        return;
-                    }
 
-                    if (!int.TryParse(textBox3.Text, out money))
+                if (selectedPledgeType == "passport")
+                {
+                    if (seriesText.Length != 4 || numberText.Length != 6)
                     {
-                        MessageBox.Show("Invalid Money value. Please enter a number.");
+                        MessageBox.Show("Для паспорта серия должна состоять из 4 цифр, а номер из 6.");
                         return;
                     }
                 }
 
-                PledgeController.AddPledge(ToPledgeType(comboBox1.Text), series, number, money);
-                this.Close();
+                if (selectedPledgeType == "internationalPassport")
+                {
+                    if (seriesText.Length != 2 || numberText.Length != 7)
+                    {
+                        MessageBox.Show("Для иностранного паспорта серия должна состоять из 2 цифр, а номер из 7.");
+                        return;
+                    }
+                }
+
+                if (selectedPledgeType == "driverLicense")
+                {
+                    if (seriesText.Length != 4 || numberText.Length != 6)
+                    {
+                        MessageBox.Show("Для водительского удостоверения серия должна состоять из 4 цифр, а номер из 6.");
+                        return;
+                    }
+                }
+
+                if (!int.TryParse(seriesText, out series))
+                {
+                    MessageBox.Show("Серия должна быть числом!");
+                    return;
+                }
+
+                if (!int.TryParse(numberText, out number))
+                {
+                    MessageBox.Show("Номер должен быть числом!");
+                    return;
+                }
             }
-            catch (Exception ex)
+
+            if (selectedPledgeType == "cash")
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                if (!int.TryParse(textBox3.Text, out money))
+                {
+                    MessageBox.Show("Введите сумму залога!");
+                    return;
+                }
+                if (money <= 0)
+                {
+                    MessageBox.Show("Сумма залога должна быть не меньше 0 рублей!");
+                    return;
+                }
             }
+
+            PledgeController.AddPledge(ToPledgeType(comboBox1.Text), series, number, money);
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
