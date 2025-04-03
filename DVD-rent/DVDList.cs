@@ -57,5 +57,16 @@ namespace DVD_rent
             }
             ReloadGridView();
         }
+
+        private void edit_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                AddDVD addDVD = new AddDVD(int.Parse(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
+                addDVD.ShowDialog();
+                ReloadGridView();
+            }
+        }
     }
 }

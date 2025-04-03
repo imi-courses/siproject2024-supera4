@@ -34,6 +34,7 @@ namespace DVD_rent
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@ namespace DVD_rent
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(482, 415);
+            this.delete.Location = new System.Drawing.Point(357, 415);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 4;
@@ -87,11 +88,22 @@ namespace DVD_rent
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
+            // edit
+            // 
+            this.edit.Location = new System.Drawing.Point(461, 415);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(119, 23);
+            this.edit.TabIndex = 5;
+            this.edit.Text = "Редактировать";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
+            // 
             // DVDList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.edit);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -112,5 +124,6 @@ namespace DVD_rent
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button edit;
     }
 }

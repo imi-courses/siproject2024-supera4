@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVD_rent.Controllers;
+using DVD_rent.Models;
 
 namespace DVD_rent
 {
@@ -16,6 +17,15 @@ namespace DVD_rent
         public AddDVD()
         {
             InitializeComponent();
+
+        }
+
+        public AddDVD(int Id)
+        {
+            InitializeComponent();
+            DVD dvd = DVDController.GetDVDById(Id);
+            quantity.Text = dvd.Quantity.ToString();
+            price.Text = dvd.Price.ToString();
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
