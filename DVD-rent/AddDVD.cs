@@ -14,6 +14,7 @@ namespace DVD_rent
 {
     public partial class AddDVD : Form
     {
+        DVD dvd = new DVD();
         public AddDVD()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace DVD_rent
         public AddDVD(int Id)
         {
             InitializeComponent();
-            DVD dvd = DVDController.GetDVDById(Id);
+            dvd = DVDController.GetDVDById(Id);
             quantity.Text = dvd.Quantity.ToString();
             price.Text = dvd.Price.ToString();
         }
@@ -40,18 +41,14 @@ namespace DVD_rent
                 {
                     throw new Exception("incorrect quantity");
                 }
-                DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text));
+                if (dvd.Id != 0) DVDController.EditDVD(dvd.Id, Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text));
+                else DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text));
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Caught an exception: {ex.Message}");
             }
-        }
-
-        private void AddDVD_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

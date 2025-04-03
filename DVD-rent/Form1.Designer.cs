@@ -50,15 +50,15 @@ namespace DVD_rent
             this.спискиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // спискиToolStripMenuItem
@@ -72,61 +72,62 @@ namespace DVD_rent
             this.черныйСписокToolStripMenuItem,
             this.залогToolStripMenuItem});
             this.спискиToolStripMenuItem.Name = "спискиToolStripMenuItem";
-            this.спискиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.спискиToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.спискиToolStripMenuItem.Text = "Списки";
             // 
             // арендToolStripMenuItem
             // 
             this.арендToolStripMenuItem.Name = "арендToolStripMenuItem";
-            this.арендToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.арендToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.арендToolStripMenuItem.Text = "Аренд";
             // 
             // кассировToolStripMenuItem
             // 
             this.кассировToolStripMenuItem.Name = "кассировToolStripMenuItem";
-            this.кассировToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.кассировToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.кассировToolStripMenuItem.Text = "Кассиров";
             // 
             // дисковToolStripMenuItem
             // 
             this.дисковToolStripMenuItem.Name = "дисковToolStripMenuItem";
-            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.дисковToolStripMenuItem.Text = "Дисков";
             this.дисковToolStripMenuItem.Click += new System.EventHandler(this.дисковToolStripMenuItem_Click);
             // 
             // клиентовToolStripMenuItem
             // 
             this.клиентовToolStripMenuItem.Name = "клиентовToolStripMenuItem";
-            this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.клиентовToolStripMenuItem.Text = "Клиентов";
             // 
             // фильмовToolStripMenuItem
             // 
             this.фильмовToolStripMenuItem.Name = "фильмовToolStripMenuItem";
-            this.фильмовToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.фильмовToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.фильмовToolStripMenuItem.Text = "Фильмов";
+            this.фильмовToolStripMenuItem.Click += new System.EventHandler(this.фильмовToolStripMenuItem_Click);
             // 
             // черныйСписокToolStripMenuItem
             // 
             this.черныйСписокToolStripMenuItem.Name = "черныйСписокToolStripMenuItem";
-            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.черныйСписокToolStripMenuItem.Text = "Черный список";
             // 
             // залогToolStripMenuItem
             // 
             this.залогToolStripMenuItem.Name = "залогToolStripMenuItem";
-            this.залогToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.залогToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.залогToolStripMenuItem.Text = "Залог";
             this.залогToolStripMenuItem.Click += new System.EventHandler(this.залогToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);

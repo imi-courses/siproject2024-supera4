@@ -112,7 +112,6 @@ namespace DVD_rent
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddDVD";
             this.Text = "AddDVD";
-            this.Load += new System.EventHandler(this.AddDVD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

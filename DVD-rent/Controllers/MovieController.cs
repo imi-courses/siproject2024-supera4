@@ -19,7 +19,7 @@ namespace DVD_rent.Controllers
             }
 
         }
-        public static void EditDVD(int id, string name)
+        public static void EditMovie(int id, string name)
         {
             try
             {
