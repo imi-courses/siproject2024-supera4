@@ -89,3 +89,4 @@ C:\Users\Huawei\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.cspr
 C:\Users\Huawei\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.exe
 C:\Users\Huawei\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD-rent.pdb
 C:\Users\Huawei\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.EmployeeList.resources
+C:\Users\Huawei\Documents\siproject2024-supera4\DVD-rent\obj\Debug\DVD_rent.AddEmployee.resources

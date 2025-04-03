@@ -11,11 +11,11 @@ namespace DVD_rent.Controllers
     class EmployeeController
     {
         //Id, Position, Login, Password, FullName
-        public static void AddEmployee(Position position, string login, string password)
+        public static void AddEmployee(Position position, string login, string password, string fullname)
         {
             using (Context db = new Context())
             {
-                db.Employees.Add(new Employee { Position = position, Login = login, Password = password });
+                db.Employees.Add(new Employee { Position = position, Login = login, Password = password, FullName = fullname });
                 db.SaveChanges();
             }
         }

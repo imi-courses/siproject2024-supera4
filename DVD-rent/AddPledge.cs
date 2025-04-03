@@ -45,5 +45,10 @@ namespace DVD_rent
         {
             this.Close();
         }
+
+        private void AddPledge_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

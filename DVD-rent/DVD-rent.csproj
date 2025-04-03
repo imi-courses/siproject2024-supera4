@@ -129,6 +129,9 @@
     <EmbeddedResource Include="AddDVD.resx">
       <DependentUpon>AddDVD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPledge.resx">
       <DependentUpon>AddPledge.cs</DependentUpon>
     </EmbeddedResource>
