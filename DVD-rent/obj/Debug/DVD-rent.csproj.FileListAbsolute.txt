@@ -22,3 +22,4 @@ D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.pdb
 D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.AssemblyReference.cache
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.AddMovie.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.MovieList.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Migrations.changeDVD.resources

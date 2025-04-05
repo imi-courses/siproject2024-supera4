@@ -10,22 +10,23 @@ namespace DVD_rent.Controllers
 {
     class DVDController
     {
-        public static void AddDVD(int quantity, float price)
+        public static void AddDVD(int quantity, float price, List<Movie> movies)
         {
             using (Context db = new Context())
             {
-                db.DVDs.Add(new DVD { Price = price, Quantity = quantity });
+                db.DVDs.Add(new DVD { Price = price, Quantity = quantity, Movies = new List<Movie>(movies) });
                 db.SaveChanges();
             }
 
         }
-        public static void EditDVD(int id, int quantity, float price)
+        public static void EditDVD(int id, int quantity, float price, List<Movie> movies)
         {
             try
             {
                 DVD dvd = GetDVDById(id);
                 dvd.Quantity = quantity;
                 dvd.Price = price;
+                dvd.Movies = new List<Movie>(movies);
 
                 Context db = new Context();
                 if (price <= 0)

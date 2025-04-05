@@ -18,7 +18,7 @@ namespace DVD_rent
         public AddDVD()
         {
             InitializeComponent();
-
+            checkedListBox1.Items.AddRange(MovieController.GetAllMovies().ToArray());
         }
 
         public AddDVD(int Id)
@@ -41,8 +41,10 @@ namespace DVD_rent
                 {
                     throw new Exception("incorrect quantity");
                 }
-                if (dvd.Id != 0) DVDController.EditDVD(dvd.Id, Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text));
-                else DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text));
+                if (dvd.Id != 0) DVDController.EditDVD(dvd.Id, Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text), checkedListBox1.CheckedItems.Cast<Movie>().ToList());
+                else DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text), checkedListBox1.CheckedItems.Cast<Movie>().ToList());
+                string namesString = checkedListBox1.CheckedItems.Cast<Movie>().ToList() != null ? string.Join(", ", checkedListBox1.CheckedItems.Cast<Movie>().ToList().Select(o => o.Name)) : "";
+                MessageBox.Show(namesString);
                 this.Close();
             }
             catch (Exception ex)

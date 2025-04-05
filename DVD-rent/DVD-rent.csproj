@@ -94,6 +94,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504030401127_changeDVD.cs" />
+    <Compile Include="Migrations\202504030401127_changeDVD.designer.cs">
+      <DependentUpon>202504030401127_changeDVD.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504030401127_changeDVD.resx">
+      <DependentUpon>202504030401127_changeDVD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MovieList.resx">
       <DependentUpon>MovieList.cs</DependentUpon>
