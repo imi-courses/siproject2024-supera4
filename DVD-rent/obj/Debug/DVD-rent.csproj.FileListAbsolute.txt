@@ -23,3 +23,6 @@ D:\DVD-rent\DVD-rent\obj\Debug\DVD-rent.csproj.AssemblyReference.cache
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.AddMovie.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.MovieList.resources
 D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.Migrations.changeDVD.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.AddEmployee.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.ClientList.resources
+D:\DVD-rent\DVD-rent\obj\Debug\DVD_rent.EmployeeList.resources

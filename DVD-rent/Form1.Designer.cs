@@ -78,47 +78,47 @@ namespace DVD_rent
             // арендToolStripMenuItem
             // 
             this.арендToolStripMenuItem.Name = "арендToolStripMenuItem";
-            this.арендToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.арендToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.арендToolStripMenuItem.Text = "Аренд";
             // 
             // кассировToolStripMenuItem
             // 
             this.кассировToolStripMenuItem.Name = "кассировToolStripMenuItem";
-            this.кассировToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.кассировToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.кассировToolStripMenuItem.Text = "Кассиров";
             this.кассировToolStripMenuItem.Click += new System.EventHandler(this.кассировToolStripMenuItem_Click);
             // 
             // дисковToolStripMenuItem
             // 
             this.дисковToolStripMenuItem.Name = "дисковToolStripMenuItem";
-            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.дисковToolStripMenuItem.Text = "Дисков";
             this.дисковToolStripMenuItem.Click += new System.EventHandler(this.дисковToolStripMenuItem_Click);
             // 
             // клиентовToolStripMenuItem
             // 
             this.клиентовToolStripMenuItem.Name = "клиентовToolStripMenuItem";
-            this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.клиентовToolStripMenuItem.Text = "Клиентов";
             this.клиентовToolStripMenuItem.Click += new System.EventHandler(this.клиентовToolStripMenuItem_Click);
             // 
             // фильмовToolStripMenuItem
             // 
             this.фильмовToolStripMenuItem.Name = "фильмовToolStripMenuItem";
-            this.фильмовToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.фильмовToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.фильмовToolStripMenuItem.Text = "Фильмов";
             this.фильмовToolStripMenuItem.Click += new System.EventHandler(this.фильмовToolStripMenuItem_Click);
             // 
             // черныйСписокToolStripMenuItem
             // 
             this.черныйСписокToolStripMenuItem.Name = "черныйСписокToolStripMenuItem";
-            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.черныйСписокToolStripMenuItem.Text = "Черный список";
             // 
             // залогToolStripMenuItem
             // 
             this.залогToolStripMenuItem.Name = "залогToolStripMenuItem";
-            this.залогToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.залогToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.залогToolStripMenuItem.Text = "Залог";
             this.залогToolStripMenuItem.Click += new System.EventHandler(this.залогToolStripMenuItem_Click);
             // 
@@ -131,7 +131,7 @@ namespace DVD_rent
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "DVD-rent";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -36,5 +36,15 @@ namespace DVD_rent
             MovieList MovieForm = new MovieList();
             MovieForm.ShowDialog();
         }
+        private void кассировToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmployeeList EmployeeForm = new EmployeeList();
+            EmployeeForm.ShowDialog();
+        }
+        private void клиентовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientList ClientForm = new ClientList();
+            ClientForm.ShowDialog();
+        }
     }
 }
