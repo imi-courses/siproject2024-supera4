@@ -86,6 +86,7 @@ namespace DVD_rent
             this.кассировToolStripMenuItem.Name = "кассировToolStripMenuItem";
             this.кассировToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.кассировToolStripMenuItem.Text = "Кассиров";
+            this.кассировToolStripMenuItem.Click += new System.EventHandler(this.кассировToolStripMenuItem_Click);
             // 
             // дисковToolStripMenuItem
             // 
@@ -99,6 +100,7 @@ namespace DVD_rent
             this.клиентовToolStripMenuItem.Name = "клиентовToolStripMenuItem";
             this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.клиентовToolStripMenuItem.Text = "Клиентов";
+            this.клиентовToolStripMenuItem.Click += new System.EventHandler(this.клиентовToolStripMenuItem_Click);
             // 
             // фильмовToolStripMenuItem
             // 
