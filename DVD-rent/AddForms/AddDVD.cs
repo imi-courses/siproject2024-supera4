@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,15 +16,19 @@ namespace DVD_rent
     public partial class AddDVD : Form
     {
         DVD dvd = new DVD();
+        List<Movie> allMovieList = new List<Movie>();
+        List<Movie> checkedMovieList = new List<Movie>();
         public AddDVD()
         {
             InitializeComponent();
-            checkedListBox1.Items.AddRange(MovieController.GetAllMovies().ToArray());
+            allMovieList = MovieController.GetAllMovies();
+            checkedListBox1.Items.AddRange(allMovieList.ToArray());
         }
 
         public AddDVD(int Id)
         {
             InitializeComponent();
+            allMovieList = MovieController.GetAllMovies();
             dvd = DVDController.GetDVDById(Id);
             quantity.Text = dvd.Quantity.ToString();
             price.Text = dvd.Price.ToString();
@@ -41,11 +46,18 @@ namespace DVD_rent
                 {
                     throw new Exception("incorrect quantity");
                 }
-                if (dvd.Id != 0) DVDController.EditDVD(dvd.Id, Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text), checkedListBox1.CheckedItems.Cast<Movie>().ToList());
-                else DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text), checkedListBox1.CheckedItems.Cast<Movie>().ToList());
-                string namesString = checkedListBox1.CheckedItems.Cast<Movie>().ToList() != null ? string.Join(", ", checkedListBox1.CheckedItems.Cast<Movie>().ToList().Select(o => o.Name)) : "";
-                MessageBox.Show(namesString);
+
+                for (int i = 0; i < checkedListBox1.CheckedIndices.Count; i++)
+                {
+                    checkedMovieList.Add(allMovieList[checkedListBox1.CheckedIndices[i]]);
+                }
+                if (dvd.Id != 0) DVDController.EditDVD(dvd.Id, Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text), checkedMovieList);
+                else DVDController.AddDVD(Convert.ToInt32(quantity.Text), Convert.ToInt32(price.Text), checkedMovieList);
+                string namesString = checkedMovieList != null ? string.Join(", ", checkedMovieList.Select(o => o.Name)) : "";
+
                 this.Close();
+
+
             }
             catch (Exception ex)
             {

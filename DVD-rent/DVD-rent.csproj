@@ -138,6 +138,14 @@
     <Compile Include="Migrations\202503171224370_addMoviesToDVDclass.designer.cs">
       <DependentUpon>202503171224370_addMoviesToDVDclass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504071031558_change movie.cs" />
+    <Compile Include="Migrations\202504071031558_change movie.designer.cs">
+      <DependentUpon>202504071031558_change movie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504071040404_change db.cs" />
+    <Compile Include="Migrations\202504071040404_change db.designer.cs">
+      <DependentUpon>202504071040404_change db.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DVD.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -191,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503171224370_addMoviesToDVDclass.resx">
       <DependentUpon>202503171224370_addMoviesToDVDclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504071031558_change movie.resx">
+      <DependentUpon>202504071031558_change movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504071040404_change db.resx">
+      <DependentUpon>202504071040404_change db.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

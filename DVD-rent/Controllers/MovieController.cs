@@ -56,6 +56,10 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
+                //foreach (var movie in db.Movies)
+                //{
+
+                //}
                 return db.Movies.ToList();
             }
         }

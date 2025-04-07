@@ -15,6 +15,9 @@ namespace DVD_rent.Models
         [MaxLength(100)]
         public string Name { get; set; }
 
+        //
+        public ICollection<DVD> DVDs { get; set; } = new List<DVD>();
+
         public override string ToString()
         {
             return Name;

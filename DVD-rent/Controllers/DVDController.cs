@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using DVD_rent.Models;
 using System.Windows.Forms;
+
 
 namespace DVD_rent.Controllers
 {
@@ -14,19 +16,25 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
-                db.DVDs.Add(new DVD { Price = price, Quantity = quantity, Movies = new List<Movie>(movies) });
+                List<Movie> movieList = new List<Movie>();
+                foreach (var movie in movies)
+                {
+                    movieList.Add(db.Movies.Find(movie.Id));
+                }
+                
+                db.DVDs.Add(new DVD { Price = price, Quantity = quantity , Movies = movieList});
                 db.SaveChanges();
             }
 
         }
-        public static void EditDVD(int id, int quantity, float price, List<Movie> movies)
+        public static void EditDVD(int id, int quantity, float price, List<Movie> movieList)
         {
             try
             {
                 DVD dvd = GetDVDById(id);
                 dvd.Quantity = quantity;
                 dvd.Price = price;
-                dvd.Movies = new List<Movie>(movies);
+                dvd.Movies = movieList;
 
                 Context db = new Context();
                 if (price <= 0)
@@ -37,7 +45,7 @@ namespace DVD_rent.Controllers
                 {
                     throw new Exception("incorrect quantity");
                 }
-                db.Entry(dvd).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(dvd).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -66,7 +74,8 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
-                return db.DVDs.ToList();
+                db.Configuration.LazyLoadingEnabled = false;
+                return db.DVDs.Include("Movies").ToList();
             }
         }
     }

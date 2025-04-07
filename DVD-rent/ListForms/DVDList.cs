@@ -29,10 +29,9 @@ namespace DVD_rent
             foreach (DVD dvd in DVDController.GetAllDVDs())
             {
                 // Сформировать строку с именами
-                string namesString = " ";//dvd.Movies != null ? string.Join(", ", dvd.Movies.Select(o => o.Name)) : "";
-
+                //string namesString = dvd.Movies != null ? string.Join(", ", dvd.Movies.Select(o => o.Name)) : "";
+                string namesString = string.Join(", ", dvd.Movies.Select(o => o.Name));
                 dataGridView1.Rows.Add(dvd.Id, dvd.Quantity, dvd.Price, namesString);
-                MessageBox.Show(namesString);
             }
         }
 

@@ -14,7 +14,9 @@ namespace DVD_rent.Models
         public int Id { get; set; }
         public int Quantity { get; set; }
         public float Price { get; set; }
-        public virtual ICollection<Movie> Movies { get; set; }
+
+        //
+        public ICollection<Movie> Movies { get; set; } = new List<Movie>();
 
     }
 }
