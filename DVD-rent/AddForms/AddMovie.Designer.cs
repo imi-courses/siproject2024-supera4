@@ -29,6 +29,7 @@ namespace DVD_rent
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMovie));
             this.save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.TextBox();
@@ -68,6 +69,7 @@ namespace DVD_rent
             this.Controls.Add(this.name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.save);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddMovie";
             this.Text = "AddMovie";
             this.ResumeLayout(false);

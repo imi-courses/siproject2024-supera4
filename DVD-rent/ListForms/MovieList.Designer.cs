@@ -29,6 +29,7 @@ namespace DVD_rent
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieList));
             this.edit = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.reload = new System.Windows.Forms.Button();
@@ -109,6 +110,7 @@ namespace DVD_rent
             this.Controls.Add(this.close);
             this.Controls.Add(this.add);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MovieList";
             this.Text = "MovieList";
             this.Load += new System.EventHandler(this.MovieList_Load);

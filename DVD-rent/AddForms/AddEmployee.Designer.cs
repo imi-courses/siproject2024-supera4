@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployee));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonSave = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(84, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ФИО:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -54,7 +55,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(76, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
+            this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Логин:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -75,7 +76,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(66, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Пароль:";
             // 
@@ -113,7 +114,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(90, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 16);
+            this.label4.Size = new System.Drawing.Size(37, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "Тип:";
             // 
@@ -131,6 +132,7 @@
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEmployee";
             this.Text = "AddEmployee";
             this.ResumeLayout(false);
