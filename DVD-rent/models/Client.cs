@@ -17,5 +17,7 @@ namespace DVD_rent.Models
         public string Address { get; set; }
         public bool InBlackList { get; set; }
 
+        //Navigation properties
+        public virtual ICollection<Rent> Rents { get; set; } = new List<Rent>();
     }
 }

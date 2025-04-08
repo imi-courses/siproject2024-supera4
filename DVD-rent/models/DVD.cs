@@ -15,8 +15,11 @@ namespace DVD_rent.Models
         public int Quantity { get; set; }
         public float Price { get; set; }
 
-        //
-        public virtual ICollection<Movie> Movies { get; set; } = new List<Movie>();
+        //Foreign key
+        public int RentId { get; set; }
 
+        //Navigation properties
+        public virtual ICollection<Movie> Movies { get; set; } = new List<Movie>();
+        public Rent Rent { get; set; }
     }
 }

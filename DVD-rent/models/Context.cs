@@ -29,6 +29,14 @@ namespace DVD_rent.Models
                     m.MapLeftKey("DVDID");
                     m.MapRightKey("MoiveID");
                 });
+
+            modelBuilder.Entity<Rent>()
+                .HasKey(t => t.PledgeId);
+
+            modelBuilder.Entity<Pledge>()
+                .HasOptional(r => r.Rent)
+                .WithOptionalPrincipal(p => p.Pledge);
+
             base.OnModelCreating(modelBuilder);
         }
     }
