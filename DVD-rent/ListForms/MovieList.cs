@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVD_rent.Controllers;
+using DVD_rent.Models;
 
 namespace DVD_rent
 {
@@ -16,11 +17,17 @@ namespace DVD_rent
         public MovieList()
         {
             InitializeComponent();
+            dataGridView1.Columns.Add("Id", "Id");
+            dataGridView1.Columns.Add("Name", "Name");
         }
 
         public void ReloadGridView()
         {
-            dataGridView1.DataSource = MovieController.GetAllMovies();
+            dataGridView1.Rows.Clear();
+            foreach (Movie movie in MovieController.GetAllMovies())
+            {
+                dataGridView1.Rows.Add(movie.Id, movie.Name);
+            }
         }
 
         private void add_Click(object sender, EventArgs e)

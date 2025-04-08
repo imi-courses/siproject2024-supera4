@@ -27,26 +27,33 @@ namespace DVD_rent.Controllers
             }
 
         }
-        public static void EditDVD(int id, int quantity, float price, List<Movie> movieList)
+        public static void EditDVD(int id, int quantity, float price, List<Movie> movies)
         {
             try
             {
-                DVD dvd = GetDVDById(id);
-                dvd.Quantity = quantity;
-                dvd.Price = price;
-                dvd.Movies = movieList;
+                using (Context db = new Context())
+                {
+                    DVD dvd = db.DVDs.Include(d => d.Movies).FirstOrDefault(d => d.Id == id);
+                    List<Movie> movieList = new List<Movie>();
+                    foreach (var movie in movies)
+                    {
+                        movieList.Add(db.Movies.Find(movie.Id));
+                    }
+                    dvd.Movies = movieList;
+                    dvd.Quantity = quantity;
+                    dvd.Price = price;
 
-                Context db = new Context();
-                if (price <= 0)
-                {
-                    throw new Exception("incorrect price");
+                    if (price <= 0)
+                    {
+                        throw new Exception("incorrect price");
+                    }
+                    if (quantity < 1)
+                    {
+                        throw new Exception("incorrect quantity");
+                    }
+                    db.Entry(dvd).State = EntityState.Modified;
+                    db.SaveChanges();
                 }
-                if (quantity < 1)
-                {
-                    throw new Exception("incorrect quantity");
-                }
-                db.Entry(dvd).State = EntityState.Modified;
-                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -76,6 +83,17 @@ namespace DVD_rent.Controllers
             {
                 db.Configuration.LazyLoadingEnabled = false;
                 return db.DVDs.Include("Movies").ToList();
+            }
+        }
+        public static List<Movie> GetMoviesByDVDID(int id)
+        {
+            using (Context db = new Context())
+            {
+                db.Configuration.LazyLoadingEnabled = false;
+                DVD dvd = GetDVDById(id);
+                db.DVDs.Attach(dvd);
+                db.Entry(dvd).Collection(d => d.Movies).Load();
+                return dvd.Movies.ToList();
             }
         }
     }

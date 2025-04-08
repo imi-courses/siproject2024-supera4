@@ -16,7 +16,7 @@ namespace DVD_rent.Models
         public string Name { get; set; }
 
         //
-        public ICollection<DVD> DVDs { get; set; } = new List<DVD>();
+        public virtual ICollection<DVD> DVDs { get; set; } = new List<DVD>();
 
         public override string ToString()
         {
