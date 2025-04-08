@@ -26,7 +26,7 @@ namespace DVD_rent
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void add_Click(object sender, EventArgs e)
         {
             AddPledge addPledge = new AddPledge();
             addPledge.ShowDialog();
@@ -37,7 +37,7 @@ namespace DVD_rent
             dataGridView1.DataSource = PledgeController.GetAllPledges();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void delete_Click(object sender, EventArgs e)
         {
             Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0)
@@ -50,22 +50,16 @@ namespace DVD_rent
             ReloadGridView();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void reload_Click(object sender, EventArgs e)
         {
             ReloadGridView();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void btnExit_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void edit_Click(object sender, EventArgs e)
         {
 
         }

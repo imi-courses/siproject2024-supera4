@@ -31,11 +31,11 @@ namespace DVD_rent
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PledgeList));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.close = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.reload = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,80 +43,80 @@ namespace DVD_rent
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(776, 398);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btnAdd
+            // add
             // 
-            this.btnAdd.Location = new System.Drawing.Point(584, 415);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(99, 23);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.add.Location = new System.Drawing.Point(584, 415);
+            this.add.Margin = new System.Windows.Forms.Padding(4);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(99, 23);
+            this.add.TabIndex = 1;
+            this.add.Text = "Добавить";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // btnExit
+            // close
             // 
-            this.btnExit.Location = new System.Drawing.Point(691, 415);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(99, 23);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Закрыть";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            this.close.Location = new System.Drawing.Point(691, 415);
+            this.close.Margin = new System.Windows.Forms.Padding(4);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(99, 23);
+            this.close.TabIndex = 2;
+            this.close.Text = "Закрыть";
+            this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
-            // button1
+            // delete
             // 
-            this.button1.Location = new System.Drawing.Point(477, 415);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Удалить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.delete.Location = new System.Drawing.Point(477, 415);
+            this.delete.Margin = new System.Windows.Forms.Padding(4);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(99, 23);
+            this.delete.TabIndex = 3;
+            this.delete.Text = "Удалить";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
-            // button2
+            // reload
             // 
-            this.button2.Location = new System.Drawing.Point(12, 415);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Обновить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.reload.Location = new System.Drawing.Point(12, 415);
+            this.reload.Margin = new System.Windows.Forms.Padding(4);
+            this.reload.Name = "reload";
+            this.reload.Size = new System.Drawing.Size(99, 23);
+            this.reload.TabIndex = 4;
+            this.reload.Text = "Обновить";
+            this.reload.UseVisualStyleBackColor = true;
+            this.reload.Click += new System.EventHandler(this.reload_Click);
             // 
-            // button3
+            // edit
             // 
-            this.button3.Location = new System.Drawing.Point(371, 415);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Редактировать";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.edit.Location = new System.Drawing.Point(371, 415);
+            this.edit.Margin = new System.Windows.Forms.Padding(4);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(99, 23);
+            this.edit.TabIndex = 5;
+            this.edit.Text = "Редактировать";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // PledgeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.edit);
+            this.Controls.Add(this.reload);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.close);
+            this.Controls.Add(this.add);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PledgeList";
             this.Text = "PledgeList";
             this.Load += new System.EventHandler(this.Form_List_Load);
@@ -128,10 +128,10 @@ namespace DVD_rent
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button close;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.Button edit;
     }
 }

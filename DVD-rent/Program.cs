@@ -14,11 +14,29 @@ namespace DVD_rent
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
+        /// 
+        public static void InitializeDatabase()
+        {
+            using (var db = new Context())
+            {
+                try
+                {
+                    db.Pledges.FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    // Handle potential database connection errors
+                    Console.WriteLine($"Error initializing database: {ex.Message}");
+                    throw; // Re-throw the exception to prevent the app from starting if the database is unavailable
+                }
+            }
+        }
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            InitializeDatabase();
             authorization authForm = new authorization();
             Application.Run(authForm);
 

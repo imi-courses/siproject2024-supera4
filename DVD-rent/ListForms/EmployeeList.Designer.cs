@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeList));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.reload = new System.Windows.Forms.Button();
+            this.close = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -47,35 +47,35 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 397);
             this.dataGridView1.TabIndex = 1;
             // 
-            // button3
+            // reload
             // 
-            this.button3.Location = new System.Drawing.Point(12, 415);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Обновить";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.reload.Location = new System.Drawing.Point(12, 415);
+            this.reload.Name = "reload";
+            this.reload.Size = new System.Drawing.Size(98, 23);
+            this.reload.TabIndex = 4;
+            this.reload.Text = "Обновить";
+            this.reload.UseVisualStyleBackColor = true;
+            this.reload.Click += new System.EventHandler(this.reload_Click);
             // 
-            // button2
+            // close
             // 
-            this.button2.Location = new System.Drawing.Point(690, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Закрыть";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.close.Location = new System.Drawing.Point(690, 415);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(98, 23);
+            this.close.TabIndex = 5;
+            this.close.Text = "Закрыть";
+            this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
-            // button1
+            // add
             // 
-            this.button1.Location = new System.Drawing.Point(586, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.add.Location = new System.Drawing.Point(586, 415);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(98, 23);
+            this.add.TabIndex = 6;
+            this.add.Text = "Добавить";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // delete
             // 
@@ -93,9 +93,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 457);
             this.Controls.Add(this.delete);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.close);
+            this.Controls.Add(this.reload);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeList";
@@ -109,9 +109,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.Button close;
+        private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button delete;
     }
 }

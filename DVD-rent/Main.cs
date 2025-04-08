@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVD_rent.Models;
 using DVD_rent.Controllers;
+using DVD_rent.ListForms;
 
 namespace DVD_rent
 {
@@ -45,6 +46,12 @@ namespace DVD_rent
         {
             ClientList ClientForm = new ClientList();
             ClientForm.ShowDialog();
+        }
+
+        private void арендToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RentList RentForm = new RentList();
+            RentForm.ShowDialog();
         }
     }
 }

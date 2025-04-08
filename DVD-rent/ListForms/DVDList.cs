@@ -41,19 +41,19 @@ namespace DVD_rent
             ReloadGridView();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void add_Click(object sender, EventArgs e)
         {
             AddDVD addDVD = new AddDVD();
             addDVD.ShowDialog();
             ReloadGridView();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void reload_Click(object sender, EventArgs e)
         {
             ReloadGridView();
         }
