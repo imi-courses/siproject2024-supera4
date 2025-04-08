@@ -33,6 +33,7 @@ namespace DVD_rent
                 string namesString = string.Join(", ", dvd.Movies.Select(o => o.Name));
                 dataGridView1.Rows.Add(dvd.Id, dvd.Quantity, dvd.Price, namesString);
             }
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void DVDList_Load(object sender, EventArgs e)

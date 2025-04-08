@@ -23,6 +23,7 @@ namespace DVD_rent
             InitializeComponent();
             allMovieList = MovieController.GetAllMovies();
             checkedListBox1.Items.AddRange(allMovieList.ToArray());
+            checkedListBox1.CheckOnClick = true;
         }
 
         public AddDVD(int Id)
@@ -45,6 +46,7 @@ namespace DVD_rent
                     }
                 }
             };
+            checkedListBox1.CheckOnClick = true;
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)

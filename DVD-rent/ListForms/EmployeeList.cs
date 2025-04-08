@@ -26,6 +26,7 @@ namespace DVD_rent
         public void ReloadGridView()
         {
             dataGridView1.DataSource = EmployeeController.GetAllEmployees();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void EmployeeList_Load(object sender, EventArgs e)
         {

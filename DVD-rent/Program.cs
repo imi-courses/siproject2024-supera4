@@ -24,7 +24,7 @@ namespace DVD_rent
 
             if (authForm.UserSuccessfullyAuthenticated)
             {
-                Application.Run(new Form1());
+                Application.Run(new Main());
             }
         }
     }

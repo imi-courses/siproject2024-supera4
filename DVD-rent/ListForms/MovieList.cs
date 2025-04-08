@@ -28,6 +28,7 @@ namespace DVD_rent
             {
                 dataGridView1.Rows.Add(movie.Id, movie.Name);
             }
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void add_Click(object sender, EventArgs e)

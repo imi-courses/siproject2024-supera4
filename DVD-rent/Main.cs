@@ -12,9 +12,9 @@ using DVD_rent.Controllers;
 
 namespace DVD_rent
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }

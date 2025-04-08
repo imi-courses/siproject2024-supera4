@@ -23,6 +23,7 @@ namespace DVD_rent
         private void Form_List_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = PledgeController.GetAllPledges();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
