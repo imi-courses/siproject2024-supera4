@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVD_rent.Models;
 
 namespace DVD_rent
 {
@@ -17,6 +18,43 @@ namespace DVD_rent
         {
             InitializeComponent();
         }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "Поиск" && textBox1.ForeColor != Color.Gray) ;
+            {
+                string searchText = textBox1.Text.Trim();
+
+                if (string.IsNullOrEmpty(searchText) )
+                {
+                    ReloadGridView();
+                    return;
+                }
+                List<Employee> filteredEmployees = EmployeeController.GetAllEmployees().Where(p=> p.FullName.ToString().Contains(searchText) || p.Login.ToString().Contains(searchText)|| p.Password.ToString().Contains(searchText)).ToList();
+                
+                dataGridView1.DataSource = filteredEmployees;
+            }
+        }
+        private void search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                textBox1.Text = "Поиск";
+                textBox1.ForeColor = Color.Gray;
+            }
+        }
+
+        private void search_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.ForeColor != Color.Gray)
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+       
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -61,6 +99,11 @@ namespace DVD_rent
                 }
             }
             ReloadGridView();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

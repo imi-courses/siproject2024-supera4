@@ -34,13 +34,14 @@
             this.close = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -49,7 +50,7 @@
             // 
             // reload
             // 
-            this.reload.Location = new System.Drawing.Point(12, 415);
+            this.reload.Location = new System.Drawing.Point(12, 457);
             this.reload.Name = "reload";
             this.reload.Size = new System.Drawing.Size(98, 23);
             this.reload.TabIndex = 4;
@@ -59,7 +60,7 @@
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(690, 415);
+            this.close.Location = new System.Drawing.Point(690, 457);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(98, 23);
             this.close.TabIndex = 5;
@@ -69,7 +70,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(586, 415);
+            this.add.Location = new System.Drawing.Point(586, 457);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(98, 23);
             this.add.TabIndex = 6;
@@ -79,7 +80,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(482, 415);
+            this.delete.Location = new System.Drawing.Point(482, 457);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 7;
@@ -87,11 +88,24 @@
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(12, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(776, 22);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "Поиск";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.search_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.search_Leave);
+            // 
             // EmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 457);
+            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.add);
             this.Controls.Add(this.close);
@@ -103,6 +117,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,5 +128,6 @@
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

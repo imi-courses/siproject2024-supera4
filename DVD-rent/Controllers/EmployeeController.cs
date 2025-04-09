@@ -32,7 +32,7 @@ namespace DVD_rent.Controllers
                 Context db = new Context();
                 //if ()
                 //{
-                //throw new Exception("incorrect price");
+                //throw new Exception("incorrect password");
                 //}
                 db.Entry(employee).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
