@@ -37,10 +37,6 @@ namespace DVD_rent.Controllers
                 pledge.Money = money;
 
                 Context db = new Context();
-                if (money <= 0)
-                {
-                    throw new Exception("incorrect price");
-                }
                 db.Entry(pledge).State = EntityState.Modified;
                 db.SaveChanges();
             }

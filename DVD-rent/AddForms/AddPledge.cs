@@ -30,19 +30,31 @@ namespace DVD_rent
         {
             InitializeComponent();
 
-            comboBox1.Items.Add("passport");
-            comboBox1.Items.Add("internationalPassport");
-            comboBox1.Items.Add("driverLicense");
-            comboBox1.Items.Add("cash");
+            pledgeType.Items.Add("passport");
+            pledgeType.Items.Add("internationalPassport");
+            pledgeType.Items.Add("driverLicense");
+            pledgeType.Items.Add("cash");
 
-            comboBox1.SelectedIndex = 0;
+            pledgeType.SelectedIndex = 0;
 
             comboBox1_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
+        Pledge pledge = new Pledge();
+
+        public AddPledge(int Id)
+        {
+            InitializeComponent();
+            pledge = PledgeController.GetPledgeById(Id);
+            pledgeType.Text = pledge.PledgeType.ToString();
+            series.Text = pledge.Series.ToString();
+            numbers.Text = pledge.Number.ToString();
+            price.Text = pledge.Money.ToString();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string selectedPledgeType = comboBox1.SelectedItem?.ToString();
+            string selectedPledgeType = pledgeType.Text;
 
             int series = 0;
             int number = 0;
@@ -50,8 +62,8 @@ namespace DVD_rent
 
             if (selectedPledgeType != "cash")
             {
-                string seriesText = textBox1.Text;
-                string numberText = textBox2.Text;
+                string seriesText = this.series.Text;
+                string numberText = numbers.Text;
 
                 if (string.IsNullOrEmpty(seriesText) || string.IsNullOrEmpty(numberText))
                 {
@@ -101,7 +113,7 @@ namespace DVD_rent
 
             if (selectedPledgeType == "cash")
             {
-                if (!int.TryParse(textBox3.Text, out money))
+                if (!int.TryParse(price.Text, out money))
                 {
                     MessageBox.Show("Введите сумму залога!");
                     return;
@@ -113,7 +125,8 @@ namespace DVD_rent
                 }
             }
 
-            PledgeController.AddPledge(ToPledgeType(comboBox1.Text), series, number, money);
+            if( pledge.Id != 0) PledgeController.EditPledge(pledge.Id, ToPledgeType(pledgeType.Text), series, number, money);
+            else PledgeController.AddPledge(ToPledgeType(pledgeType.Text), series, number, money);
             this.Close();
         }
 
@@ -124,22 +137,22 @@ namespace DVD_rent
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedPledgeType = comboBox1.SelectedItem?.ToString();
+            string selectedPledgeType = pledgeType.SelectedItem?.ToString();
 
             if (selectedPledgeType == "cash")
             {
-                textBox1.Enabled = false;
-                textBox2.Enabled = false;
-                textBox3.Enabled = true;
-                textBox1.Text = "";
-                textBox2.Text = "";
+                series.Enabled = false;
+                numbers.Enabled = false;
+                price.Enabled = true;
+                series.Text = "";
+                numbers.Text = "";
             }
             else
             {
-                textBox1.Enabled = true;
-                textBox2.Enabled = true;
-                textBox3.Enabled = false;
-                textBox3.Text = "";
+                series.Enabled = true;
+                numbers.Enabled = true;
+                price.Enabled = false;
+                price.Text = "";
             }
         }
     }

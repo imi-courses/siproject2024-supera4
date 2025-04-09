@@ -61,7 +61,13 @@ namespace DVD_rent
         }
         private void edit_Click(object sender, EventArgs e)
         {
-
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                AddPledge addPledge = new AddPledge(int.Parse(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
+                addPledge.ShowDialog();
+                ReloadGridView();
+            }
         }
 
         private void search_TextChanged(object sender, EventArgs e)
