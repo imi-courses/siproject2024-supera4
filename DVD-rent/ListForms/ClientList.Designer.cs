@@ -34,6 +34,7 @@
             this.delete = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(449, 415);
+            this.delete.Location = new System.Drawing.Point(326, 415);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 5;
@@ -82,12 +83,24 @@
             this.close.TabIndex = 7;
             this.close.Text = "Закрыть";
             this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
+            // edit
+            // 
+            this.edit.Location = new System.Drawing.Point(439, 415);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(119, 23);
+            this.edit.TabIndex = 8;
+            this.edit.Text = "Редактировать";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // ClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.edit);
             this.Controls.Add(this.close);
             this.Controls.Add(this.add);
             this.Controls.Add(this.delete);
@@ -96,9 +109,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientList";
             this.Text = "ClientList";
-            this.Load += new System.EventHandler(this.ClientList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
+            //this.Load += new System.EventHandler(this.ClientList_Load);
+            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            //this.ResumeLayout(false);
 
         }
 
@@ -109,5 +122,6 @@
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button close;
+        private System.Windows.Forms.Button edit;
     }
 }

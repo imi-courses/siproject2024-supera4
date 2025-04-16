@@ -50,7 +50,7 @@ namespace DVD_rent.Controllers
                 return db.Clients.Find(id);
             }
         }
-        public static void DeleteDVDById(int id)
+        public static void DeleteClientById(int id)
         {
             using (Context db = new Context())
             {
@@ -60,7 +60,7 @@ namespace DVD_rent.Controllers
                 db.SaveChanges();
             }
         }
-        public static List<Client> GetAllDVDs()
+        public static List<Client> GetAllClients()
         {
             using (Context db = new Context())
             {

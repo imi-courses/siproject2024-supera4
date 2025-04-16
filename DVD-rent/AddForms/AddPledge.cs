@@ -142,5 +142,10 @@ namespace DVD_rent
                 textBox3.Text = "";
             }
         }
+
+        private void AddPledge_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddForms\AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\AddDVD.cs">
       <SubType>Form</SubType>
     </Compile>

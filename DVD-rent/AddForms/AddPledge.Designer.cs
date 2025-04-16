@@ -46,7 +46,7 @@ namespace DVD_rent
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(123, 22);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace DVD_rent
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(123, 55);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 22);
             this.textBox1.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace DVD_rent
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(123, 87);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 22);
             this.textBox2.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace DVD_rent
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(123, 119);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(160, 22);
             this.textBox3.TabIndex = 3;
@@ -79,7 +79,7 @@ namespace DVD_rent
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(184, 151);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
@@ -93,7 +93,7 @@ namespace DVD_rent
             this.label1.Location = new System.Drawing.Point(24, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Вид залога:";
             // 
@@ -103,7 +103,7 @@ namespace DVD_rent
             this.label2.Location = new System.Drawing.Point(55, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Серия:";
             // 
@@ -113,7 +113,7 @@ namespace DVD_rent
             this.label3.Location = new System.Drawing.Point(51, 91);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Номер:";
             // 
@@ -123,14 +123,14 @@ namespace DVD_rent
             this.label4.Location = new System.Drawing.Point(45, 123);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
+            this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Деньги:";
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(76, 151);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 9;
@@ -154,9 +154,10 @@ namespace DVD_rent
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddPledge";
             this.Text = "AddPledge";
+            this.Load += new System.EventHandler(this.AddPledge_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
