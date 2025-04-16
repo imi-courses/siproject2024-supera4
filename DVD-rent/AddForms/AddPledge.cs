@@ -50,6 +50,8 @@ namespace DVD_rent
             series.Text = pledge.Series.ToString();
             numbers.Text = pledge.Number.ToString();
             price.Text = pledge.Money.ToString();
+
+            comboBox1_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -137,7 +139,7 @@ namespace DVD_rent
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedPledgeType = pledgeType.SelectedItem?.ToString();
+            string selectedPledgeType = pledgeType.Text;
 
             if (selectedPledgeType == "cash")
             {
