@@ -69,5 +69,20 @@ namespace DVD_rent.Controllers
                 db.SaveChanges();
             }
         }
+        public static bool PledgeExists(PledgeType pledgeType, int series, int number, int? excludeId = null)
+        {
+            using (Context db = new Context())
+            {
+                var query = db.Pledges
+                    .Where(p => p.PledgeType == pledgeType && p.Series == series && p.Number == number);
+
+                if (excludeId.HasValue)
+                {
+                    query = query.Where(p => p.Id != excludeId.Value);
+                }
+
+                return query.Any();
+            }
+        }
     }
 }

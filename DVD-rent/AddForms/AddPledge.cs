@@ -113,21 +113,16 @@ namespace DVD_rent
                 }
             }
 
-            if (selectedPledgeType == "cash")
+            if (selectedPledgeType != "cash")
             {
-                if (!int.TryParse(price.Text, out money))
+                if (PledgeController.PledgeExists(ToPledgeType(selectedPledgeType), series, number, pledge.Id > 0 ? pledge.Id : (int?)null))
                 {
-                    MessageBox.Show("Введите сумму залога!");
-                    return;
-                }
-                if (money <= 0)
-                {
-                    MessageBox.Show("Сумма залога должна быть не меньше 0 рублей!");
+                    MessageBox.Show("Залог с таким типом, серией и номером уже существует!");
                     return;
                 }
             }
 
-            if( pledge.Id != 0) PledgeController.EditPledge(pledge.Id, ToPledgeType(pledgeType.Text), series, number, money);
+            if (pledge.Id != 0) PledgeController.EditPledge(pledge.Id, ToPledgeType(pledgeType.Text), series, number, money);
             else PledgeController.AddPledge(ToPledgeType(pledgeType.Text), series, number, money);
             this.Close();
         }
