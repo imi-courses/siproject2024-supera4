@@ -85,6 +85,7 @@ namespace DVD_rent
 
                 List<Pledge> filteredPledges = PledgeController.GetAllPledges()
                     .Where(p =>
+                        p.PledgeType.ToString().Contains(searchText) ||
                         p.Series.ToString().Contains(searchText) ||
                         p.Number.ToString().Contains(searchText) ||
                         p.Money.ToString().Contains(searchText)
