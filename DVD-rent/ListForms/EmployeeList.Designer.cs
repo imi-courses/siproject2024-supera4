@@ -34,7 +34,7 @@
             this.close = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,24 +88,24 @@
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
-            // textBox1
+            // search
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(12, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(776, 22);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Поиск";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Enter += new System.EventHandler(this.search_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.search_Leave);
+            this.search.ForeColor = System.Drawing.Color.Gray;
+            this.search.Location = new System.Drawing.Point(12, 20);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(776, 22);
+            this.search.TabIndex = 8;
+            this.search.Text = "Поиск";
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged_1);
+            this.search.Enter += new System.EventHandler(this.search_Enter);
+            this.search.Leave += new System.EventHandler(this.search_Leave);
             // 
             // EmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 488);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.add);
             this.Controls.Add(this.close);
@@ -128,6 +128,6 @@
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox search;
     }
 }
