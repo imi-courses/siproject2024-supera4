@@ -17,6 +17,10 @@ namespace DVD_rent
         public EmployeeList()
         {
             InitializeComponent();
+            dataGridView1.Columns.Add("Id", "Id");
+            dataGridView1.Columns.Add("Position", "Position");
+            dataGridView1.Columns.Add("Login", "Login");
+            dataGridView1.Columns.Add("Password", "Password");
         }
 
         private void search_TextChanged(object sender, EventArgs e)
@@ -45,17 +49,17 @@ namespace DVD_rent
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            ReloadGridView();
         }
 
         public void ReloadGridView()
         {
-            dataGridView1.DataSource = EmployeeController.GetAllEmployees();
+            dataGridView1.Rows.Clear();
+            foreach (Employee employee in EmployeeController.GetAllEmployees())
+            {
+                dataGridView1.Rows.Add(employee.Id, employee.Position, employee.Login, employee.Password);
+            }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-        private void EmployeeList_Load(object sender, EventArgs e)
-        {
-            ReloadGridView();
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -82,7 +86,7 @@ namespace DVD_rent
             {
                 for (int i = 0; i < selectedRowCount; i++)
                 {
-                    DVDController.DeleteDVDById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                    EmployeeController.DeleteEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
                 }
             }
             ReloadGridView();
@@ -132,6 +136,17 @@ namespace DVD_rent
             {
                 search.Text = "Поиск";
                 search.ForeColor = Color.Gray;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                AddEmployee addEmployee = new AddEmployee(int.Parse(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
+                addEmployee.ShowDialog();
+                ReloadGridView();
             }
         }
     }
