@@ -36,13 +36,15 @@ namespace DVD_rent
             this.update = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
+            this.type = new System.Windows.Forms.ListBox();
+            this.search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -51,7 +53,7 @@ namespace DVD_rent
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(586, 415);
+            this.add.Location = new System.Drawing.Point(586, 452);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(98, 23);
             this.add.TabIndex = 1;
@@ -61,7 +63,7 @@ namespace DVD_rent
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(690, 415);
+            this.close.Location = new System.Drawing.Point(690, 452);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(98, 23);
             this.close.TabIndex = 2;
@@ -71,7 +73,7 @@ namespace DVD_rent
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(12, 415);
+            this.update.Location = new System.Drawing.Point(12, 452);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(98, 23);
             this.update.TabIndex = 3;
@@ -81,7 +83,7 @@ namespace DVD_rent
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(357, 415);
+            this.delete.Location = new System.Drawing.Point(357, 452);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 4;
@@ -91,7 +93,7 @@ namespace DVD_rent
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(461, 415);
+            this.edit.Location = new System.Drawing.Point(461, 452);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(119, 23);
             this.edit.TabIndex = 5;
@@ -99,11 +101,34 @@ namespace DVD_rent
             this.edit.UseVisualStyleBackColor = true;
             this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
+            // type
+            // 
+            this.type.FormattingEnabled = true;
+            this.type.ItemHeight = 16;
+            this.type.Location = new System.Drawing.Point(614, 14);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(173, 20);
+            this.type.TabIndex = 17;
+            // 
+            // search
+            // 
+            this.search.ForeColor = System.Drawing.Color.Gray;
+            this.search.Location = new System.Drawing.Point(12, 12);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(596, 22);
+            this.search.TabIndex = 16;
+            this.search.Text = "Поиск";
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            this.search.Enter += new System.EventHandler(this.search_Enter);
+            this.search.Leave += new System.EventHandler(this.search_Leave);
+            // 
             // DVDList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.Controls.Add(this.type);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.update);
@@ -116,6 +141,7 @@ namespace DVD_rent
             this.Load += new System.EventHandler(this.DVDList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,5 +153,7 @@ namespace DVD_rent
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.ListBox type;
+        private System.Windows.Forms.TextBox search;
     }
 }

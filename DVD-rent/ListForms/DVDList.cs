@@ -81,5 +81,56 @@ namespace DVD_rent
                 ReloadGridView();
             }
         }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
+            {
+
+                string searchText = search.Text.Trim();
+
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    ReloadGridView();
+                    return;
+                }
+
+                List<DVD> filteredDVDs = DVDController.GetAllDVDs()
+                    .Where(dvd =>
+                        dvd.Quantity.ToString().Contains(searchText) ||
+                        dvd.Price.ToString().Contains(searchText) || 
+                        string.Join(", ", dvd.Movies.Select(o => o.Name)).Contains(searchText)
+                    )
+                    .ToList();
+
+                dataGridView1.Rows.Clear();
+                foreach (DVD dvd in filteredDVDs)
+                {
+                    // Сформировать строку с именами
+                    //string namesString = dvd.Movies != null ? string.Join(", ", dvd.Movies.Select(o => o.Name)) : "";
+                    string namesString = string.Join(", ", dvd.Movies.Select(o => o.Name));
+                    dataGridView1.Rows.Add(dvd.Id, dvd.Quantity, dvd.Price, namesString);
+                }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+        }
+
+        private void search_Enter(object sender, EventArgs e)
+        {
+            if (search.ForeColor == Color.Gray)
+            {
+                search.Text = "";
+                search.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(search.Text))
+            {
+                search.Text = "Поиск";
+                search.ForeColor = Color.Gray;
+            }
+        }
     }
 }

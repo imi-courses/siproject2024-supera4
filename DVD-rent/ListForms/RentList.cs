@@ -76,9 +76,48 @@ namespace DVD_rent.ListForms
             ReloadGridView();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void search_TextChanged(object sender, EventArgs e)
         {
+            if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
+            {
 
+                string searchText = search.Text.Trim();
+
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    ReloadGridView();
+                    return;
+                }
+
+                List<Pledge> filteredPledges = PledgeController.GetAllPledges()
+                    .Where(p =>
+                        p.PledgeType.ToString().Contains(searchText) ||
+                        p.Series.ToString().Contains(searchText) ||
+                        p.Number.ToString().Contains(searchText) ||
+                        p.Money.ToString().Contains(searchText)
+                    )
+                    .ToList();
+
+                dataGridView1.DataSource = filteredPledges;
+            }
+        }
+
+        private void search_Enter(object sender, EventArgs e)
+        {
+            if (search.ForeColor == Color.Gray)
+            {
+                search.Text = "";
+                search.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(search.Text))
+            {
+                search.Text = "Поиск";
+                search.ForeColor = Color.Gray;
+            }
         }
 
         //private void edit_Click(object sender, EventArgs e)
