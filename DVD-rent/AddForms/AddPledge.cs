@@ -147,5 +147,10 @@ namespace DVD_rent
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

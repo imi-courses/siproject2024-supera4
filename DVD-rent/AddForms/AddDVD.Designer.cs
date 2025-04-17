@@ -42,7 +42,7 @@ namespace DVD_rent
             // ButtonSave
             // 
             this.ButtonSave.Location = new System.Drawing.Point(253, 266);
-            this.ButtonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonSave.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(99, 23);
             this.ButtonSave.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace DVD_rent
             this.label1.Location = new System.Drawing.Point(64, 201);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 17);
+            this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Количество";
             // 
@@ -66,14 +66,14 @@ namespace DVD_rent
             this.label2.Location = new System.Drawing.Point(121, 238);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Цена";
             // 
             // quantity
             // 
             this.quantity.Location = new System.Drawing.Point(187, 197);
-            this.quantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantity.Margin = new System.Windows.Forms.Padding(4);
             this.quantity.Name = "quantity";
             this.quantity.Size = new System.Drawing.Size(149, 22);
             this.quantity.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace DVD_rent
             // price
             // 
             this.price.Location = new System.Drawing.Point(187, 231);
-            this.price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.price.Margin = new System.Windows.Forms.Padding(4);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(149, 22);
             this.price.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace DVD_rent
             // 
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(187, 17);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(197, 157);
             this.checkedListBox1.TabIndex = 5;
@@ -101,7 +101,7 @@ namespace DVD_rent
             this.label3.Location = new System.Drawing.Point(95, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Фильмы";
             // 
@@ -121,6 +121,7 @@ namespace DVD_rent
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddDVD";
             this.Text = "AddDVD";
+            this.Load += new System.EventHandler(this.AddDVD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

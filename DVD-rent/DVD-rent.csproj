@@ -181,6 +181,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\DVDController.cs" />
+    <EmbeddedResource Include="AddForms\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForms\AddDVD.resx">
       <DependentUpon>AddDVD.cs</DependentUpon>
     </EmbeddedResource>

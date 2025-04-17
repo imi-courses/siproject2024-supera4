@@ -40,5 +40,10 @@ namespace DVD_rent
         {
             EmployeeController.AddEmployee(ToEmployeeType(comboBox1.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text), Convert.ToString(textBox3.Text));
         }
+
+        private void AddEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

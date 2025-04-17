@@ -74,6 +74,7 @@
             this.add.TabIndex = 6;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // close
             // 
@@ -109,9 +110,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientList";
             this.Text = "ClientList";
-            //this.Load += new System.EventHandler(this.ClientList_Load);
-            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            //this.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.ClientList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
 
         }
 
