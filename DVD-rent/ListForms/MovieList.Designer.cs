@@ -36,12 +36,14 @@ namespace DVD_rent
             this.close = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.type = new System.Windows.Forms.ListBox();
+            this.search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(461, 415);
+            this.edit.Location = new System.Drawing.Point(461, 451);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(119, 23);
             this.edit.TabIndex = 11;
@@ -51,7 +53,7 @@ namespace DVD_rent
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(357, 415);
+            this.delete.Location = new System.Drawing.Point(357, 451);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 10;
@@ -61,7 +63,7 @@ namespace DVD_rent
             // 
             // reload
             // 
-            this.reload.Location = new System.Drawing.Point(12, 415);
+            this.reload.Location = new System.Drawing.Point(12, 451);
             this.reload.Name = "reload";
             this.reload.Size = new System.Drawing.Size(98, 23);
             this.reload.TabIndex = 9;
@@ -71,7 +73,7 @@ namespace DVD_rent
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(690, 415);
+            this.close.Location = new System.Drawing.Point(690, 451);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(98, 23);
             this.close.TabIndex = 8;
@@ -81,7 +83,7 @@ namespace DVD_rent
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(586, 415);
+            this.add.Location = new System.Drawing.Point(586, 451);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(98, 23);
             this.add.TabIndex = 7;
@@ -92,18 +94,37 @@ namespace DVD_rent
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 397);
             this.dataGridView1.TabIndex = 6;
             // 
+            // type
+            // 
+            this.type.FormattingEnabled = true;
+            this.type.ItemHeight = 16;
+            this.type.Location = new System.Drawing.Point(614, 14);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(173, 20);
+            this.type.TabIndex = 15;
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(12, 12);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(596, 22);
+            this.search.TabIndex = 14;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
             // MovieList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.Controls.Add(this.type);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.reload);
@@ -116,6 +137,7 @@ namespace DVD_rent
             this.Load += new System.EventHandler(this.MovieList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,5 +149,7 @@ namespace DVD_rent
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ListBox type;
+        private System.Windows.Forms.TextBox search;
     }
 }
