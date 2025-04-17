@@ -18,6 +18,10 @@ namespace DVD_rent
         public PledgeList()
         {
             InitializeComponent();
+            string[] types = { "PledgeType", "Series", "Number", "Money" };
+            type.Items.AddRange(types);
+            type.SelectedIndex = 0;
+            type.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void Form_List_Load(object sender, EventArgs e)
@@ -76,22 +80,46 @@ namespace DVD_rent
             {
 
                 string searchText = search.Text.Trim();
-
+                List<Pledge> filteredPledges = new List<Pledge>();
+                
                 if (string.IsNullOrEmpty(searchText))
                 {
                     ReloadGridView();
                     return;
                 }
 
-                List<Pledge> filteredPledges = PledgeController.GetAllPledges()
+                if (type.SelectedItem.ToString() == "PledgeType")
+                {
+                    filteredPledges = PledgeController.GetAllPledges()
                     .Where(p =>
-                        p.PledgeType.ToString().Contains(searchText) ||
-                        p.Series.ToString().Contains(searchText) ||
-                        p.Number.ToString().Contains(searchText) ||
+                        p.PledgeType.ToString().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Series")
+                {
+                    filteredPledges = PledgeController.GetAllPledges()
+                    .Where(p =>
+                        p.Series.ToString().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Number")
+                {
+                    filteredPledges = PledgeController.GetAllPledges()
+                    .Where(p =>
+                        p.Number.ToString().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Money")
+                {
+                    filteredPledges = PledgeController.GetAllPledges()
+                    .Where(p =>
                         p.Money.ToString().Contains(searchText)
                     )
                     .ToList();
-
+                }
                 dataGridView1.DataSource = filteredPledges;
             }
         }

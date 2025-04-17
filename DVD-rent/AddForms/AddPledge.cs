@@ -60,7 +60,7 @@ namespace DVD_rent
 
             int series = 0;
             int number = 0;
-            int money = 0;
+            float money = 0;
 
             if (selectedPledgeType != "cash")
             {
@@ -109,6 +109,21 @@ namespace DVD_rent
                 if (!int.TryParse(numberText, out number))
                 {
                     MessageBox.Show("Номер должен быть числом!");
+                    return;
+                }
+            }
+
+            else
+            {
+                if (!float.TryParse(price.Text, out money))
+                {
+                    MessageBox.Show("Сумма залога должна быть числом!");
+                    return;
+                }
+
+                if (money < 0)
+                {
+                    MessageBox.Show("Сумма залога не может быть отрицательной!");
                     return;
                 }
             }

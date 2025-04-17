@@ -37,23 +37,24 @@ namespace DVD_rent
             this.reload = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
+            this.type = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 32);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(582, 323);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 397);
             this.dataGridView1.TabIndex = 0;
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(435, 359);
+            this.add.Location = new System.Drawing.Point(586, 452);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(74, 19);
+            this.add.Size = new System.Drawing.Size(98, 23);
             this.add.TabIndex = 1;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
@@ -61,9 +62,9 @@ namespace DVD_rent
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(515, 359);
+            this.close.Location = new System.Drawing.Point(690, 452);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(74, 19);
+            this.close.Size = new System.Drawing.Size(98, 23);
             this.close.TabIndex = 2;
             this.close.Text = "Закрыть";
             this.close.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@ namespace DVD_rent
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(355, 359);
+            this.delete.Location = new System.Drawing.Point(357, 452);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(74, 19);
+            this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 3;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = true;
@@ -81,9 +82,9 @@ namespace DVD_rent
             // 
             // reload
             // 
-            this.reload.Location = new System.Drawing.Point(6, 359);
+            this.reload.Location = new System.Drawing.Point(12, 452);
             this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(74, 19);
+            this.reload.Size = new System.Drawing.Size(98, 23);
             this.reload.TabIndex = 4;
             this.reload.Text = "Обновить";
             this.reload.UseVisualStyleBackColor = true;
@@ -91,9 +92,9 @@ namespace DVD_rent
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(275, 359);
+            this.edit.Location = new System.Drawing.Point(461, 452);
             this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(74, 19);
+            this.edit.Size = new System.Drawing.Size(119, 23);
             this.edit.TabIndex = 5;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = true;
@@ -102,20 +103,29 @@ namespace DVD_rent
             // search
             // 
             this.search.ForeColor = System.Drawing.Color.Gray;
-            this.search.Location = new System.Drawing.Point(6, 6);
+            this.search.Location = new System.Drawing.Point(12, 12);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(582, 20);
+            this.search.Size = new System.Drawing.Size(596, 20);
             this.search.TabIndex = 6;
             this.search.Text = "Поиск";
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             this.search.Enter += new System.EventHandler(this.search_Enter);
             this.search.Leave += new System.EventHandler(this.search_Leave);
             // 
+            // type
+            // 
+            this.type.FormattingEnabled = true;
+            this.type.Location = new System.Drawing.Point(614, 12);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(173, 21);
+            this.type.TabIndex = 7;
+            // 
             // PledgeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 387);
+            this.ClientSize = new System.Drawing.Size(802, 490);
+            this.Controls.Add(this.type);
             this.Controls.Add(this.search);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.reload);
@@ -142,5 +152,6 @@ namespace DVD_rent
         private System.Windows.Forms.Button reload;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.TextBox search;
+        private System.Windows.Forms.ComboBox type;
     }
 }
