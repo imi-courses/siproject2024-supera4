@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVD_rent.Models;
 
 namespace DVD_rent
 {
     public partial class authorization : Form
     {
         public bool UserSuccessfullyAuthenticated { get; private set; } = false;
+        public Employee employee = new Employee();
 
         public authorization()
         {

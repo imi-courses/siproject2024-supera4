@@ -19,14 +19,14 @@ namespace DVD_rent.ListForms
         public RentList()
         {
             InitializeComponent();
-            dataGridView1.Columns.Add("Id", "Id");
-            dataGridView1.Columns.Add("RentDate", "RentDate");
-            dataGridView1.Columns.Add("ReturnDate", "ReturnDate");
-            dataGridView1.Columns.Add("State", "State");
-            dataGridView1.Columns.Add("Money", "Money");
-            dataGridView1.Columns.Add("Client", "Client");
-            dataGridView1.Columns.Add("Employee", "Employee");
-            dataGridView1.Columns.Add("Pledge", "Pledge");
+            dataGridView1.Columns.Add("Id", "ID");
+            dataGridView1.Columns.Add("RentDate", "Дата аренды");
+            dataGridView1.Columns.Add("ReturnDate", "Дата возвращения");
+            dataGridView1.Columns.Add("State", "Состояние");
+            dataGridView1.Columns.Add("Money", "Цена");
+            dataGridView1.Columns.Add("Client", "ФИО клиента");
+            dataGridView1.Columns.Add("Employee", "ФИО кассира");
+            dataGridView1.Columns.Add("Pledge", "Залог");
             dataGridView1.Columns.Add("DVDs", "DVDs");
         }
 
@@ -35,7 +35,6 @@ namespace DVD_rent.ListForms
             dataGridView1.Rows.Clear();
             foreach (Rent rent in RentController.GetAllRents())
             {
-                //string namesString = string.Join(", ", rent.Movies.Select(o => o.Name));
                 dataGridView1.Rows.Add(rent.Id, rent.RentDate, rent.ReturnDate, rent.State, rent.Money, rent.Client, rent.Employee, rent.Pledge, rent.DVDs);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -74,6 +73,50 @@ namespace DVD_rent.ListForms
                 }
             }
             ReloadGridView();
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
+            {
+
+                string searchText = search.Text.Trim();
+
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    ReloadGridView();
+                    return;
+                }
+
+                List<Pledge> filteredPledges = PledgeController.GetAllPledges()
+                    .Where(p =>
+                        p.PledgeType.ToString().Contains(searchText) ||
+                        p.Series.ToString().Contains(searchText) ||
+                        p.Number.ToString().Contains(searchText) ||
+                        p.Money.ToString().Contains(searchText)
+                    )
+                    .ToList();
+
+                dataGridView1.DataSource = filteredPledges;
+            }
+        }
+
+        private void search_Enter(object sender, EventArgs e)
+        {
+            if (search.ForeColor == Color.Gray)
+            {
+                search.Text = "";
+                search.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(search.Text))
+            {
+                search.Text = "Поиск";
+                search.ForeColor = Color.Gray;
+            }
         }
 
         //private void edit_Click(object sender, EventArgs e)

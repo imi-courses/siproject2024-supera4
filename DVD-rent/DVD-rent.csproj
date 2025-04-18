@@ -196,6 +196,9 @@
     <EmbeddedResource Include="AddForms\AddPledge.resx">
       <DependentUpon>AddPledge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddRent.resx">
+      <DependentUpon>AddRent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="authorization.resx">
       <DependentUpon>authorization.cs</DependentUpon>
     </EmbeddedResource>

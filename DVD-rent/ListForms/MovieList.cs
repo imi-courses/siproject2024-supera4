@@ -17,8 +17,12 @@ namespace DVD_rent
         public MovieList()
         {
             InitializeComponent();
-            dataGridView1.Columns.Add("Id", "Id");
-            dataGridView1.Columns.Add("Name", "Name");
+            string[] types = { "ID", "Название" };
+            dataGridView1.Columns.Add("Id", "ID");
+            dataGridView1.Columns.Add("Name", "Название");
+            type.Items.AddRange(types);
+            type.SelectedIndex = 0;
+            type.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void ReloadGridView()
@@ -76,5 +80,64 @@ namespace DVD_rent
         {
             ReloadGridView();
         }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
+            {
+
+                string searchText = search.Text.Trim();
+                List<Movie> filteredMovies = new List<Movie>();
+
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    ReloadGridView();
+                    return;
+                }
+
+                if (type.SelectedItem.ToString() == "ID")
+                {
+                    filteredMovies = MovieController.GetAllMovies()
+                    .Where(movie =>
+                        movie.Id.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Название")
+                {
+                    filteredMovies = MovieController.GetAllMovies()
+                    .Where(movie =>
+                        movie.Name.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+
+                dataGridView1.Rows.Clear();
+                foreach (Movie movie in filteredMovies)
+                {
+                    dataGridView1.Rows.Add(movie.Id, movie.Name);
+                }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+        }
+
+        private void search_Enter(object sender, EventArgs e)
+        {
+            if (search.ForeColor == Color.Gray)
+            {
+                search.Text = "";
+                search.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(search.Text))
+            {
+                search.Text = "Поиск";
+                search.ForeColor = Color.Gray;
+            }
+        }
+
     }
 }
