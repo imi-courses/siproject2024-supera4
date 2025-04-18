@@ -167,5 +167,15 @@ namespace DVD_rent
                 price.Text = "";
             }
         }
+
+        private void AddPledge_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
