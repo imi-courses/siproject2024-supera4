@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -43,8 +46,21 @@
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,97 +72,97 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddForms\AddClient.cs">
+    <Compile Include="Forms\AddForms\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForms\AddClient.Designer.cs">
+    <Compile Include="Forms\AddForms\AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddForms\AddDVD.cs">
+    <Compile Include="Forms\AddForms\AddDVD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForms\AddDVD.Designer.cs">
+    <Compile Include="Forms\AddForms\AddDVD.Designer.cs">
       <DependentUpon>AddDVD.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddForms\AddEmployee.cs">
+    <Compile Include="Forms\AddForms\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForms\AddEmployee.Designer.cs">
+    <Compile Include="Forms\AddForms\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddForms\AddMovie.cs">
+    <Compile Include="Forms\AddForms\AddMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForms\AddMovie.Designer.cs">
+    <Compile Include="Forms\AddForms\AddMovie.Designer.cs">
       <DependentUpon>AddMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddForms\AddPledge.cs">
+    <Compile Include="Forms\AddForms\AddPledge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForms\AddPledge.Designer.cs">
+    <Compile Include="Forms\AddForms\AddPledge.Designer.cs">
       <DependentUpon>AddPledge.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddForms\AddRent.cs">
+    <Compile Include="Forms\AddForms\AddRent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForms\AddRent.Designer.cs">
+    <Compile Include="Forms\AddForms\AddRent.Designer.cs">
       <DependentUpon>AddRent.cs</DependentUpon>
     </Compile>
-    <Compile Include="authorization.cs">
+    <Compile Include="Forms\authorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="authorization.Designer.cs">
+    <Compile Include="Forms\authorization.Designer.cs">
       <DependentUpon>authorization.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\RentController.cs" />
-    <Compile Include="ListForms\ClientList.cs">
+    <Compile Include="Forms\ListForms\ClientList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListForms\ClientList.Designer.cs">
+    <Compile Include="Forms\ListForms\ClientList.Designer.cs">
       <DependentUpon>ClientList.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PledgeController.cs" />
-    <Compile Include="ListForms\DVDList.cs">
+    <Compile Include="Forms\ListForms\DVDList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListForms\DVDList.Designer.cs">
+    <Compile Include="Forms\ListForms\DVDList.Designer.cs">
       <DependentUpon>DVDList.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="ListForms\EmployeeList.cs">
+    <Compile Include="Forms\ListForms\EmployeeList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListForms\EmployeeList.Designer.cs">
+    <Compile Include="Forms\ListForms\EmployeeList.Designer.cs">
       <DependentUpon>EmployeeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListForms\RentList.cs">
+    <Compile Include="Forms\ListForms\RentList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListForms\RentList.Designer.cs">
+    <Compile Include="Forms\ListForms\RentList.Designer.cs">
       <DependentUpon>RentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202504030401127_changeDVD.cs" />
     <Compile Include="Migrations\202504030401127_changeDVD.designer.cs">
       <DependentUpon>202504030401127_changeDVD.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListForms\MovieList.cs">
+    <Compile Include="Forms\ListForms\MovieList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListForms\MovieList.Designer.cs">
+    <Compile Include="Forms\ListForms\MovieList.Designer.cs">
       <DependentUpon>MovieList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListForms\PledgeList.cs">
+    <Compile Include="Forms\ListForms\PledgeList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListForms\PledgeList.designer.cs">
+    <Compile Include="Forms\ListForms\PledgeList.designer.cs">
       <DependentUpon>PledgeList.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202502190215252_add migration.cs" />
@@ -181,49 +197,49 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\DVDController.cs" />
-    <EmbeddedResource Include="AddForms\AddClient.resx">
+    <EmbeddedResource Include="Forms\AddForms\AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddForms\AddDVD.resx">
+    <EmbeddedResource Include="Forms\AddForms\AddDVD.resx">
       <DependentUpon>AddDVD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddForms\AddEmployee.resx">
+    <EmbeddedResource Include="Forms\AddForms\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddForms\AddMovie.resx">
+    <EmbeddedResource Include="Forms\AddForms\AddMovie.resx">
       <DependentUpon>AddMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddForms\AddPledge.resx">
+    <EmbeddedResource Include="Forms\AddForms\AddPledge.resx">
       <DependentUpon>AddPledge.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddForms\AddRent.resx">
+    <EmbeddedResource Include="Forms\AddForms\AddRent.resx">
       <DependentUpon>AddRent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="authorization.resx">
+    <EmbeddedResource Include="Forms\authorization.resx">
       <DependentUpon>authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListForms\ClientList.resx">
+    <EmbeddedResource Include="Forms\ListForms\ClientList.resx">
       <DependentUpon>ClientList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListForms\DVDList.resx">
+    <EmbeddedResource Include="Forms\ListForms\DVDList.resx">
       <DependentUpon>DVDList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListForms\EmployeeList.resx">
+    <EmbeddedResource Include="Forms\ListForms\EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListForms\RentList.resx">
+    <EmbeddedResource Include="Forms\ListForms\RentList.resx">
       <DependentUpon>RentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504030401127_changeDVD.resx">
       <DependentUpon>202504030401127_changeDVD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListForms\MovieList.resx">
+    <EmbeddedResource Include="Forms\ListForms\MovieList.resx">
       <DependentUpon>MovieList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListForms\PledgeList.resx">
+    <EmbeddedResource Include="Forms\ListForms\PledgeList.resx">
       <DependentUpon>PledgeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190215252_add migration.resx">

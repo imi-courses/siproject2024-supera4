@@ -33,10 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fullName = new System.Windows.Forms.TextBox();
+            this.login = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
+            this.position = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(84, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ФИО:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -55,7 +55,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(76, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
+            this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Логин:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -76,45 +76,45 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(66, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Пароль:";
             // 
-            // textBox1
+            // fullName
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 22);
-            this.textBox1.TabIndex = 4;
+            this.fullName.Location = new System.Drawing.Point(149, 95);
+            this.fullName.Name = "fullName";
+            this.fullName.Size = new System.Drawing.Size(150, 22);
+            this.fullName.TabIndex = 4;
             // 
-            // textBox2
+            // login
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 22);
-            this.textBox2.TabIndex = 5;
+            this.login.Location = new System.Drawing.Point(149, 150);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(150, 22);
+            this.login.TabIndex = 5;
             // 
-            // textBox3
+            // password
             // 
-            this.textBox3.Location = new System.Drawing.Point(149, 212);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 22);
-            this.textBox3.TabIndex = 6;
+            this.password.Location = new System.Drawing.Point(149, 212);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(150, 22);
+            this.password.TabIndex = 6;
             // 
-            // comboBox1
+            // position
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 24);
-            this.comboBox1.TabIndex = 7;
+            this.position.FormattingEnabled = true;
+            this.position.Location = new System.Drawing.Point(149, 34);
+            this.position.Name = "position";
+            this.position.Size = new System.Drawing.Size(150, 24);
+            this.position.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(90, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 16);
+            this.label4.Size = new System.Drawing.Size(37, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "Тип:";
             // 
@@ -124,10 +124,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 307);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.position);
+            this.Controls.Add(this.password);
+            this.Controls.Add(this.login);
+            this.Controls.Add(this.fullName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.label2);
@@ -147,10 +147,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ButtonSave;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox fullName;
+        private System.Windows.Forms.TextBox login;
+        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.ComboBox position;
         private System.Windows.Forms.Label label4;
     }
 }

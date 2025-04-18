@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace DVD_rent
 {
@@ -25,16 +26,16 @@ namespace DVD_rent
         public AddEmployee()
         {
             InitializeComponent();
-            comboBox1.Items.Add("cashier");
+            position.Items.Add("cashier");
         }
         public AddEmployee(int Id)
         {
             InitializeComponent();
-            comboBox1.Items.Add("cashier");
+            position.Items.Add("cashier");
             employee = EmployeeController.GetEmployeeById(Id);
-            textBox1.Text = employee.FullName.ToString();
-            textBox2.Text = employee.Login.ToString();
-            textBox3.Text = employee.Password.ToString();
+            fullName.Text = employee.FullName.ToString();
+            login.Text = employee.Login.ToString();
+            password.Text = employee.Password.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -49,7 +50,9 @@ namespace DVD_rent
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            EmployeeController.AddEmployee(ToEmployeeType(comboBox1.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text), Convert.ToString(textBox3.Text));
+            string hashed = BCrypt.Net.BCrypt.HashPassword(password.Text);
+            EmployeeController.AddEmployee(ToEmployeeType(position.Text), Convert.ToString(login.Text), hashed, Convert.ToString(fullName.Text));
+            this.Close();
         }
 
         private void AddEmployee_Load(object sender, EventArgs e)
