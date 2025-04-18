@@ -38,7 +38,6 @@ namespace DVD_rent
             this.дисковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильмовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.черныйСписокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.залогToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +69,6 @@ namespace DVD_rent
             this.дисковToolStripMenuItem,
             this.клиентовToolStripMenuItem,
             this.фильмовToolStripMenuItem,
-            this.черныйСписокToolStripMenuItem,
             this.залогToolStripMenuItem});
             this.спискиToolStripMenuItem.Name = "спискиToolStripMenuItem";
             this.спискиToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
@@ -111,12 +109,6 @@ namespace DVD_rent
             this.фильмовToolStripMenuItem.Text = "Фильмов";
             this.фильмовToolStripMenuItem.Click += new System.EventHandler(this.фильмовToolStripMenuItem_Click);
             // 
-            // черныйСписокToolStripMenuItem
-            // 
-            this.черныйСписокToolStripMenuItem.Name = "черныйСписокToolStripMenuItem";
-            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.черныйСписокToolStripMenuItem.Text = "Черный список";
-            // 
             // залогToolStripMenuItem
             // 
             this.залогToolStripMenuItem.Name = "залогToolStripMenuItem";
@@ -152,7 +144,6 @@ namespace DVD_rent
         private System.Windows.Forms.ToolStripMenuItem дисковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem клиентовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фильмовToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem черныйСписокToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem залогToolStripMenuItem;
     }
 }

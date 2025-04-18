@@ -30,9 +30,8 @@ namespace DVD_rent.Models
 
         //Navigation properties
         public virtual ICollection<DVD> DVDs { get; set; } = new List<DVD>();
-        public Client Client { get; set; }
-        public Employee Employee { get; set; }
-        [ForeignKey("PledgeId")]
-        public Pledge Pledge { get; set; }
+        public virtual Client Client { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual Pledge Pledge { get; set; }
     }
 }

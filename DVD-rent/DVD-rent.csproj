@@ -185,6 +185,10 @@
     <Compile Include="Migrations\202504080953308_add relationships to classes.designer.cs">
       <DependentUpon>202504080953308_add relationships to classes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504181201384_change.cs" />
+    <Compile Include="Migrations\202504181201384_change.designer.cs">
+      <DependentUpon>202504181201384_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DVD.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -256,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504080953308_add relationships to classes.resx">
       <DependentUpon>202504080953308_add relationships to classes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504181201384_change.resx">
+      <DependentUpon>202504181201384_change.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

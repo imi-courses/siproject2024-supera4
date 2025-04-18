@@ -11,17 +11,25 @@ namespace DVD_rent.Controllers
 {
     class RentController
     {
-        public static void AddRent(DateTime RentDate, DateTime ReturnDate, State state, float money, Client client, Employee employee, Pledge pledge, List<DVD> DVDs)
+        public static void AddRent(DateTime RentDate, DateTime ReturnDate, State state, float money, int clientId, int employeeId, int pledgeId, int DVDs)
         {
             using (Context db = new Context())
             {
 
-                db.Rents.Add(new Rent { RentDate = RentDate, ReturnDate = ReturnDate , State = state, Money = money , Client = client, Employee = employee, Pledge = pledge, DVDs = DVDs});
+                db.Rents.Add(new Rent { 
+                    RentDate = RentDate, 
+                    ReturnDate = ReturnDate , 
+                    State = state, 
+                    Money = money , 
+                    ClientId = clientId,
+                    EmployeeId = employeeId,
+                    PledgeId = pledgeId,
+                    DVDs = new List<DVD>() });
                 db.SaveChanges();
             }
 
         }
-        public static void EditRent(int id, DateTime RentDate, DateTime ReturnDate, State state, float money, Client client, Employee employee, Pledge pledge, List<DVD> DVDs)
+        public static void EditRent(int id, DateTime RentDate, DateTime ReturnDate, State state, float money, int clientId, int employeeId, int pledgeId, int DVDs)
         {
             try
             {
@@ -32,10 +40,10 @@ namespace DVD_rent.Controllers
                     rent.ReturnDate = ReturnDate;
                     rent.State = state;
                     rent.Money = money;
-                    rent.Client = client;
-                    rent.Employee = employee;
-                    rent.Pledge = pledge;
-                    rent.DVDs = DVDs;
+                    rent.Client = ClientController.GetClientById(clientId);
+                    rent.Employee = EmployeeController.GetEmployeeById(employeeId);
+                    rent.Pledge = PledgeController.GetPledgeById(pledgeId);
+                    rent.DVDs = new List<DVD>();
 
                     //if (price <= 0)
                     //{

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms;
 using DVD_rent.Controllers;
 using DVD_rent.Models;
 using DVD_rent.AddForms;
@@ -16,7 +15,9 @@ namespace DVD_rent.ListForms
 {
     public partial class RentList : Form
     {
-        public RentList()
+        public Employee user = new Employee();
+
+        public RentList(Employee user)
         {
             InitializeComponent();
             dataGridView1.Columns.Add("Id", "ID");
@@ -28,6 +29,7 @@ namespace DVD_rent.ListForms
             dataGridView1.Columns.Add("Employee", "ФИО кассира");
             dataGridView1.Columns.Add("Pledge", "Залог");
             dataGridView1.Columns.Add("DVDs", "DVDs");
+            this.user = user;
         }
 
         public void ReloadGridView()
@@ -47,7 +49,7 @@ namespace DVD_rent.ListForms
 
         private void add_Click(object sender, EventArgs e)
         {
-            AddRent addRent = new AddRent();
+            AddRent addRent = new AddRent(user);
             addRent.ShowDialog();
             ReloadGridView();
         }

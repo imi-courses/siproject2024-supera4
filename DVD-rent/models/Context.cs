@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DVD_rent.Models
 {
@@ -30,17 +31,8 @@ namespace DVD_rent.Models
                     m.MapRightKey("MoiveID");
                 });
 
-            modelBuilder.Entity<Rent>()
-                .HasKey(t => t.PledgeId);
-
-            modelBuilder.Entity<Pledge>()
-                .HasOptional(r => r.Rent)
-                .WithOptionalPrincipal(p => p.Pledge);
-
             base.OnModelCreating(modelBuilder);
         }
     }
-
-    
 }
 

@@ -25,7 +25,7 @@ namespace DVD_rent
 
         private void search_TextChanged(object sender, EventArgs e)
         {
-            if (search.Text != "Поиск" && search.ForeColor != Color.Gray) ;
+            if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
             {
                 string searchText = search.Text.Trim();
 

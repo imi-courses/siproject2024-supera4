@@ -18,7 +18,6 @@ namespace DVD_rent
     }
     public class Pledge
     {
-        [Key]
         public int Id { get; set; }
         public PledgeType PledgeType { get; set; }
         public int Series { get; set; }
@@ -26,6 +25,6 @@ namespace DVD_rent
         public float Money { get; set; }
 
         //Navigation properties
-        public Rent Rent { get; set; }
+        public virtual ICollection<Rent> Rents { get; set; } = new List<Rent>();
     }
 }

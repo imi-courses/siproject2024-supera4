@@ -38,23 +38,26 @@ namespace DVD_rent
             this.edit = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
             this.type = new System.Windows.Forms.ComboBox();
+            this.btnChoose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 60);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(1035, 489);
             this.dataGridView1.TabIndex = 0;
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(586, 452);
+            this.add.Location = new System.Drawing.Point(781, 556);
+            this.add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(98, 23);
+            this.add.Size = new System.Drawing.Size(131, 28);
             this.add.TabIndex = 1;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
@@ -62,9 +65,10 @@ namespace DVD_rent
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(690, 452);
+            this.close.Location = new System.Drawing.Point(920, 556);
+            this.close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(98, 23);
+            this.close.Size = new System.Drawing.Size(131, 28);
             this.close.TabIndex = 2;
             this.close.Text = "Закрыть";
             this.close.UseVisualStyleBackColor = true;
@@ -72,9 +76,10 @@ namespace DVD_rent
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(357, 452);
+            this.delete.Location = new System.Drawing.Point(476, 556);
+            this.delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(98, 23);
+            this.delete.Size = new System.Drawing.Size(131, 28);
             this.delete.TabIndex = 3;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = true;
@@ -82,9 +87,10 @@ namespace DVD_rent
             // 
             // reload
             // 
-            this.reload.Location = new System.Drawing.Point(12, 452);
+            this.reload.Location = new System.Drawing.Point(16, 556);
+            this.reload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(98, 23);
+            this.reload.Size = new System.Drawing.Size(131, 28);
             this.reload.TabIndex = 4;
             this.reload.Text = "Обновить";
             this.reload.UseVisualStyleBackColor = true;
@@ -92,9 +98,10 @@ namespace DVD_rent
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(461, 452);
+            this.edit.Location = new System.Drawing.Point(615, 556);
+            this.edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(119, 23);
+            this.edit.Size = new System.Drawing.Size(159, 28);
             this.edit.TabIndex = 5;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = true;
@@ -103,9 +110,10 @@ namespace DVD_rent
             // search
             // 
             this.search.ForeColor = System.Drawing.Color.Gray;
-            this.search.Location = new System.Drawing.Point(12, 12);
+            this.search.Location = new System.Drawing.Point(16, 15);
+            this.search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(596, 20);
+            this.search.Size = new System.Drawing.Size(793, 22);
             this.search.TabIndex = 6;
             this.search.Text = "Поиск";
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
@@ -115,16 +123,28 @@ namespace DVD_rent
             // type
             // 
             this.type.FormattingEnabled = true;
-            this.type.Location = new System.Drawing.Point(614, 12);
+            this.type.Location = new System.Drawing.Point(819, 15);
+            this.type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(173, 21);
+            this.type.Size = new System.Drawing.Size(229, 24);
             this.type.TabIndex = 7;
+            // 
+            // btnChoose
+            // 
+            this.btnChoose.Location = new System.Drawing.Point(345, 561);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(124, 23);
+            this.btnChoose.TabIndex = 8;
+            this.btnChoose.Text = "Выбрать";
+            this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // PledgeList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 490);
+            this.ClientSize = new System.Drawing.Size(1069, 603);
+            this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.type);
             this.Controls.Add(this.search);
             this.Controls.Add(this.edit);
@@ -134,6 +154,7 @@ namespace DVD_rent
             this.Controls.Add(this.add);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PledgeList";
             this.Text = "PledgeList";
             this.Load += new System.EventHandler(this.Form_List_Load);
@@ -153,5 +174,6 @@ namespace DVD_rent
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.ComboBox type;
+        private System.Windows.Forms.Button btnChoose;
     }
 }

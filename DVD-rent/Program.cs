@@ -38,11 +38,11 @@ namespace DVD_rent
             Application.SetCompatibleTextRenderingDefault(false);
             InitializeDatabase();
             authorization authForm = new authorization();
-            Application.Run(authForm);
+            authForm.ShowDialog();
 
             if (authForm.UserSuccessfullyAuthenticated)
             {
-                Application.Run(new Main());
+                Application.Run(new Main(authForm.user));    
             }
         }
     }

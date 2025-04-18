@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVD_rent.Models;
+using DVD_rent.Controllers;
 
 namespace DVD_rent.AddForms
 {
     public partial class AddRent : Form
     {
-        public AddRent()
+        public Employee user = new Employee();
+        public Rent rent = new Rent();
+
+        public AddRent(Employee user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void chooseClient_Click(object sender, EventArgs e)
@@ -33,6 +39,32 @@ namespace DVD_rent.AddForms
         {
             PledgeList PledgeForm = new PledgeList();
             PledgeForm.ShowDialog();
+            pledge.Text = PledgeForm.ChoosenPledge.Id.ToString();
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rent.Id != 0) RentController.EditRent(rent.Id, rentDate.Value, returnDate.Value, State.active, float.Parse(money.Text), Int32.Parse(client.Text), user.Id, Int32.Parse(pledge.Text), 5);
+                else RentController.AddRent(rentDate.Value, returnDate.Value, State.active, float.Parse(money.Text), Int32.Parse(client.Text), user.Id, Int32.Parse(pledge.Text), 5);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Caught an exception: {ex.Message}");
+                // Проверка на внутреннее исключение
+                if (ex.InnerException != null)
+                {
+                    MessageBox.Show("Подробности: " + ex.InnerException.Message);
+
+                    // Иногда бывает ещё один уровень вложенности:
+                    if (ex.InnerException.InnerException != null)
+                    {
+                        MessageBox.Show("Глубже: " + ex.InnerException.InnerException.Message);
+                    }
+                }
+            }
         }
     }
 }

@@ -36,14 +36,14 @@ namespace DVD_rent.AddForms
             this.returnDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.money = new System.Windows.Forms.TextBox();
-            this.Client = new System.Windows.Forms.TextBox();
+            this.client = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chooseClient = new System.Windows.Forms.Button();
             this.choosePledge = new System.Windows.Forms.Button();
-            this.Pledge = new System.Windows.Forms.TextBox();
+            this.pledge = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chooseDisks = new System.Windows.Forms.Button();
-            this.DVDs = new System.Windows.Forms.TextBox();
+            this.dvds = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -56,6 +56,7 @@ namespace DVD_rent.AddForms
             this.ButtonSave.TabIndex = 7;
             this.ButtonSave.Text = "Сохранить";
             this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // label4
             // 
@@ -108,12 +109,12 @@ namespace DVD_rent.AddForms
             this.money.Size = new System.Drawing.Size(200, 22);
             this.money.TabIndex = 20;
             // 
-            // Client
+            // client
             // 
-            this.Client.Location = new System.Drawing.Point(225, 144);
-            this.Client.Name = "Client";
-            this.Client.Size = new System.Drawing.Size(200, 22);
-            this.Client.TabIndex = 22;
+            this.client.Location = new System.Drawing.Point(225, 144);
+            this.client.Name = "client";
+            this.client.Size = new System.Drawing.Size(200, 22);
+            this.client.TabIndex = 22;
             // 
             // label1
             // 
@@ -145,12 +146,12 @@ namespace DVD_rent.AddForms
             this.choosePledge.UseVisualStyleBackColor = true;
             this.choosePledge.Click += new System.EventHandler(this.choosePledge_Click);
             // 
-            // Pledge
+            // pledge
             // 
-            this.Pledge.Location = new System.Drawing.Point(225, 173);
-            this.Pledge.Name = "Pledge";
-            this.Pledge.Size = new System.Drawing.Size(200, 22);
-            this.Pledge.TabIndex = 28;
+            this.pledge.Location = new System.Drawing.Point(225, 173);
+            this.pledge.Name = "pledge";
+            this.pledge.Size = new System.Drawing.Size(200, 22);
+            this.pledge.TabIndex = 28;
             // 
             // label3
             // 
@@ -172,12 +173,12 @@ namespace DVD_rent.AddForms
             this.chooseDisks.UseVisualStyleBackColor = true;
             this.chooseDisks.Click += new System.EventHandler(this.chooseDisks_Click);
             // 
-            // DVDs
+            // dvds
             // 
-            this.DVDs.Location = new System.Drawing.Point(225, 201);
-            this.DVDs.Name = "DVDs";
-            this.DVDs.Size = new System.Drawing.Size(200, 22);
-            this.DVDs.TabIndex = 31;
+            this.dvds.Location = new System.Drawing.Point(225, 201);
+            this.dvds.Name = "dvds";
+            this.dvds.Size = new System.Drawing.Size(200, 22);
+            this.dvds.TabIndex = 31;
             // 
             // label7
             // 
@@ -195,13 +196,13 @@ namespace DVD_rent.AddForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 316);
             this.Controls.Add(this.chooseDisks);
-            this.Controls.Add(this.DVDs);
+            this.Controls.Add(this.dvds);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.choosePledge);
-            this.Controls.Add(this.Pledge);
+            this.Controls.Add(this.pledge);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.chooseClient);
-            this.Controls.Add(this.Client);
+            this.Controls.Add(this.client);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.money);
             this.Controls.Add(this.label6);
@@ -225,14 +226,14 @@ namespace DVD_rent.AddForms
         private System.Windows.Forms.DateTimePicker returnDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox money;
-        private System.Windows.Forms.TextBox Client;
+        private System.Windows.Forms.TextBox client;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button chooseClient;
         private System.Windows.Forms.Button choosePledge;
-        private System.Windows.Forms.TextBox Pledge;
+        private System.Windows.Forms.TextBox pledge;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button chooseDisks;
-        private System.Windows.Forms.TextBox DVDs;
+        private System.Windows.Forms.TextBox dvds;
         private System.Windows.Forms.Label label7;
     }
 }

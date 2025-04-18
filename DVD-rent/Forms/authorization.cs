@@ -8,32 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVD_rent.Models;
+using DVD_rent.Controllers;
 
 namespace DVD_rent
 {
     public partial class authorization : Form
     {
         public bool UserSuccessfullyAuthenticated { get; private set; } = false;
-        public Employee employee = new Employee();
+        public Employee user = new Employee();
 
         public authorization()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            //if (login.Text == "admin" && password.Text == "admin")
-            if (true)
+            var employee = EmployeeController.GetAllEmployees()
+                .FirstOrDefault(emp => emp.Login == login.Text);
+
+            if (employee != null && BCrypt.Net.BCrypt.Verify(password.Text, employee.Password))
             {
                 UserSuccessfullyAuthenticated = true;
+                user = employee;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
+                return;
             }
-            else
-            {
-                password.Text = "";
-                MessageBox.Show("Incorrect password or login");
-            }
+            password.Text = "";
+            MessageBox.Show("Неправильный логин или пароль");
         }
     }
 }

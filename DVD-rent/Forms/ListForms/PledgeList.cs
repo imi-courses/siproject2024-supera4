@@ -15,6 +15,8 @@ namespace DVD_rent
 
     public partial class PledgeList : Form
     {
+        public Pledge ChoosenPledge = new Pledge();
+
         public PledgeList()
         {
             InitializeComponent();
@@ -139,6 +141,16 @@ namespace DVD_rent
             {
                 search.Text = "Поиск";
                 search.ForeColor = Color.Gray;
+            }
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                ChoosenPledge = PledgeController.GetPledgeById(int.Parse(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
+                this.Close();
             }
         }
     }

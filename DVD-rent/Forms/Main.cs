@@ -15,9 +15,14 @@ namespace DVD_rent
 {
     public partial class Main : Form
     {
-        public Main()
+        public Employee user = new Employee();
+
+        public Main(Employee user)
         {
             InitializeComponent();
+            this.user = user;
+            //if (user.Position == Position.cashier) кассировToolStripMenuItem.Enabled = false;
+            AddUsernameToRight(user.Position.ToString() + " | " + user.FullName);
         }
 
         private void дисковToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,8 +55,21 @@ namespace DVD_rent
 
         private void арендToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RentList RentForm = new RentList();
+            RentList RentForm = new RentList(user);
             RentForm.ShowDialog();
+        }
+
+        private void AddUsernameToRight(string username)
+        {
+            ToolStripLabel userLabel = new ToolStripLabel()
+            {
+                Text = username,
+                Alignment = ToolStripItemAlignment.Right,
+                Margin = new Padding(0, 0, 10, 0),
+                Font = new Font(menuStrip1.Font, FontStyle.Bold)
+            };
+
+            menuStrip1.Items.Add(userLabel);
         }
     }
 }

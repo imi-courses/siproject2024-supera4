@@ -37,7 +37,7 @@ namespace DVD_rent.AddForms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            ClientController.AddClient(Convert.ToInt32(textBox1.Text), Convert.ToString(textBox2.Text), false);
+            ClientController.AddClient(Convert.ToInt32(textBox2.Text), textBox1.Text, false);
         }
 
         private void button3_Click(object sender, EventArgs e)
