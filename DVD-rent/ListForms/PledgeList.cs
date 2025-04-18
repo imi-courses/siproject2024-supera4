@@ -141,10 +141,5 @@ namespace DVD_rent
                 search.ForeColor = Color.Gray;
             }
         }
-
-        private void search_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
