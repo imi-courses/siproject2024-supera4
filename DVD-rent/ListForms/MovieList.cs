@@ -17,8 +17,12 @@ namespace DVD_rent
         public MovieList()
         {
             InitializeComponent();
-            dataGridView1.Columns.Add("Id", "Id");
-            dataGridView1.Columns.Add("Name", "Name");
+            string[] types = { "ID", "Название" };
+            dataGridView1.Columns.Add("Id", "ID");
+            dataGridView1.Columns.Add("Name", "Название");
+            type.Items.AddRange(types);
+            type.SelectedIndex = 0;
+            type.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void ReloadGridView()
@@ -83,6 +87,7 @@ namespace DVD_rent
             {
 
                 string searchText = search.Text.Trim();
+                List<Movie> filteredMovies = new List<Movie>();
 
                 if (string.IsNullOrEmpty(searchText))
                 {
@@ -90,16 +95,29 @@ namespace DVD_rent
                     return;
                 }
 
-                List<Pledge> filteredPledges = PledgeController.GetAllPledges()
-                    .Where(p =>
-                        p.PledgeType.ToString().Contains(searchText) ||
-                        p.Series.ToString().Contains(searchText) ||
-                        p.Number.ToString().Contains(searchText) ||
-                        p.Money.ToString().Contains(searchText)
+                if (type.SelectedItem.ToString() == "ID")
+                {
+                    filteredMovies = MovieController.GetAllMovies()
+                    .Where(movie =>
+                        movie.Id.ToString().ToLower().Contains(searchText)
                     )
                     .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Название")
+                {
+                    filteredMovies = MovieController.GetAllMovies()
+                    .Where(movie =>
+                        movie.Name.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
 
-                dataGridView1.DataSource = filteredPledges;
+                dataGridView1.Rows.Clear();
+                foreach (Movie movie in filteredMovies)
+                {
+                    dataGridView1.Rows.Add(movie.Id, movie.Name);
+                }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
 

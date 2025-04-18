@@ -21,5 +21,10 @@ namespace DVD_rent.Models
         //Navigation properties
         public virtual ICollection<Movie> Movies { get; set; } = new List<Movie>();
         public Rent Rent { get; set; }
+
+        public string GetStringOfMovies()
+        {
+            return string.Join(", ", Movies.Select(o => o.Name));
+        }
     }
 }

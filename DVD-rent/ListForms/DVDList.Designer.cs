@@ -36,8 +36,8 @@ namespace DVD_rent
             this.update = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
-            this.type = new System.Windows.Forms.ListBox();
             this.search = new System.Windows.Forms.TextBox();
+            this.type = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,15 +101,6 @@ namespace DVD_rent
             this.edit.UseVisualStyleBackColor = true;
             this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
-            // type
-            // 
-            this.type.FormattingEnabled = true;
-            this.type.ItemHeight = 16;
-            this.type.Location = new System.Drawing.Point(614, 14);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(173, 20);
-            this.type.TabIndex = 17;
-            // 
             // search
             // 
             this.search.ForeColor = System.Drawing.Color.Gray;
@@ -121,6 +112,14 @@ namespace DVD_rent
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             this.search.Enter += new System.EventHandler(this.search_Enter);
             this.search.Leave += new System.EventHandler(this.search_Leave);
+            // 
+            // type
+            // 
+            this.type.FormattingEnabled = true;
+            this.type.Location = new System.Drawing.Point(614, 12);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(173, 24);
+            this.type.TabIndex = 17;
             // 
             // DVDList
             // 
@@ -153,7 +152,7 @@ namespace DVD_rent
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button edit;
-        private System.Windows.Forms.ListBox type;
         private System.Windows.Forms.TextBox search;
+        private System.Windows.Forms.ComboBox type;
     }
 }

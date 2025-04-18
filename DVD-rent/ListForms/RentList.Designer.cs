@@ -36,8 +36,8 @@ namespace DVD_rent.ListForms
             this.close = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.type = new System.Windows.Forms.ListBox();
             this.search = new System.Windows.Forms.TextBox();
+            this.type = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,7 @@ namespace DVD_rent.ListForms
             this.delete.TabIndex = 10;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // update
             // 
@@ -67,6 +68,7 @@ namespace DVD_rent.ListForms
             this.update.TabIndex = 9;
             this.update.Text = "Обновить";
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.reload_Click);
             // 
             // close
             // 
@@ -76,6 +78,7 @@ namespace DVD_rent.ListForms
             this.close.TabIndex = 8;
             this.close.Text = "Закрыть";
             this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // add
             // 
@@ -85,6 +88,7 @@ namespace DVD_rent.ListForms
             this.add.TabIndex = 7;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // dataGridView1
             // 
@@ -96,15 +100,6 @@ namespace DVD_rent.ListForms
             this.dataGridView1.Size = new System.Drawing.Size(776, 397);
             this.dataGridView1.TabIndex = 6;
             // 
-            // type
-            // 
-            this.type.FormattingEnabled = true;
-            this.type.ItemHeight = 16;
-            this.type.Location = new System.Drawing.Point(614, 14);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(173, 20);
-            this.type.TabIndex = 17;
-            // 
             // search
             // 
             this.search.Location = new System.Drawing.Point(12, 12);
@@ -112,6 +107,14 @@ namespace DVD_rent.ListForms
             this.search.Size = new System.Drawing.Size(596, 22);
             this.search.TabIndex = 16;
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
+            // type
+            // 
+            this.type.FormattingEnabled = true;
+            this.type.Location = new System.Drawing.Point(614, 12);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(173, 24);
+            this.type.TabIndex = 18;
             // 
             // RentList
             // 
@@ -143,7 +146,7 @@ namespace DVD_rent.ListForms
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ListBox type;
         private System.Windows.Forms.TextBox search;
+        private System.Windows.Forms.ComboBox type;
     }
 }

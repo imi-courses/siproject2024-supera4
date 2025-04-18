@@ -16,11 +16,15 @@ namespace DVD_rent
     {
         public DVDList()
         {
+            string[] types = { "ID", "Количество", "Цена", "Фильмы" };
             InitializeComponent();
-            dataGridView1.Columns.Add("Id", "Id");
-            dataGridView1.Columns.Add("Quantity", "Quantity");
-            dataGridView1.Columns.Add("Price", "Price");
-            dataGridView1.Columns.Add("Names", "Names");
+            dataGridView1.Columns.Add("Id", "ID");
+            dataGridView1.Columns.Add("Quantity", "Количество");
+            dataGridView1.Columns.Add("Price", "Цена");
+            dataGridView1.Columns.Add("films", "Фильмы");
+            type.Items.AddRange(types);
+            type.SelectedIndex = 0;
+            type.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void ReloadGridView()
@@ -28,10 +32,7 @@ namespace DVD_rent
             dataGridView1.Rows.Clear();
             foreach (DVD dvd in DVDController.GetAllDVDs())
             {
-                // Сформировать строку с именами
-                //string namesString = dvd.Movies != null ? string.Join(", ", dvd.Movies.Select(o => o.Name)) : "";
-                string namesString = string.Join(", ", dvd.Movies.Select(o => o.Name));
-                dataGridView1.Rows.Add(dvd.Id, dvd.Quantity, dvd.Price, namesString);
+                dataGridView1.Rows.Add(dvd.Id, dvd.Quantity, dvd.Price, dvd.GetStringOfMovies());
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -87,29 +88,54 @@ namespace DVD_rent
             if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
             {
 
-                string searchText = search.Text.Trim();
-
+                string searchText = search.Text.Trim().ToLower();
+                List<DVD> filteredDVDs = new List<DVD>();
+                
+                
                 if (string.IsNullOrEmpty(searchText))
                 {
                     ReloadGridView();
                     return;
                 }
 
-                List<DVD> filteredDVDs = DVDController.GetAllDVDs()
+                if (type.SelectedItem.ToString() == "ID")
+                {
+                    filteredDVDs = DVDController.GetAllDVDs()
                     .Where(dvd =>
-                        dvd.Quantity.ToString().Contains(searchText) ||
-                        dvd.Price.ToString().Contains(searchText) || 
-                        string.Join(", ", dvd.Movies.Select(o => o.Name)).Contains(searchText)
+                        dvd.Id.ToString().ToLower().Contains(searchText)
                     )
                     .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Количество")
+                {
+                    filteredDVDs = DVDController.GetAllDVDs()
+                    .Where(dvd =>
+                        dvd.Quantity.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                } 
+                else if (type.SelectedItem.ToString() == "Цена")
+                {
+                    filteredDVDs = DVDController.GetAllDVDs()
+                    .Where(dvd =>
+                        dvd.Price.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Фильмы")
+                {
+                    filteredDVDs = DVDController.GetAllDVDs()
+                    .Where(dvd =>
+                        dvd.GetStringOfMovies().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                
 
                 dataGridView1.Rows.Clear();
                 foreach (DVD dvd in filteredDVDs)
                 {
-                    // Сформировать строку с именами
-                    //string namesString = dvd.Movies != null ? string.Join(", ", dvd.Movies.Select(o => o.Name)) : "";
-                    string namesString = string.Join(", ", dvd.Movies.Select(o => o.Name));
-                    dataGridView1.Rows.Add(dvd.Id, dvd.Quantity, dvd.Price, namesString);
+                    dataGridView1.Rows.Add(dvd.Id, dvd.Quantity, dvd.Price, dvd.GetStringOfMovies());
                 }
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
