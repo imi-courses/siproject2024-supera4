@@ -39,6 +39,10 @@ namespace DVD_rent
             this.клиентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильмовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.залогToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.Report = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,14 +55,14 @@ namespace DVD_rent
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // спискиToolStripMenuItem
@@ -71,56 +75,94 @@ namespace DVD_rent
             this.фильмовToolStripMenuItem,
             this.залогToolStripMenuItem});
             this.спискиToolStripMenuItem.Name = "спискиToolStripMenuItem";
-            this.спискиToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.спискиToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.спискиToolStripMenuItem.Text = "Списки";
             // 
             // арендToolStripMenuItem
             // 
             this.арендToolStripMenuItem.Name = "арендToolStripMenuItem";
-            this.арендToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.арендToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.арендToolStripMenuItem.Text = "Аренд";
             this.арендToolStripMenuItem.Click += new System.EventHandler(this.арендToolStripMenuItem_Click);
             // 
             // кассировToolStripMenuItem
             // 
             this.кассировToolStripMenuItem.Name = "кассировToolStripMenuItem";
-            this.кассировToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.кассировToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.кассировToolStripMenuItem.Text = "Кассиров";
             this.кассировToolStripMenuItem.Click += new System.EventHandler(this.кассировToolStripMenuItem_Click);
             // 
             // дисковToolStripMenuItem
             // 
             this.дисковToolStripMenuItem.Name = "дисковToolStripMenuItem";
-            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.дисковToolStripMenuItem.Text = "Дисков";
             this.дисковToolStripMenuItem.Click += new System.EventHandler(this.дисковToolStripMenuItem_Click);
             // 
             // клиентовToolStripMenuItem
             // 
             this.клиентовToolStripMenuItem.Name = "клиентовToolStripMenuItem";
-            this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.клиентовToolStripMenuItem.Text = "Клиентов";
             this.клиентовToolStripMenuItem.Click += new System.EventHandler(this.клиентовToolStripMenuItem_Click);
             // 
             // фильмовToolStripMenuItem
             // 
             this.фильмовToolStripMenuItem.Name = "фильмовToolStripMenuItem";
-            this.фильмовToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.фильмовToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.фильмовToolStripMenuItem.Text = "Фильмов";
             this.фильмовToolStripMenuItem.Click += new System.EventHandler(this.фильмовToolStripMenuItem_Click);
             // 
             // залогToolStripMenuItem
             // 
             this.залогToolStripMenuItem.Name = "залогToolStripMenuItem";
-            this.залогToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.залогToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.залогToolStripMenuItem.Text = "Залог";
             this.залогToolStripMenuItem.Click += new System.EventHandler(this.залогToolStripMenuItem_Click);
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(94, 47);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(219, 75);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.TabIndex = 3;
+            this.btnReport.Text = "Отчёт";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // Report
+            // 
+            this.Report.Location = new System.Drawing.Point(32, 111);
+            this.Report.Name = "Report";
+            this.Report.Size = new System.Drawing.Size(262, 192);
+            this.Report.TabIndex = 4;
+            this.Report.Text = "";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Report);
+            this.Controls.Add(this.btnReport);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -145,6 +187,10 @@ namespace DVD_rent
         private System.Windows.Forms.ToolStripMenuItem клиентовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фильмовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem залогToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.RichTextBox Report;
     }
 }
 

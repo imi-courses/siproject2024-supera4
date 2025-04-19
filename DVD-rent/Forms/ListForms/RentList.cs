@@ -30,6 +30,7 @@ namespace DVD_rent.ListForms
             dataGridView1.Columns.Add("Pledge", "Залог");
             dataGridView1.Columns.Add("DVDs", "DVDs");
             this.user = user;
+            ReloadGridView();
         }
 
         public void ReloadGridView()
@@ -37,7 +38,16 @@ namespace DVD_rent.ListForms
             dataGridView1.Rows.Clear();
             foreach (Rent rent in RentController.GetAllRents())
             {
-                dataGridView1.Rows.Add(rent.Id, rent.RentDate, rent.ReturnDate, rent.State, rent.Money, rent.Client, rent.Employee, rent.Pledge, rent.DVDs);
+                dataGridView1.Rows.Add(
+                    rent.Id, 
+                    rent.RentDate, 
+                    rent.ReturnDate, 
+                    rent.State, 
+                    rent.Money, 
+                    rent.Client.FullName, 
+                    rent.Employee.FullName, 
+                    rent.Pledge.Id, 
+                    rent.DVDs);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }

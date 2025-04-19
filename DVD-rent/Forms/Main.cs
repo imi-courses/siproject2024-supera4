@@ -71,5 +71,25 @@ namespace DVD_rent
 
             menuStrip1.Items.Add(userLabel);
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            int rentedDVDs = 0;
+            int expiredRents = 0;
+            foreach (Rent rent in RentController.GetAllRents())
+            {
+                if (rent.RentDate.Date == dateTimePicker.Value.Date)
+                {
+                    rentedDVDs++;
+                }
+                else if ((rent.ReturnDate < dateTimePicker.Value)&&(rent.State == State.active))
+                {
+                    expiredRents++;
+                }
+            }
+            Report.Text += "Количество одолженных за день дисков: " + rentedDVDs.ToString() + "\n";
+            Report.Text += "Количество не вернувшихся дисков: " + rentedDVDs.ToString() + "\n";
+            Report.Text += "Отчёт от: " + user.FullName + "\n";
+        }
     }
 }

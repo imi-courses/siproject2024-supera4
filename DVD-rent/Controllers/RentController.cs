@@ -84,7 +84,7 @@ namespace DVD_rent.Controllers
             using (Context db = new Context())
             {
                 db.Configuration.LazyLoadingEnabled = false;
-                return db.Rents.ToList();
+                return db.Rents.Include("Client").Include("Pledge").Include("Employee").ToList();
             }
         }
     }
