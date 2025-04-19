@@ -75,10 +75,5 @@ namespace DVD_rent
                 MessageBox.Show($"Caught an exception: {ex.Message}");
             }
         }
-
-        private void AddDVD_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

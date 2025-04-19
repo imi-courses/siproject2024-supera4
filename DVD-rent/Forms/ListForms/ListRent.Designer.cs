@@ -49,6 +49,7 @@ namespace DVD_rent.ListForms
             this.edit.TabIndex = 11;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // delete
             // 
@@ -102,11 +103,15 @@ namespace DVD_rent.ListForms
             // 
             // search
             // 
+            this.search.ForeColor = System.Drawing.Color.Gray;
             this.search.Location = new System.Drawing.Point(12, 12);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(596, 22);
             this.search.TabIndex = 16;
+            this.search.Text = "Поиск";
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            this.search.Enter += new System.EventHandler(this.search_Enter);
+            this.search.Leave += new System.EventHandler(this.search_Leave);
             // 
             // type
             // 

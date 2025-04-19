@@ -23,29 +23,49 @@ namespace DVD_rent.AddForms
             this.user = user;
         }
 
+        public AddRent(Employee user, int rentId)
+        {
+            InitializeComponent();
+            this.user = user;
+            this.rent = RentController.GetRentById(rentId);
+            rentDate.Value = rent.RentDate;
+            returnDate.Value = rent.ReturnDate;
+            money.Text = rent.Money.ToString();
+            client.Text = rent.ClientId.ToString();
+            pledge.Text = rent.PledgeId.ToString();
+            dvds.Text = "пока ничего нет";
+        }
+
         private void chooseClient_Click(object sender, EventArgs e)
         {
             ClientList ClientForm = new ClientList();
             ClientForm.ShowDialog();
+            client.Text = ClientForm.ChoosenClientId;
         }
 
         private void chooseDisks_Click(object sender, EventArgs e)
         {
-            DVDList DVDform = new DVDList();
+            DVDList DVDform = new DVDList(ListFormStatus.choose);
             DVDform.ShowDialog();
+            dvds.Text = DVDform.ChoosenDVDsId;
         }
 
         private void choosePledge_Click(object sender, EventArgs e)
         {
             PledgeList PledgeForm = new PledgeList();
             PledgeForm.ShowDialog();
-            pledge.Text = PledgeForm.ChoosenPledge.Id.ToString();
+            pledge.Text = PledgeForm.ChoosenPledgeId;
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             try
             {
+                List<int> dvdIds = dvds.Text
+                    .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)                                            
+                    .ToList();
+
                 if (rent.Id != 0) RentController.EditRent(
                     rent.Id, 
                     rentDate.Value.Date, 
@@ -55,7 +75,7 @@ namespace DVD_rent.AddForms
                     Int32.Parse(client.Text), 
                     user.Id, 
                     Int32.Parse(pledge.Text), 
-                    5);
+                    dvdIds);
                 else RentController.AddRent(
                     rentDate.Value.Date, 
                     returnDate.Value.Date, 
@@ -63,8 +83,8 @@ namespace DVD_rent.AddForms
                     float.Parse(money.Text), 
                     Int32.Parse(client.Text), 
                     user.Id, 
-                    Int32.Parse(pledge.Text), 
-                    5);
+                    Int32.Parse(pledge.Text),
+                    dvdIds);
                 this.Close();
             }
             catch (Exception ex)

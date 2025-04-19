@@ -27,7 +27,7 @@ namespace DVD_rent
 
         private void дисковToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DVDList DVDform = new DVDList();
+            DVDList DVDform = new DVDList(ListFormStatus.NotChoose);
             DVDform.ShowDialog();
         }
 

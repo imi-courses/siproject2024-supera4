@@ -12,9 +12,16 @@ using DVD_rent.Models;
 
 namespace DVD_rent
 {
+    public enum ListFormStatus
+    {
+        choose,
+        NotChoose
+    }
+
     public partial class DVDList : Form
     {
-        public DVDList()
+        public string ChoosenDVDsId;
+        public DVDList(ListFormStatus status)
         {
             string[] types = { "ID", "Количество", "Цена", "Фильмы" };
             InitializeComponent();
@@ -25,6 +32,7 @@ namespace DVD_rent
             type.Items.AddRange(types);
             type.SelectedIndex = 0;
             type.DropDownStyle = ComboBoxStyle.DropDownList;
+            if (status == ListFormStatus.NotChoose) btnChoose.Visible = false;
         }
 
         public void ReloadGridView()
@@ -156,6 +164,16 @@ namespace DVD_rent
             {
                 search.Text = "Поиск";
                 search.ForeColor = Color.Gray;
+            }
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            for (int i=0; i< selectedRowCount;i++)
+            {
+                ChoosenDVDsId += dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString() + " ";
+                this.Close();
             }
         }
     }

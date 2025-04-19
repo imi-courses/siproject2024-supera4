@@ -11,10 +11,15 @@ namespace DVD_rent.Controllers
 {
     class RentController
     {
-        public static void AddRent(DateTime RentDate, DateTime ReturnDate, State state, float money, int clientId, int employeeId, int pledgeId, int DVDs)
+        public static void AddRent(DateTime RentDate, DateTime ReturnDate, State state, float money, int clientId, int employeeId, int pledgeId, List<int> dvdIds)
         {
             using (Context db = new Context())
             {
+                List<DVD> dvdList = new List<DVD>();
+                foreach (var dvd in dvdList)
+                {
+                    dvdList.Add(db.DVDs.Find(dvd.Id));
+                }
 
                 db.Rents.Add(new Rent { 
                     RentDate = RentDate, 
@@ -24,12 +29,13 @@ namespace DVD_rent.Controllers
                     ClientId = clientId,
                     EmployeeId = employeeId,
                     PledgeId = pledgeId,
-                    DVDs = new List<DVD>() });
+                    DVDs = dvdList
+                });
                 db.SaveChanges();
             }
 
         }
-        public static void EditRent(int id, DateTime RentDate, DateTime ReturnDate, State state, float money, int clientId, int employeeId, int pledgeId, int DVDs)
+        public static void EditRent(int id, DateTime RentDate, DateTime ReturnDate, State state, float money, int clientId, int employeeId, int pledgeId, List<int> dvdIds)
         {
             try
             {
@@ -43,7 +49,13 @@ namespace DVD_rent.Controllers
                     rent.Client = ClientController.GetClientById(clientId);
                     rent.Employee = EmployeeController.GetEmployeeById(employeeId);
                     rent.Pledge = PledgeController.GetPledgeById(pledgeId);
-                    rent.DVDs = new List<DVD>();
+
+                    List<DVD> dvdList = new List<DVD>();
+                    foreach (var dvd in dvdList)
+                    {
+                        dvdList.Add(db.DVDs.Find(dvd.Id));
+                    }
+                    rent.DVDs = dvdList;
 
                     //if (price <= 0)
                     //{

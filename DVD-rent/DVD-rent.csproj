@@ -116,32 +116,32 @@
     </Compile>
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\RentController.cs" />
-    <Compile Include="Forms\ListForms\ClientList.cs">
+    <Compile Include="Forms\ListForms\ListClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListForms\ClientList.Designer.cs">
-      <DependentUpon>ClientList.cs</DependentUpon>
+    <Compile Include="Forms\ListForms\ListClient.Designer.cs">
+      <DependentUpon>ListClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PledgeController.cs" />
-    <Compile Include="Forms\ListForms\DVDList.cs">
+    <Compile Include="Forms\ListForms\ListDVD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListForms\DVDList.Designer.cs">
-      <DependentUpon>DVDList.cs</DependentUpon>
+    <Compile Include="Forms\ListForms\ListDVD.Designer.cs">
+      <DependentUpon>ListDVD.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Forms\ListForms\EmployeeList.cs">
+    <Compile Include="Forms\ListForms\ListEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListForms\EmployeeList.Designer.cs">
-      <DependentUpon>EmployeeList.cs</DependentUpon>
+    <Compile Include="Forms\ListForms\ListEmployee.Designer.cs">
+      <DependentUpon>ListEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListForms\RentList.cs">
+    <Compile Include="Forms\ListForms\ListRent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListForms\RentList.Designer.cs">
-      <DependentUpon>RentList.cs</DependentUpon>
+    <Compile Include="Forms\ListForms\ListRent.Designer.cs">
+      <DependentUpon>ListRent.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
@@ -153,17 +153,17 @@
     <Compile Include="Migrations\202504030401127_changeDVD.designer.cs">
       <DependentUpon>202504030401127_changeDVD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListForms\MovieList.cs">
+    <Compile Include="Forms\ListForms\ListMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListForms\MovieList.Designer.cs">
-      <DependentUpon>MovieList.cs</DependentUpon>
+    <Compile Include="Forms\ListForms\ListMovie.Designer.cs">
+      <DependentUpon>ListMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListForms\PledgeList.cs">
+    <Compile Include="Forms\ListForms\ListPledge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListForms\PledgeList.designer.cs">
-      <DependentUpon>PledgeList.cs</DependentUpon>
+    <Compile Include="Forms\ListForms\ListPledge.designer.cs">
+      <DependentUpon>ListPledge.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202502190215252_add migration.cs" />
     <Compile Include="Migrations\202502190215252_add migration.designer.cs">
@@ -222,17 +222,17 @@
     <EmbeddedResource Include="Forms\authorization.resx">
       <DependentUpon>authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListForms\ClientList.resx">
-      <DependentUpon>ClientList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ListForms\ListClient.resx">
+      <DependentUpon>ListClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListForms\DVDList.resx">
-      <DependentUpon>DVDList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ListForms\ListDVD.resx">
+      <DependentUpon>ListDVD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListForms\EmployeeList.resx">
-      <DependentUpon>EmployeeList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ListForms\ListEmployee.resx">
+      <DependentUpon>ListEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListForms\RentList.resx">
-      <DependentUpon>RentList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ListForms\ListRent.resx">
+      <DependentUpon>ListRent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -240,11 +240,11 @@
     <EmbeddedResource Include="Migrations\202504030401127_changeDVD.resx">
       <DependentUpon>202504030401127_changeDVD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListForms\MovieList.resx">
-      <DependentUpon>MovieList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ListForms\ListMovie.resx">
+      <DependentUpon>ListMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListForms\PledgeList.resx">
-      <DependentUpon>PledgeList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ListForms\ListPledge.resx">
+      <DependentUpon>ListPledge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190215252_add migration.resx">
       <DependentUpon>202502190215252_add migration.cs</DependentUpon>

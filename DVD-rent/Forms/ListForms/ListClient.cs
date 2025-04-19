@@ -15,6 +15,8 @@ namespace DVD_rent
 {
     public partial class ClientList : Form
     {
+        public string ChoosenClientId;
+
         public ClientList()
         {
             InitializeComponent();
@@ -24,19 +26,6 @@ namespace DVD_rent
             dataGridView1.Columns.Add("Address", "Адрес");
             dataGridView1.Columns.Add("InBlackList", "Чёрный список");
         }
-
-        //private void Form_List_Load(object sender, EventArgs e)
-        //{
-        //    dataGridView1.DataSource = ClientController.GetAllClients();
-        //    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        //}
-
-        //private void add_Click(object sender, EventArgs e)
-        //{
-        //    AddClient addClient = new AddClient();
-        //    addClient.ShowDialog();
-        //    ReloadGridView();
-        //}
         public void ReloadGridView()
         {
             dataGridView1.Rows.Clear();
@@ -86,6 +75,16 @@ namespace DVD_rent
             AddClient addClient = new AddClient();
             addClient.ShowDialog();
             ReloadGridView();
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                ChoosenClientId = dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString();
+                this.Close();
+            }
         }
     }
 }
