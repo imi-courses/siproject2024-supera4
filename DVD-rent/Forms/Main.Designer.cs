@@ -55,14 +55,14 @@ namespace DVD_rent
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // спискиToolStripMenuItem
@@ -75,7 +75,7 @@ namespace DVD_rent
             this.фильмовToolStripMenuItem,
             this.залогToolStripMenuItem});
             this.спискиToolStripMenuItem.Name = "спискиToolStripMenuItem";
-            this.спискиToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.спискиToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.спискиToolStripMenuItem.Text = "Списки";
             // 
             // арендToolStripMenuItem
@@ -122,7 +122,7 @@ namespace DVD_rent
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(94, 47);
+            this.dateTimePicker.Location = new System.Drawing.Point(154, 47);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker.TabIndex = 1;
@@ -130,15 +130,15 @@ namespace DVD_rent
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 52);
+            this.label1.Location = new System.Drawing.Point(29, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(120, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.label1.Text = "День для отчёта";
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(219, 75);
+            this.btnReport.Location = new System.Drawing.Point(279, 75);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(75, 23);
             this.btnReport.TabIndex = 3;
@@ -150,7 +150,7 @@ namespace DVD_rent
             // 
             this.Report.Location = new System.Drawing.Point(32, 111);
             this.Report.Name = "Report";
-            this.Report.Size = new System.Drawing.Size(262, 192);
+            this.Report.Size = new System.Drawing.Size(322, 192);
             this.Report.TabIndex = 4;
             this.Report.Text = "";
             // 

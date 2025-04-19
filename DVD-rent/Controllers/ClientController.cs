@@ -10,20 +10,25 @@ namespace DVD_rent.Controllers
 {
     internal class ClientController
     {
-        public static void AddClient(int phoneNumber, string address, bool inBlackList)
+        public static void AddClient(string fullName, int phoneNumber, string address, bool inBlackList)
         {
             using (Context db = new Context())
             {
-                db.Clients.Add(new Client { PhoneNumber = phoneNumber, Address = address, InBlackList = inBlackList });
+                db.Clients.Add(new Client {
+                    FullName = fullName,
+                    PhoneNumber = phoneNumber, 
+                    Address = address, 
+                    InBlackList = inBlackList });
                 db.SaveChanges();
             }
 
         }
-        public static void EditClient(int id, int phoneNumber, string address, bool inBlackList)
+        public static void EditClient(string fullName, int id, int phoneNumber, string address, bool inBlackList)
         {
             try
             {
                 Client client = GetClientById(id);
+                client.FullName = fullName;
                 client.PhoneNumber = phoneNumber;
                 client.Address = address;
                 client.InBlackList = inBlackList;

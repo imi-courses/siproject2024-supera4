@@ -46,8 +46,25 @@ namespace DVD_rent.AddForms
         {
             try
             {
-                if (rent.Id != 0) RentController.EditRent(rent.Id, rentDate.Value, returnDate.Value, State.active, float.Parse(money.Text), Int32.Parse(client.Text), user.Id, Int32.Parse(pledge.Text), 5);
-                else RentController.AddRent(rentDate.Value, returnDate.Value, State.active, float.Parse(money.Text), Int32.Parse(client.Text), user.Id, Int32.Parse(pledge.Text), 5);
+                if (rent.Id != 0) RentController.EditRent(
+                    rent.Id, 
+                    rentDate.Value.Date, 
+                    returnDate.Value.Date, 
+                    State.active, 
+                    float.Parse(money.Text), 
+                    Int32.Parse(client.Text), 
+                    user.Id, 
+                    Int32.Parse(pledge.Text), 
+                    5);
+                else RentController.AddRent(
+                    rentDate.Value.Date, 
+                    returnDate.Value.Date, 
+                    State.active, 
+                    float.Parse(money.Text), 
+                    Int32.Parse(client.Text), 
+                    user.Id, 
+                    Int32.Parse(pledge.Text), 
+                    5);
                 this.Close();
             }
             catch (Exception ex)

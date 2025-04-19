@@ -78,15 +78,16 @@ namespace DVD_rent
             int expiredRents = 0;
             foreach (Rent rent in RentController.GetAllRents())
             {
-                if (rent.RentDate.Date == dateTimePicker.Value.Date)
+                if (rent.RentDate == dateTimePicker.Value.Date)
                 {
                     rentedDVDs++;
                 }
-                else if ((rent.ReturnDate < dateTimePicker.Value)&&(rent.State == State.active))
+                else if ((rent.ReturnDate < dateTimePicker.Value.Date)&&(rent.State == State.active))
                 {
                     expiredRents++;
                 }
             }
+            Report.Text += dateTimePicker.Value.Date.ToString() + "\n";
             Report.Text += "Количество одолженных за день дисков: " + rentedDVDs.ToString() + "\n";
             Report.Text += "Количество не вернувшихся дисков: " + rentedDVDs.ToString() + "\n";
             Report.Text += "Отчёт от: " + user.FullName + "\n";

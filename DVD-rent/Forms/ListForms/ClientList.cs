@@ -18,10 +18,11 @@ namespace DVD_rent
         public ClientList()
         {
             InitializeComponent();
-            dataGridView1.Columns.Add("Id", "Id");
-            dataGridView1.Columns.Add("PhoneNumber", "PhoneNumber");
-            dataGridView1.Columns.Add("Address", "Address");
-            dataGridView1.Columns.Add("InBlackList", "InBlackList");
+            dataGridView1.Columns.Add("Id", "ID");
+            dataGridView1.Columns.Add("FullName", "ФИО");
+            dataGridView1.Columns.Add("PhoneNumber", "к.т.");
+            dataGridView1.Columns.Add("Address", "Адрес");
+            dataGridView1.Columns.Add("InBlackList", "Чёрный список");
         }
 
         //private void Form_List_Load(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace DVD_rent
             dataGridView1.Rows.Clear();
             foreach (Client client in ClientController.GetAllClients())
             {
-                dataGridView1.Rows.Add(client.Id, client.PhoneNumber, client.InBlackList, client.Address);
+                dataGridView1.Rows.Add(client.Id, client.FullName, client.PhoneNumber, client.Address, client.InBlackList);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
