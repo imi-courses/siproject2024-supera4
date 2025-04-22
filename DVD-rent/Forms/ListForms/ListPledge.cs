@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DVD_rent.Controllers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DVD_rent.Models;
 
 namespace DVD_rent
 {
@@ -19,17 +21,17 @@ namespace DVD_rent
 
         public PledgeList()
         {
-            InitializeComponent();
             string[] types = { "PledgeType", "Series", "Number", "Money" };
+            InitializeComponent();
+            dataGridView1.Columns.Add("Id", "ID");
+            dataGridView1.Columns.Add("PledgeType", "Тип залога");
+            dataGridView1.Columns.Add("Series", "Серия");
+            dataGridView1.Columns.Add("Number", "Номер");
+            dataGridView1.Columns.Add("Money", "Деньги");
             type.Items.AddRange(types);
             type.SelectedIndex = 0;
             type.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void Form_List_Load(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = PledgeController.GetAllPledges();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ReloadGridView();
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -40,7 +42,12 @@ namespace DVD_rent
         }
         public void ReloadGridView()
         {
-            dataGridView1.DataSource = PledgeController.GetAllPledges();
+            dataGridView1.Rows.Clear();
+            foreach (Pledge pledge in PledgeController.GetAllPledges())
+            {
+                dataGridView1.Rows.Add(pledge.Id, pledge.PledgeType, pledge.Series, pledge.Number, pledge.Money);
+            }
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void delete_Click(object sender, EventArgs e)
