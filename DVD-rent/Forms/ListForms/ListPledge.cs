@@ -129,7 +129,12 @@ namespace DVD_rent
                     )
                     .ToList();
                 }
-                dataGridView1.DataSource = filteredPledges;
+                dataGridView1.Rows.Clear();
+                foreach (Pledge pledge in filteredPledges)
+                {
+                    dataGridView1.Rows.Add(pledge.Id, pledge.PledgeType, pledge.Series, pledge.Number, pledge.Money, pledge.Rents.Any() ? pledge.Rents.ToArray()[0].Id : -1);
+                }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
 
