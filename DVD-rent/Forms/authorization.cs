@@ -27,14 +27,14 @@ namespace DVD_rent
             var employee = EmployeeController.GetAllEmployees()
                 .FirstOrDefault(emp => emp.Login == login.Text);
 
-            //if (employee != null && BCrypt.Net.BCrypt.Verify(password.Text, employee.Password))
-            //{
+            if (employee != null && BCrypt.Net.BCrypt.Verify(password.Text, employee.Password))
+            {
                 UserSuccessfullyAuthenticated = true;
-            //    user = employee;
+                user = employee;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
                 return;
-            //}
+            }
             password.Text = "";
             MessageBox.Show("Неправильный логин или пароль");
         }

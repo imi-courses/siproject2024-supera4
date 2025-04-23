@@ -28,10 +28,10 @@ namespace DVD_rent
             dataGridView1.Columns.Add("Series", "Серия");
             dataGridView1.Columns.Add("Number", "Номер");
             dataGridView1.Columns.Add("Money", "Деньги");
+            dataGridView1.Columns.Add("RentId", "RentId");
             type.Items.AddRange(types);
             type.SelectedIndex = 0;
             type.DropDownStyle = ComboBoxStyle.DropDownList;
-            ReloadGridView();
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace DVD_rent
             dataGridView1.Rows.Clear();
             foreach (Pledge pledge in PledgeController.GetAllPledges())
             {
-                dataGridView1.Rows.Add(pledge.Id, pledge.PledgeType, pledge.Series, pledge.Number, pledge.Money);
+                dataGridView1.Rows.Add(pledge.Id, pledge.PledgeType, pledge.Series, pledge.Number, pledge.Money, pledge.Rents.Any() ? pledge.Rents.ToArray()[0].Id : -1);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -159,6 +159,11 @@ namespace DVD_rent
                 ChoosenPledgeId = dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString();
                 this.Close();
             }
+        }
+
+        private void PledgeList_Load(object sender, EventArgs e)
+        {
+            ReloadGridView();
         }
     }
 }

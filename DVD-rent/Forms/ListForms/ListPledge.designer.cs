@@ -124,7 +124,7 @@ namespace DVD_rent
             // btnChoose
             // 
             this.btnChoose.Location = new System.Drawing.Point(190, 367);
-            this.btnChoose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChoose.Margin = new System.Windows.Forms.Padding(2);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(74, 19);
             this.btnChoose.TabIndex = 8;
@@ -149,6 +149,7 @@ namespace DVD_rent
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PledgeList";
             this.Text = "PledgeList";
+            this.Load += new System.EventHandler(this.PledgeList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

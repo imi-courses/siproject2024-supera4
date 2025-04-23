@@ -20,9 +20,22 @@ namespace DVD_rent
         public Main(Employee user)
         {
             InitializeComponent();
+            string position;
+            switch (user.Position)
+            {
+                case Position.cashier:
+                    position = "Кассир";
+                    break;
+                case Position.director:
+                    position = "Директор";
+                    break;
+                default:
+                    position = user.Position.ToString();
+                    break;
+            }
             this.user = user;
             //if (user.Position == Position.cashier) кассировToolStripMenuItem.Enabled = false;
-            AddUsernameToRight(user.Position.ToString() + " | " + user.FullName);
+            AddUsernameToRight(position + " | " + user.FullName);
         }
 
         private void дисковToolStripMenuItem_Click(object sender, EventArgs e)

@@ -56,7 +56,8 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
-                return db.Pledges.ToList();
+                db.Configuration.LazyLoadingEnabled = false;;
+                return db.Pledges.Include("Rents").ToList();
             }
         }
         public static void DeletePledgeById(int id)
