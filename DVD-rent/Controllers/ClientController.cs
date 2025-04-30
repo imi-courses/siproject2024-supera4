@@ -46,6 +46,7 @@ namespace DVD_rent.Controllers
                 if (string.IsNullOrWhiteSpace(fullName))
                     throw new Exception("ФИО не может быть пустым");
 
+                // Проверка, что номер содержит ровно 11 цифр
                 if (phoneNumber.Length != 11 || !phoneNumber.All(char.IsDigit))
                     throw new Exception("Номер телефона должен содержать ровно 11 цифр");
 
@@ -56,7 +57,7 @@ namespace DVD_rent.Controllers
                         throw new Exception("Клиент не найден");
 
                     client.FullName = fullName;
-                    client.PhoneNumber = phoneNumber;
+                    client.PhoneNumber = phoneNumber; // Теперь string
                     client.Address = address;
                     client.InBlackList = inBlackList;
 
@@ -66,7 +67,7 @@ namespace DVD_rent.Controllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при редактировании клиента: {ex.Message}");
+                MessageBox.Show($"Ошибка при редактировании: {ex.Message}");
                 throw;
             }
         }

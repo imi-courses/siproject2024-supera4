@@ -22,12 +22,12 @@ namespace DVD_rent.AddForms
             button3.Text = "Отмена";
         }
 
-        public void SetClientData(int id, string fullName, int phoneNumber, string address, bool inBlackList)
+        public void SetClientData(int id, string fullName, string phoneNumber, string address, bool inBlackList)
         {
             _clientId = id;
-            this.fullName.Text = fullName;
-            this.phoneNumber.Text = phoneNumber.ToString();
-            this.address.Text = address;
+            this.fullName.Text = fullName ?? "";
+            this.phoneNumber.Text = phoneNumber; // Форматирование до 11 цифр
+            this.address.Text = address ?? "";
             this.checkBoxBlackList.Checked = inBlackList;
         }
 
@@ -41,7 +41,7 @@ namespace DVD_rent.AddForms
                     return;
                 }
 
-                string phone = phoneNumber.Text;
+                string phone = phoneNumber.Text.Trim();
                 if (phone.Length != 11 || !phone.All(char.IsDigit))
                 {
                     MessageBox.Show("Номер телефона должен содержать ровно 11 цифр");

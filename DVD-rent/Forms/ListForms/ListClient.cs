@@ -86,13 +86,20 @@ namespace DVD_rent
                 DataGridViewRow row = dataGridView1.SelectedRows[0];
                 int id = Convert.ToInt32(row.Cells["Id"].Value);
                 string fullName = row.Cells["FullName"].Value.ToString();
-                int phoneNumber = Convert.ToInt32(row.Cells["PhoneNumber"].Value);
+                string phone = row.Cells["PhoneNumber"].Value.ToString(); // Теперь string
                 string address = row.Cells["Address"].Value.ToString();
                 bool inBlackList = row.Cells["InBlackList"].Value.ToString() == "Да";
 
+                // Проверка на 11 цифр
+                if (phone.Length != 11 || !phone.All(char.IsDigit))
+                {
+                    MessageBox.Show("Номер телефона должен содержать ровно 11 цифр");
+                    return;
+                }
+
                 AddClient editForm = new AddClient();
                 editForm.Text = "Редактирование клиента";
-                editForm.SetClientData(id, fullName, phoneNumber, address, inBlackList);
+                editForm.SetClientData(id, fullName, phone, address, inBlackList);
 
                 if (editForm.ShowDialog() == DialogResult.OK)
                 {
@@ -101,7 +108,7 @@ namespace DVD_rent
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при редактировании: {ex.Message}");
+                MessageBox.Show($"Ошибка: {ex.Message}");
             }
         }
 
