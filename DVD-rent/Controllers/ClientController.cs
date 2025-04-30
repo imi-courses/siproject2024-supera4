@@ -10,44 +10,67 @@ namespace DVD_rent.Controllers
 {
     internal class ClientController
     {
-        public static void AddClient(string fullName, int phoneNumber, string address, bool inBlackList)
-        {
-            using (Context db = new Context())
-            {
-                db.Clients.Add(new Client {
-                    FullName = fullName,
-                    PhoneNumber = phoneNumber, 
-                    Address = address, 
-                    InBlackList = inBlackList });
-                db.SaveChanges();
-            }
-
-        }
-        public static void EditClient(string fullName, int id, int phoneNumber, string address, bool inBlackList)
+        public static void AddClient(string fullName, string phoneNumber, string address, bool inBlackList)
         {
             try
             {
-                Client client = GetClientById(id);
-                client.FullName = fullName;
-                client.PhoneNumber = phoneNumber;
-                client.Address = address;
-                client.InBlackList = inBlackList;
+                if (string.IsNullOrWhiteSpace(fullName))
+                    throw new Exception("ФИО не может быть пустым");
 
-                Context db = new Context();
+                if (phoneNumber.Length != 11 || !phoneNumber.All(char.IsDigit))
+                    throw new Exception("Номер телефона должен содержать ровно 11 цифр");
 
-                if (phoneNumber < 11)
+                using (Context db = new Context())
                 {
-                    throw new Exception("incorrect phone number");
+                    db.Clients.Add(new Client
+                    {
+                        FullName = fullName,
+                        PhoneNumber = phoneNumber,
+                        Address = address,
+                        InBlackList = inBlackList
+                    });
+                    db.SaveChanges();
                 }
-
-                db.Entry(client).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Caught an exception: {ex.Message}");
+                MessageBox.Show($"Ошибка при добавлении клиента: {ex.Message}");
+                throw;
             }
         }
+
+        public static void EditClient(int id, string fullName, string phoneNumber, string address, bool inBlackList)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(fullName))
+                    throw new Exception("ФИО не может быть пустым");
+
+                if (phoneNumber.Length != 11 || !phoneNumber.All(char.IsDigit))
+                    throw new Exception("Номер телефона должен содержать ровно 11 цифр");
+
+                using (Context db = new Context())
+                {
+                    Client client = db.Clients.Find(id);
+                    if (client == null)
+                        throw new Exception("Клиент не найден");
+
+                    client.FullName = fullName;
+                    client.PhoneNumber = phoneNumber;
+                    client.Address = address;
+                    client.InBlackList = inBlackList;
+
+                    db.Entry(client).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при редактировании клиента: {ex.Message}");
+                throw;
+            }
+        }
+
         public static Client GetClientById(int id)
         {
             using (Context db = new Context())
@@ -55,6 +78,7 @@ namespace DVD_rent.Controllers
                 return db.Clients.Find(id);
             }
         }
+
         public static void DeleteClientById(int id)
         {
             using (Context db = new Context())
@@ -65,6 +89,7 @@ namespace DVD_rent.Controllers
                 db.SaveChanges();
             }
         }
+
         public static List<Client> GetAllClients()
         {
             using (Context db = new Context())
@@ -74,4 +99,3 @@ namespace DVD_rent.Controllers
         }
     }
 }
-
