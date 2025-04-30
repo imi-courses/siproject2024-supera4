@@ -21,7 +21,7 @@ namespace DVD_rent
 
         public PledgeList()
         {
-            string[] types = { "PledgeType", "Series", "Number", "Money" };
+            string[] types = { "PledgeType", "Series", "Number", "Money", "RentId" };
             InitializeComponent();
             dataGridView1.Columns.Add("Id", "ID");
             dataGridView1.Columns.Add("PledgeType", "Тип залога");
@@ -126,6 +126,14 @@ namespace DVD_rent
                     filteredPledges = PledgeController.GetAllPledges()
                     .Where(p =>
                         p.Money.ToString().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "RentId")
+                {
+                    filteredPledges = PledgeController.GetAllPledges()
+                    .Where(p =>
+                        p.Rents.Any() && p.Rents.First().Id.ToString().Contains(searchText)
                     )
                     .ToList();
                 }
