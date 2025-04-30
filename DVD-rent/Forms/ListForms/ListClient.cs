@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DVD_rent.AddForms;
+﻿using DVD_rent.AddForms;
 using DVD_rent.Controllers;
 using DVD_rent.Models;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DVD_rent
 {
@@ -23,15 +19,9 @@ namespace DVD_rent
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.Columns.Add("Id", "ID");
             dataGridView1.Columns.Add("FullName", "ФИО");
-            dataGridView1.Columns.Add("PhoneNumber", "к.т.");
+            dataGridView1.Columns.Add("PhoneNumber", "Телефон");
             dataGridView1.Columns.Add("Address", "Адрес");
             dataGridView1.Columns.Add("InBlackList", "Чёрный список");
-
-            delete.Text = "Удалить";
-            edit.Text = "Редактировать";
-            add.Text = "Добавить";
-            close.Text = "Закрыть";
-            reload.Text = "Обновить";
         }
 
         public void ReloadGridView()
@@ -47,6 +37,86 @@ namespace DVD_rent
                     client.InBlackList ? "Да" : "Нет");
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
+            {
+                string searchText = search.Text.Trim();
+
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    ReloadGridView();
+                    return;
+                }
+
+                List<Client> filteredClients = ClientController.GetAllClients()
+                    .Where(c =>
+                        c.FullName.Contains(searchText) ||
+                        c.PhoneNumber.Contains(searchText) ||
+                        c.Address.Contains(searchText))
+                    .ToList();
+
+                dataGridView1.Rows.Clear();
+                foreach (Client client in filteredClients)
+                {
+                    dataGridView1.Rows.Add(client.Id, client.FullName, client.PhoneNumber,
+                                         client.Address, client.InBlackList ? "Да" : "Нет");
+                }
+            }
+        }
+
+        private void search_Enter(object sender, EventArgs e)
+        {
+            if (search.ForeColor == Color.Gray)
+            {
+                search.Text = "";
+                search.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(search.Text))
+            {
+                search.Text = "Поиск";
+                search.ForeColor = Color.Gray;
+            }
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            AddClient addForm = new AddClient();
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                ReloadGridView();
+            }
+        }
+
+        private void edit_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Выберите клиента для редактирования");
+                return;
+            }
+
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            int id = Convert.ToInt32(row.Cells["Id"].Value);
+            string fullName = row.Cells["FullName"].Value.ToString();
+            string phone = row.Cells["PhoneNumber"].Value.ToString();
+            string address = row.Cells["Address"].Value.ToString();
+            bool inBlackList = row.Cells["InBlackList"].Value.ToString() == "Да";
+
+            AddClient editForm = new AddClient();
+            editForm.Text = "Редактирование клиента";
+            editForm.SetClientData(id, fullName, phone, address, inBlackList);
+
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                ReloadGridView();
+            }
         }
 
         private void delete_Click(object sender, EventArgs e)
@@ -70,54 +140,6 @@ namespace DVD_rent
                 {
                     MessageBox.Show($"Ошибка при удалении: {ex.Message}");
                 }
-            }
-        }
-
-        private void edit_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Выберите клиента для редактирования");
-                return;
-            }
-
-            try
-            {
-                DataGridViewRow row = dataGridView1.SelectedRows[0];
-                int id = Convert.ToInt32(row.Cells["Id"].Value);
-                string fullName = row.Cells["FullName"].Value.ToString();
-                string phone = row.Cells["PhoneNumber"].Value.ToString(); // Теперь string
-                string address = row.Cells["Address"].Value.ToString();
-                bool inBlackList = row.Cells["InBlackList"].Value.ToString() == "Да";
-
-                // Проверка на 11 цифр
-                if (phone.Length != 11 || !phone.All(char.IsDigit))
-                {
-                    MessageBox.Show("Номер телефона должен содержать ровно 11 цифр");
-                    return;
-                }
-
-                AddClient editForm = new AddClient();
-                editForm.Text = "Редактирование клиента";
-                editForm.SetClientData(id, fullName, phone, address, inBlackList);
-
-                if (editForm.ShowDialog() == DialogResult.OK)
-                {
-                    ReloadGridView();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка: {ex.Message}");
-            }
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            AddClient addForm = new AddClient();
-            if (addForm.ShowDialog() == DialogResult.OK)
-            {
-                ReloadGridView();
             }
         }
 

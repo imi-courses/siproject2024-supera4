@@ -25,18 +25,19 @@
             this.close = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
             this.btnChoose = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 397);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.Size = new System.Drawing.Size(776, 369);
+            this.dataGridView1.TabIndex = 0;
             // 
             // reload
             // 
@@ -98,11 +99,24 @@
             this.btnChoose.UseVisualStyleBackColor = true;
             this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
+            // search
+            // 
+            this.search.ForeColor = System.Drawing.Color.Gray;
+            this.search.Location = new System.Drawing.Point(12, 12);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(200, 22);
+            this.search.TabIndex = 20;
+            this.search.Text = "Поиск";
+            this.search.Enter += new System.EventHandler(this.search_Enter);
+            this.search.Leave += new System.EventHandler(this.search_Leave);
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
             // ClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.close);
@@ -112,10 +126,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientList";
-            this.Text = "ClientList";
+            this.Text = "Список клиентов";
             this.Load += new System.EventHandler(this.ClientList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,5 +143,6 @@
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button btnChoose;
+        private System.Windows.Forms.TextBox search;
     }
 }
