@@ -36,13 +36,15 @@
             this.delete = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -51,7 +53,7 @@
             // 
             // reload
             // 
-            this.reload.Location = new System.Drawing.Point(12, 457);
+            this.reload.Location = new System.Drawing.Point(12, 452);
             this.reload.Name = "reload";
             this.reload.Size = new System.Drawing.Size(98, 23);
             this.reload.TabIndex = 4;
@@ -61,7 +63,7 @@
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(690, 457);
+            this.close.Location = new System.Drawing.Point(690, 452);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(98, 23);
             this.close.TabIndex = 5;
@@ -71,7 +73,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(586, 457);
+            this.add.Location = new System.Drawing.Point(586, 452);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(98, 23);
             this.add.TabIndex = 6;
@@ -81,7 +83,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(482, 457);
+            this.delete.Location = new System.Drawing.Point(357, 452);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 7;
@@ -92,9 +94,9 @@
             // search
             // 
             this.search.ForeColor = System.Drawing.Color.Gray;
-            this.search.Location = new System.Drawing.Point(12, 20);
+            this.search.Location = new System.Drawing.Point(12, 12);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(776, 22);
+            this.search.Size = new System.Drawing.Size(596, 22);
             this.search.TabIndex = 8;
             this.search.Text = "Поиск";
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged_1);
@@ -103,19 +105,38 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(378, 457);
+            this.button1.Location = new System.Drawing.Point(461, 452);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.Size = new System.Drawing.Size(119, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "Редактировать";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(614, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(173, 24);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(253, 452);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Выбрать";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // EmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.search);
             this.Controls.Add(this.delete);
@@ -142,5 +163,7 @@
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
