@@ -59,5 +59,11 @@ namespace DVD_rent
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           Form listEmployee = new Form();
+            listEmployee.ShowDialog();
+        }
     }
 }
