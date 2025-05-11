@@ -33,7 +33,7 @@ namespace DVD_rent.AddForms
             money.Text = rent.Money.ToString();
             client.Text = rent.ClientId.ToString();
             pledge.Text = rent.PledgeId.ToString();
-            foreach (DVD dvd in rent.DVDs)
+            foreach (DVD dvd in this.rent.DVDs)
             {
                 dvds.Text += dvd.Id.ToString() + " ";
             }
@@ -68,6 +68,12 @@ namespace DVD_rent.AddForms
                     .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(int.Parse)                                            
                     .ToList();
+
+                foreach (int dvdId in dvdIds)
+                {
+                    if (DVDController.GetDVDById(dvdId).Quantity == 0)
+                        throw new Exception("Диск с таким ID=" + dvdId.ToString() + " нет в наличии");
+                }
 
                 if (rent.Id != 0) RentController.EditRent(
                     rent.Id, 

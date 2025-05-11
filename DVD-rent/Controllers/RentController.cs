@@ -15,10 +15,13 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
+                DVD dvd = new DVD();
                 List<DVD> dvdList = new List<DVD>();
                 foreach (int dvdId in dvdIds)
                 {
-                    dvdList.Add(db.DVDs.Find(dvdId));
+                    dvd = db.DVDs.Find(dvdId);
+                    dvd.Quantity--;
+                    dvdList.Add(dvd);
                 }
 
                 db.Rents.Add(new Rent { 
@@ -41,30 +44,35 @@ namespace DVD_rent.Controllers
             {
                 using (Context db = new Context())
                 {
-                    Rent rent = RentController.GetRentById(id);
+                    List<DVD> dvdList = new List<DVD>();
+                    DVD dvd = new DVD();
+
+                    Rent rent = db.Rents
+                        .Include(r => r.DVDs)
+                        .FirstOrDefault(r => r.Id == id); // rent которая находиться в базе данных
+
+                    //обратно возвращаем значения количество дисков
+                    foreach (DVD d in rent.DVDs)
+                    {
+                        dvd = db.DVDs.Find(d.Id);
+                        dvd.Quantity++;
+                    }
+
+                    //меняем rent из базы данных данными из нового renta
                     rent.RentDate = RentDate;
                     rent.ReturnDate = ReturnDate;
                     rent.State = state;
                     rent.Money = money;
-                    rent.Client = ClientController.GetClientById(clientId);
-                    rent.Employee = EmployeeController.GetEmployeeById(employeeId);
-                    rent.Pledge = PledgeController.GetPledgeById(pledgeId);
+                    rent.Client = db.Clients.Find(clientId);
+                    rent.Employee = db.Employees.Find(employeeId);
+                    rent.Pledge = db.Pledges.Find(pledgeId);
 
-                    List<DVD> dvdList = new List<DVD>();
-                    foreach (var dvd in dvdList)
+                    foreach (int dvdId in dvdIds)
                     {
-                        dvdList.Add(db.DVDs.Find(dvd.Id));
+                        db.DVDs.Find(dvdId).Quantity--;
+                        dvdList.Add(db.DVDs.Find(dvdId));
                     }
                     rent.DVDs = dvdList;
-
-                    //if (price <= 0)
-                    //{
-                    //    throw new Exception("incorrect price");
-                    //}
-                    //if (quantity < 1)
-                    //{
-                    //    throw new Exception("incorrect quantity");
-                    //}
                     db.Entry(rent).State = EntityState.Modified;
                     db.SaveChanges();
                 }
@@ -78,7 +86,13 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
-                return db.Rents.Find(id);
+                db.Configuration.LazyLoadingEnabled = false;
+                return db.Rents
+                    .Include(r => r.Client)
+                    .Include(r => r.Pledge)
+                    .Include(r => r.Employee)
+                    .Include(r => r.DVDs)
+                    .FirstOrDefault(r => r.Id == id);
             }
         }
         public static void DeleteRentById(int id)
