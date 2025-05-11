@@ -42,6 +42,11 @@ namespace DVD_rent.ListForms
             dataGridView1.Rows.Clear();
             foreach (Rent rent in rents)
             {
+                string dvds="";
+                foreach (DVD dvd in rent.DVDs)
+                {
+                    dvds += dvd.Id.ToString() + " ";
+                }
                 dataGridView1.Rows.Add(
                     rent.Id, 
                     rent.RentDate, 
@@ -51,7 +56,7 @@ namespace DVD_rent.ListForms
                     rent.Client.FullName, 
                     rent.Employee.FullName, 
                     rent.Pledge.Id, 
-                    rent.DVDs);
+                    dvds);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }

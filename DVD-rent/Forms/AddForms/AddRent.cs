@@ -33,7 +33,10 @@ namespace DVD_rent.AddForms
             money.Text = rent.Money.ToString();
             client.Text = rent.ClientId.ToString();
             pledge.Text = rent.PledgeId.ToString();
-            dvds.Text = "пока ничего нет";
+            foreach (DVD dvd in rent.DVDs)
+            {
+                dvds.Text += dvd.Id.ToString() + " ";
+            }
         }
 
         private void chooseClient_Click(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace DVD_rent.AddForms
                     float.Parse(money.Text), 
                     Int32.Parse(client.Text), 
                     user.Id, 
-                    Int32.Parse(pledge.Text), 
+                    Int32.Parse(pledge.Text),
                     dvdIds);
                 else RentController.AddRent(
                     rentDate.Value.Date, 

@@ -16,9 +16,9 @@ namespace DVD_rent.Controllers
             using (Context db = new Context())
             {
                 List<DVD> dvdList = new List<DVD>();
-                foreach (var dvd in dvdList)
+                foreach (int dvdId in dvdIds)
                 {
-                    dvdList.Add(db.DVDs.Find(dvd.Id));
+                    dvdList.Add(db.DVDs.Find(dvdId));
                 }
 
                 db.Rents.Add(new Rent { 
@@ -96,7 +96,7 @@ namespace DVD_rent.Controllers
             using (Context db = new Context())
             {
                 db.Configuration.LazyLoadingEnabled = false;
-                return db.Rents.Include("Client").Include("Pledge").Include("Employee").ToList();
+                return db.Rents.Include("Client").Include("Pledge").Include("Employee").Include("DVDs").ToList();
             }
         }
     }
