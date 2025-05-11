@@ -108,11 +108,11 @@
     <Compile Include="Forms\AddForms\AddRent.Designer.cs">
       <DependentUpon>AddRent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\authorization.cs">
+    <Compile Include="Forms\Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\authorization.Designer.cs">
-      <DependentUpon>authorization.cs</DependentUpon>
+    <Compile Include="Forms\Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\RentController.cs" />
@@ -148,6 +148,12 @@
     </Compile>
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202504030401127_changeDVD.cs" />
     <Compile Include="Migrations\202504030401127_changeDVD.designer.cs">
@@ -219,8 +225,8 @@
     <EmbeddedResource Include="Forms\AddForms\AddRent.resx">
       <DependentUpon>AddRent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\authorization.resx">
-      <DependentUpon>authorization.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListForms\ListClient.resx">
       <DependentUpon>ListClient.cs</DependentUpon>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504030401127_changeDVD.resx">
       <DependentUpon>202504030401127_changeDVD.cs</DependentUpon>

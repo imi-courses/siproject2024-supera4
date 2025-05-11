@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVD_rent.Models;
 using DVD_rent.Controllers;
+using DVD_rent.Forms;
 
 namespace DVD_rent
 {
@@ -15,6 +16,8 @@ namespace DVD_rent
         /// Главная точка входа для приложения.
         /// </summary>
         /// 
+
+        /// Начальное подключение базы данных
         public static void InitializeDatabase()
         {
             using (var db = new Context())
@@ -37,12 +40,39 @@ namespace DVD_rent
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             InitializeDatabase();
-            authorization authForm = new authorization();
-            authForm.ShowDialog();
 
-            if (authForm.UserSuccessfullyAuthenticated)
+
+            //Проверка существования директора
+            bool isDirectorExist = false;
+            List<Employee> employees = EmployeeController.GetAllEmployees();
+            foreach (Employee e in employees)
             {
-                Application.Run(new Main(authForm.user));    
+                if (e.Position == Position.director)
+                {
+                    isDirectorExist = true;
+                    break;
+                }
+            }
+
+            //Регистрация
+            if (!isDirectorExist)
+            {
+                
+                Registration regForm = new Registration();
+                if (regForm.ShowDialog() == DialogResult.OK)
+                {
+                    isDirectorExist = true;
+                }
+            }
+
+            //Авторизация
+            if (isDirectorExist)
+            {
+                Authorization authForm = new Authorization();
+                if (authForm.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new Main(authForm.user));
+                }
             }
         }
     }

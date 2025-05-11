@@ -1,7 +1,7 @@
 ﻿
 namespace DVD_rent
 {
-    partial class authorization
+    partial class Authorization
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace DVD_rent
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(authorization));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authorization));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();

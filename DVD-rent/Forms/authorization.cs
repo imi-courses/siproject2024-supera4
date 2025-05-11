@@ -12,12 +12,11 @@ using DVD_rent.Controllers;
 
 namespace DVD_rent
 {
-    public partial class authorization : Form
+    public partial class Authorization : Form
     {
-        public bool UserSuccessfullyAuthenticated { get; private set; } = false;
         public Employee user = new Employee();
 
-        public authorization()
+        public Authorization()
         {
             InitializeComponent();
         }
@@ -29,7 +28,6 @@ namespace DVD_rent
 
             if (employee != null && BCrypt.Net.BCrypt.Verify(password.Text, employee.Password))
             {
-                UserSuccessfullyAuthenticated = true;
                 user = employee;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
