@@ -129,7 +129,10 @@ namespace DVD_rent
             {
                 for (int i = 0; i < selectedRowCount; i++)
                 {
-                    EmployeeController.DeleteEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                    if (EmployeeController.GetEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString())).Position != Position.director)
+                        EmployeeController.DeleteEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                    else
+                        MessageBox.Show("Невозможно удалить директора!");
                 }
             }
             ReloadGridView();
