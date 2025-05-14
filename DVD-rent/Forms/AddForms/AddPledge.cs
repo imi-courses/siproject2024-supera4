@@ -177,5 +177,10 @@ namespace DVD_rent
         {
 
         }
+
+        private void AddPledge_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
