@@ -26,6 +26,7 @@
             this.edit = new System.Windows.Forms.Button();
             this.btnChoose = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
+            this.type = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(326, 415);
+            this.delete.Location = new System.Drawing.Point(357, 415);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(98, 23);
             this.delete.TabIndex = 5;
@@ -61,7 +62,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(574, 415);
+            this.add.Location = new System.Drawing.Point(586, 415);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(98, 23);
             this.add.TabIndex = 6;
@@ -81,7 +82,7 @@
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(439, 415);
+            this.edit.Location = new System.Drawing.Point(461, 415);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(119, 23);
             this.edit.TabIndex = 8;
@@ -91,7 +92,7 @@
             // 
             // btnChoose
             // 
-            this.btnChoose.Location = new System.Drawing.Point(213, 415);
+            this.btnChoose.Location = new System.Drawing.Point(253, 415);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(98, 23);
             this.btnChoose.TabIndex = 19;
@@ -104,18 +105,27 @@
             this.search.ForeColor = System.Drawing.Color.Gray;
             this.search.Location = new System.Drawing.Point(12, 12);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(200, 22);
+            this.search.Size = new System.Drawing.Size(649, 22);
             this.search.TabIndex = 20;
             this.search.Text = "Поиск";
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             this.search.Enter += new System.EventHandler(this.search_Enter);
             this.search.Leave += new System.EventHandler(this.search_Leave);
-            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
+            // type
+            // 
+            this.type.FormattingEnabled = true;
+            this.type.Location = new System.Drawing.Point(667, 10);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(121, 24);
+            this.type.TabIndex = 21;
             // 
             // ClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.type);
             this.Controls.Add(this.search);
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.edit);
@@ -144,5 +154,6 @@
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.TextBox search;
+        private System.Windows.Forms.ComboBox type;
     }
 }

@@ -153,5 +153,10 @@ namespace DVD_rent
                 this.Close();
             }
         }
+
+        private void type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace DVD_rent
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 60);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1035, 489);
@@ -55,7 +55,7 @@ namespace DVD_rent
             // add
             // 
             this.add.Location = new System.Drawing.Point(781, 556);
-            this.add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.add.Margin = new System.Windows.Forms.Padding(4);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(131, 28);
             this.add.TabIndex = 1;
@@ -66,7 +66,7 @@ namespace DVD_rent
             // close
             // 
             this.close.Location = new System.Drawing.Point(920, 556);
-            this.close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.close.Margin = new System.Windows.Forms.Padding(4);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(131, 28);
             this.close.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace DVD_rent
             // delete
             // 
             this.delete.Location = new System.Drawing.Point(476, 556);
-            this.delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.delete.Margin = new System.Windows.Forms.Padding(4);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(131, 28);
             this.delete.TabIndex = 3;
@@ -88,7 +88,7 @@ namespace DVD_rent
             // reload
             // 
             this.reload.Location = new System.Drawing.Point(16, 556);
-            this.reload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reload.Margin = new System.Windows.Forms.Padding(4);
             this.reload.Name = "reload";
             this.reload.Size = new System.Drawing.Size(131, 28);
             this.reload.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace DVD_rent
             // edit
             // 
             this.edit.Location = new System.Drawing.Point(615, 556);
-            this.edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edit.Margin = new System.Windows.Forms.Padding(4);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(159, 28);
             this.edit.TabIndex = 5;
@@ -111,7 +111,7 @@ namespace DVD_rent
             // 
             this.search.ForeColor = System.Drawing.Color.Gray;
             this.search.Location = new System.Drawing.Point(16, 15);
-            this.search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.search.Margin = new System.Windows.Forms.Padding(4);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(793, 22);
             this.search.TabIndex = 6;
@@ -124,10 +124,11 @@ namespace DVD_rent
             // 
             this.type.FormattingEnabled = true;
             this.type.Location = new System.Drawing.Point(819, 15);
-            this.type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.type.Margin = new System.Windows.Forms.Padding(4);
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(229, 24);
             this.type.TabIndex = 7;
+            this.type.SelectedIndexChanged += new System.EventHandler(this.type_SelectedIndexChanged);
             // 
             // btnChoose
             // 
@@ -154,7 +155,7 @@ namespace DVD_rent
             this.Controls.Add(this.add);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PledgeList";
             this.Text = "PledgeList";
             this.Load += new System.EventHandler(this.Form_List_Load);

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DVD_rent
 {
@@ -13,15 +14,23 @@ namespace DVD_rent
     {
         public string ChoosenClientId;
 
-        public ClientList()
+        public ClientList(ListFormStatus status)
         {
             InitializeComponent();
+            string[] types = { "ID", "ФИО", "Телефон", "Адрес", "Черный список" };
+
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.Columns.Add("Id", "ID");
             dataGridView1.Columns.Add("FullName", "ФИО");
             dataGridView1.Columns.Add("PhoneNumber", "Телефон");
             dataGridView1.Columns.Add("Address", "Адрес");
             dataGridView1.Columns.Add("InBlackList", "Чёрный список");
+
+            type.Items.AddRange(types);
+            type.SelectedIndex = 0;
+            type.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            if (status == ListFormStatus.NotChoose) btnChoose.Visible = false;
         }
 
         public void ReloadGridView()
@@ -43,27 +52,72 @@ namespace DVD_rent
         {
             if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
             {
-                string searchText = search.Text.Trim();
 
-                if (string.IsNullOrEmpty(searchText))
+                string searchText = search.Text.Trim();
+                List<Client> filteredClients = new List<Client>();
+
+                if(string.IsNullOrEmpty(searchText))
                 {
                     ReloadGridView();
                     return;
                 }
 
-                List<Client> filteredClients = ClientController.GetAllClients()
-                    .Where(c =>
-                        c.FullName.Contains(searchText) ||
-                        c.PhoneNumber.Contains(searchText) ||
-                        c.Address.Contains(searchText))
+
+                if (type.SelectedItem.ToString() == "ID")
+                {
+                    filteredClients = ClientController.GetAllClients()
+                    .Where(client =>
+                        client.Id.ToString().ToLower().Contains(searchText)
+                    )
                     .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "ФИО")
+                {
+                    filteredClients = ClientController.GetAllClients()
+                    .Where(client =>
+                        client.FullName.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Телефон")
+                {
+                    filteredClients = ClientController.GetAllClients()
+                    .Where(client =>
+                        client.PhoneNumber.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Адрес")
+                {
+                    filteredClients = ClientController.GetAllClients()
+                    .Where(client =>
+                        client.Address.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Черный список")
+                {
+                    filteredClients = ClientController.GetAllClients()
+                    .Where(client =>
+                        client.InBlackList.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
 
                 dataGridView1.Rows.Clear();
                 foreach (Client client in filteredClients)
                 {
-                    dataGridView1.Rows.Add(client.Id, client.FullName, client.PhoneNumber,
-                                         client.Address, client.InBlackList ? "Да" : "Нет");
+                    dataGridView1.Rows.Add(
+                        client.Id,
+                        client.FullName,
+                        client.PhoneNumber,
+                        client.Address,
+                        client.InBlackList ? "Да" : "Нет");
                 }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+
             }
         }
 
