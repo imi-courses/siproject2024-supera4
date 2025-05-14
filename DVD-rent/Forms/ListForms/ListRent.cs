@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DVD_rent.Controllers;
 using DVD_rent.Models;
 using DVD_rent.AddForms;
+using DVD_rent.Forms;
 
 namespace DVD_rent.ListForms
 {
@@ -211,6 +212,17 @@ namespace DVD_rent.ListForms
             {
                 AddRent addRent = new AddRent(user, int.Parse(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
                 addRent.ShowDialog();
+                ReloadGridView(RentController.GetAllRents());
+            }
+        }
+
+        private void btn_closeRent_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                CloseRent closeRent = new CloseRent(int.Parse(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
+                closeRent.ShowDialog();
                 ReloadGridView(RentController.GetAllRents());
             }
         }

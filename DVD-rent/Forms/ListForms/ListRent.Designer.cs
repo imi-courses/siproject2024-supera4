@@ -38,6 +38,7 @@ namespace DVD_rent.ListForms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.search = new System.Windows.Forms.TextBox();
             this.type = new System.Windows.Forms.ComboBox();
+            this.btn_closeRent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,11 +122,22 @@ namespace DVD_rent.ListForms
             this.type.Size = new System.Drawing.Size(173, 24);
             this.type.TabIndex = 18;
             // 
+            // btn_closeRent
+            // 
+            this.btn_closeRent.Location = new System.Drawing.Point(210, 443);
+            this.btn_closeRent.Name = "btn_closeRent";
+            this.btn_closeRent.Size = new System.Drawing.Size(140, 23);
+            this.btn_closeRent.TabIndex = 19;
+            this.btn_closeRent.Text = "Закрыть аренду";
+            this.btn_closeRent.UseVisualStyleBackColor = true;
+            this.btn_closeRent.Click += new System.EventHandler(this.btn_closeRent_Click);
+            // 
             // RentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 471);
+            this.Controls.Add(this.btn_closeRent);
             this.Controls.Add(this.type);
             this.Controls.Add(this.search);
             this.Controls.Add(this.edit);
@@ -153,5 +165,6 @@ namespace DVD_rent.ListForms
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.ComboBox type;
+        private System.Windows.Forms.Button btn_closeRent;
     }
 }
