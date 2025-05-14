@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202504181201384_change.designer.cs">
       <DependentUpon>202504181201384_change.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505140117329_asdfa.cs" />
+    <Compile Include="Migrations\202505140117329_asdfa.Designer.cs">
+      <DependentUpon>202505140117329_asdfa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DVD.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -263,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504181201384_change.resx">
       <DependentUpon>202504181201384_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505140117329_asdfa.resx">
+      <DependentUpon>202505140117329_asdfa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

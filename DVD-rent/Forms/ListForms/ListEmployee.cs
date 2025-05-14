@@ -17,29 +17,71 @@ namespace DVD_rent
         public EmployeeList()
         {
             InitializeComponent();
+            string[] types = { "Позиция", "ФИО", "Логин", "Пароль" };
+            type.Items.AddRange(types);
+            type.SelectedIndex = 0;
+            type.DropDownStyle = ComboBoxStyle.DropDownList;
             dataGridView1.Columns.Add("Id", "Id");
-            dataGridView1.Columns.Add("Position", "Position");
-            dataGridView1.Columns.Add("Login", "Login");
-            dataGridView1.Columns.Add("Password", "Password");
+            dataGridView1.Columns.Add("Position", "Позиция");
+            dataGridView1.Columns.Add("FullName", "ФИО");
+            dataGridView1.Columns.Add("Login", "Логин");
+            dataGridView1.Columns.Add("Password", "Пароль");
         }
 
         private void search_TextChanged(object sender, EventArgs e)
         {
             if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
             {
-                string searchText = search.Text.Trim();
 
-                if (string.IsNullOrEmpty(searchText) )
+                string searchText = search.Text.Trim();
+                List<Employee> filteredEmployeed = new List<Employee>();
+
+                if (string.IsNullOrEmpty(searchText))
                 {
                     ReloadGridView();
                     return;
                 }
-                List<Employee> filteredEmployees = EmployeeController.GetAllEmployees().Where(p=> 
-                p.FullName.ToString().Contains(searchText) || 
-                p.Login.ToString().Contains(searchText)|| 
-                p.Password.ToString().Contains(searchText)).ToList();
-                
-                dataGridView1.DataSource = filteredEmployees;
+
+                if (type.SelectedItem.ToString() == "Позиция")
+                {
+                    filteredEmployeed = EmployeeController.GetAllEmployees()
+                    .Where(p =>
+                        p.Position.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "ФИО")
+                {
+                    filteredEmployeed = EmployeeController.GetAllEmployees()
+                    .Where(p =>
+                        p.FullName.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+            
+                else if (type.SelectedItem.ToString() == "Логин")
+                {
+                    filteredEmployeed = EmployeeController.GetAllEmployees()
+                    .Where(p =>
+                        p.Login.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+                else if (type.SelectedItem.ToString() == "Пароль")
+                {
+                    filteredEmployeed = EmployeeController.GetAllEmployees()
+                    .Where(p =>
+                        p.Password.ToString().ToLower().Contains(searchText)
+                    )
+                    .ToList();
+                }
+
+                dataGridView1.Rows.Clear();
+                foreach (Employee employee in filteredEmployeed)
+                {
+                    dataGridView1.Rows.Add(employee.Id, employee.Position, employee.FullName, employee.Login, employee.Password);
+                }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
 
@@ -55,9 +97,10 @@ namespace DVD_rent
         public void ReloadGridView()
         {
             dataGridView1.Rows.Clear();
+
             foreach (Employee employee in EmployeeController.GetAllEmployees())
             {
-                dataGridView1.Rows.Add(employee.Id, employee.Position, employee.Login, employee.Password);
+                dataGridView1.Rows.Add(employee.Id, employee.Position, employee.FullName, employee.Login, employee.Password);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -100,7 +143,7 @@ namespace DVD_rent
         private void search_TextChanged_1(object sender, EventArgs e)
         {
             if (search.Text != "Поиск" && search.ForeColor != Color.Gray)
-            {          
+            {
                 string searchText = search.Text.Trim();
 
                 if (string.IsNullOrEmpty(searchText))
@@ -139,6 +182,7 @@ namespace DVD_rent
             }
         }
 
+        //редактировать
         private void button1_Click(object sender, EventArgs e)
         {
             Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);

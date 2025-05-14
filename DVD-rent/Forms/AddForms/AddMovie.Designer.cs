@@ -50,7 +50,7 @@ namespace DVD_rent
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Название фильма";
             // 
@@ -72,6 +72,7 @@ namespace DVD_rent
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddMovie";
             this.Text = "AddMovie";
+            this.Load += new System.EventHandler(this.AddMovie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
