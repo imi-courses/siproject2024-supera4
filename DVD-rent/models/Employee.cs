@@ -17,14 +17,16 @@ namespace DVD_rent.Models
     public class Employee : Person
     {
         public int Id { get; set; }
+
+
         public Position Position { get; set; }
-        [MaxLength(100)]
+
+
         public string Login { get; set; }
-        [MaxLength(100)]
+
+        
         public string Password { get; set; }
 
-        //Navigation properties
         public virtual ICollection<Rent> Rents { get; set; } = new List<Rent>();
-
     }
 }
