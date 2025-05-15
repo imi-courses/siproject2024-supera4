@@ -227,6 +227,10 @@
     <Compile Include="Migrations\202505110946066_many to many rent dvd.designer.cs">
       <DependentUpon>202505110946066_many to many rent dvd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505150016106_merge conflicts.cs" />
+    <Compile Include="Migrations\202505150016106_merge conflicts.designer.cs">
+      <DependentUpon>202505150016106_merge conflicts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DVD.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -313,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505110946066_many to many rent dvd.resx">
       <DependentUpon>202505110946066_many to many rent dvd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505150016106_merge conflicts.resx">
+      <DependentUpon>202505150016106_merge conflicts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
