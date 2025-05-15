@@ -178,5 +178,10 @@ namespace DVD_rent
         {
             ReloadGridView();
         }
+
+        private void type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

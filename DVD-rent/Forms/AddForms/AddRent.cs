@@ -41,7 +41,7 @@ namespace DVD_rent.AddForms
 
         private void chooseClient_Click(object sender, EventArgs e)
         {
-            ClientList ClientForm = new ClientList();
+            ClientList ClientForm = new ClientList(ListFormStatus.choose);
             ClientForm.ShowDialog();
             client.Text = ClientForm.ChoosenClientId;
         }

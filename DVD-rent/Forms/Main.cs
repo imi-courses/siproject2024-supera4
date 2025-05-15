@@ -65,7 +65,7 @@ namespace DVD_rent
         }
         private void клиентовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientList ClientForm = new ClientList();
+            ClientList ClientForm = new ClientList(ListFormStatus.NotChoose);
             ClientForm.ShowDialog();
         }
 

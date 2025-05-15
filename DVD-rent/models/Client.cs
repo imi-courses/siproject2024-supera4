@@ -12,7 +12,7 @@ namespace DVD_rent.Models
     public class Client : Person
     {
         public int Id { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         [MaxLength(100)]
         public string Address { get; set; }
         public bool InBlackList { get; set; }
