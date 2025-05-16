@@ -29,6 +29,8 @@ namespace DVD_rent
         public AddDVD(int Id)
         {
             InitializeComponent();
+
+            this.Text = "Редактировать диск";
             allMovieList = MovieController.GetAllMovies();
             checkedListBox1.Items.AddRange(allMovieList.ToArray());
             dvd = DVDController.GetDVDById(Id);

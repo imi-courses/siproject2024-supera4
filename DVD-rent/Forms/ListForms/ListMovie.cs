@@ -49,6 +49,12 @@ namespace DVD_rent
 
         private void edit_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Выберите для редактирования");
+                return;
+            }
+
             Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount == 1)
             {
@@ -60,15 +66,32 @@ namespace DVD_rent
 
         private void delete_Click(object sender, EventArgs e)
         {
-            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
-                for (int i = 0; i < selectedRowCount; i++)
+                MessageBox.Show("Выберите для удаления");
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите удалить?",
+                "Подтверждение удаления", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
                 {
-                    MovieController.DeleteMovieById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                    Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                    if (selectedRowCount > 0)
+                    {
+                        for (int i = 0; i < selectedRowCount; i++)
+                        {
+                            MovieController.DeleteMovieById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                        }
+                    }
+                    ReloadGridView();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении: {ex.Message}");
                 }
             }
-            ReloadGridView();
         }
 
         private void reload_Click(object sender, EventArgs e)

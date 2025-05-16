@@ -152,6 +152,12 @@ namespace DVD_rent
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
+                MessageBox.Show("Выберите для редактирования");
+                return;
+            }
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
                 MessageBox.Show("Выберите клиента для редактирования");
                 return;
             }
@@ -177,17 +183,23 @@ namespace DVD_rent
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Выберите клиента для удаления");
+                MessageBox.Show("Выберите для удаления");
                 return;
             }
 
-            if (MessageBox.Show("Вы уверены, что хотите удалить выбранного клиента?",
+            if (MessageBox.Show("Вы уверены, что хотите удалить?",
                 "Подтверждение удаления", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
-                    int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
-                    ClientController.DeleteClientById(id);
+                    Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                    if (selectedRowCount > 0)
+                    {
+                        for (int i = 0; i < selectedRowCount; i++)
+                        {
+                            ClientController.DeleteClientById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                        }
+                    }
                     ReloadGridView();
                 }
                 catch (Exception ex)

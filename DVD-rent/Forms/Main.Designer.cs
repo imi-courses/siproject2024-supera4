@@ -32,13 +32,14 @@ namespace DVD_rent
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.спискиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.арендToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.дисковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.дисковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильмовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.залогToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.кассировToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.кассирыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
@@ -51,7 +52,8 @@ namespace DVD_rent
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.спискиToolStripMenuItem});
+            this.спискиToolStripMenuItem,
+            this.кассирыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -61,19 +63,27 @@ namespace DVD_rent
             // 
             // файлToolStripMenuItem
             // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.закрытьToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // закрытьToolStripMenuItem
+            // 
+            this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.закрытьToolStripMenuItem.Text = "Закрыть";
+            this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
             // спискиToolStripMenuItem
             // 
             this.спискиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.арендToolStripMenuItem,
-            this.дисковToolStripMenuItem,
             this.клиентовToolStripMenuItem,
+            this.дисковToolStripMenuItem,
             this.фильмовToolStripMenuItem,
-            this.залогToolStripMenuItem,
-            this.кассировToolStripMenuItem});
+            this.залогToolStripMenuItem});
             this.спискиToolStripMenuItem.Name = "спискиToolStripMenuItem";
             this.спискиToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.спискиToolStripMenuItem.Text = "Списки";
@@ -85,19 +95,19 @@ namespace DVD_rent
             this.арендToolStripMenuItem.Text = "Аренд";
             this.арендToolStripMenuItem.Click += new System.EventHandler(this.арендToolStripMenuItem_Click);
             // 
-            // дисковToolStripMenuItem
-            // 
-            this.дисковToolStripMenuItem.Name = "дисковToolStripMenuItem";
-            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.дисковToolStripMenuItem.Text = "Дисков";
-            this.дисковToolStripMenuItem.Click += new System.EventHandler(this.дисковToolStripMenuItem_Click);
-            // 
             // клиентовToolStripMenuItem
             // 
             this.клиентовToolStripMenuItem.Name = "клиентовToolStripMenuItem";
             this.клиентовToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.клиентовToolStripMenuItem.Text = "Клиентов";
             this.клиентовToolStripMenuItem.Click += new System.EventHandler(this.клиентовToolStripMenuItem_Click);
+            // 
+            // дисковToolStripMenuItem
+            // 
+            this.дисковToolStripMenuItem.Name = "дисковToolStripMenuItem";
+            this.дисковToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.дисковToolStripMenuItem.Text = "Дисков";
+            this.дисковToolStripMenuItem.Click += new System.EventHandler(this.дисковToolStripMenuItem_Click);
             // 
             // фильмовToolStripMenuItem
             // 
@@ -113,12 +123,12 @@ namespace DVD_rent
             this.залогToolStripMenuItem.Text = "Залог";
             this.залогToolStripMenuItem.Click += new System.EventHandler(this.залогToolStripMenuItem_Click);
             // 
-            // кассировToolStripMenuItem
+            // кассирыToolStripMenuItem
             // 
-            this.кассировToolStripMenuItem.Name = "кассировToolStripMenuItem";
-            this.кассировToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.кассировToolStripMenuItem.Text = "Кассиров";
-            this.кассировToolStripMenuItem.Click += new System.EventHandler(this.кассировToolStripMenuItem_Click);
+            this.кассирыToolStripMenuItem.Name = "кассирыToolStripMenuItem";
+            this.кассирыToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
+            this.кассирыToolStripMenuItem.Text = "Сотрудники";
+            this.кассирыToolStripMenuItem.Click += new System.EventHandler(this.кассировToolStripMenuItem_Click);
             // 
             // dateTimePicker
             // 
@@ -185,7 +195,6 @@ namespace DVD_rent
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem спискиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem арендToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem кассировToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дисковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem клиентовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фильмовToolStripMenuItem;
@@ -194,6 +203,8 @@ namespace DVD_rent
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.RichTextBox Report;
+        private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem кассирыToolStripMenuItem;
     }
 }
 

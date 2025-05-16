@@ -71,10 +71,19 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
-                DVD dvd = GetDVDById(id);
-                db.DVDs.Attach(dvd);
-                db.DVDs.Remove(dvd);
-                db.SaveChanges();
+                DVD dvd = db.DVDs
+                    .Include(r => r.Rents)
+                    .FirstOrDefault(r => r.Id == id);
+                if (dvd.Rents.Count == 0)
+                {
+                    db.DVDs.Attach(dvd);
+                    db.DVDs.Remove(dvd);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Нельзя удалить диск, который находиться в аренде");
+                }
             }
         }
         public static List<DVD> GetAllDVDs()

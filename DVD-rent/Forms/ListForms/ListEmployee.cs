@@ -124,18 +124,35 @@ namespace DVD_rent
 
         private void delete_Click(object sender, EventArgs e)
         {
-            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
-                for (int i = 0; i < selectedRowCount; i++)
+                MessageBox.Show("Выберите для удаления");
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите удалить?",
+                "Подтверждение удаления", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
                 {
-                    if (EmployeeController.GetEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString())).Position != Position.director)
-                        EmployeeController.DeleteEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
-                    else
-                        MessageBox.Show("Невозможно удалить директора!");
+                    Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                    if (selectedRowCount > 0)
+                    {
+                        for (int i = 0; i < selectedRowCount; i++)
+                        {
+                            if (EmployeeController.GetEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString())).Position != Position.director)
+                                EmployeeController.DeleteEmployeeById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                            else
+                                MessageBox.Show("Невозможно удалить директора!");
+                        }
+                    }
+                    ReloadGridView();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении: {ex.Message}");
                 }
             }
-            ReloadGridView();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -186,8 +203,14 @@ namespace DVD_rent
         }
 
         //редактировать
-        private void button1_Click(object sender, EventArgs e)
+        private void edit_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Выберите для редактирования");
+                return;
+            }
+
             Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount == 1)
             {

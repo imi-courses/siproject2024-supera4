@@ -84,7 +84,7 @@ namespace DVD_rent.Controllers
         {
             using (Context db = new Context())
             {
-                Client client = GetClientById(id);
+                Client client = ClientController.GetClientById(id);
                 db.Clients.Attach(client);
                 db.Clients.Remove(client);
                 db.SaveChanges();

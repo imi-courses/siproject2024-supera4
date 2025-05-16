@@ -25,6 +25,8 @@ namespace DVD_rent
         public AddEmployee(int Id)
         {
             InitializeComponent();
+
+            this.Text = "Редактировать сотрудника";
             employee = EmployeeController.GetEmployeeById(Id);
             fullName.Text = employee.FullName.ToString();
             login.Text = employee.Login.ToString();
@@ -65,7 +67,7 @@ namespace DVD_rent
 
                 if (employee.Id != 0)
                 {
-                    EmployeeController.EditEmployee(employee.Id, Position.cashier, Convert.ToString(login.Text), hashed, Convert.ToString(fullName.Text));
+                    EmployeeController.EditEmployee(employee.Id, employee.Position, Convert.ToString(login.Text), hashed, Convert.ToString(fullName.Text));
                 }
                 else
                 {

@@ -91,7 +91,7 @@ namespace DVD_rent.Controllers
                     .Include(r => r.Client)
                     .Include(r => r.Pledge)
                     .Include(r => r.Employee)
-                    .Include(r => r.DVDs)
+                    .Include(r => r.DVDs.Select(d => d.Movies))
                     .FirstOrDefault(r => r.Id == id);
             }
         }

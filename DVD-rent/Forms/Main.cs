@@ -37,7 +37,7 @@ namespace DVD_rent
                     break;
             }
             this.user = user;
-            //if (user.Position == Position.cashier) кассировToolStripMenuItem.Enabled = false;
+            if (user.Position == Position.cashier) кассирыToolStripMenuItem.Enabled = false;
             AddUsernameToRight(position + " | " + user.FullName);
         }
 
@@ -189,12 +189,57 @@ namespace DVD_rent
 
 
 
-                // Авто подбор ширины столбца
-                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
-                // Сохраняем в файл
-                var file = new FileInfo("Отчёт " + dateTimePicker.Value.ToString("yyyy-MM-dd") + ".xlsx");
-                package.SaveAs(file);
+                // Создаем SaveFileDialog
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx|All Files|*.*";
+                saveFileDialog.Title = "Сохранить отчёт";
+                saveFileDialog.DefaultExt = "xlsx";
+                saveFileDialog.AddExtension = true;
+
+                // Устанавливаем начальную директорию из Settings
+                if (!string.IsNullOrEmpty(Properties.Settings.Default.FilePath))
+                {
+                    saveFileDialog.InitialDirectory = Properties.Settings.Default.FilePath;
+                }
+                else
+                {
+                    // Если в Settings нет пути, устанавливаем папку "Мои документы" по умолчанию
+                    saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                }
+                // Устанавливаем имя файла по умолчанию
+                saveFileDialog.FileName = "Отчёт " + dateTimePicker.Value.ToString("yyyy-MM-dd") + ".xlsx";
+
+
+                // Отображаем диалог сохранения файла
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Получаем выбранный путь и имя файла
+                    string filePath = saveFileDialog.FileName;
+
+                    try
+                    {
+                        // Сохраняем файл
+                        var file = new FileInfo(filePath);
+                        package.SaveAs(file);
+
+                        // Обновляем SavePath в Settings
+                        Properties.Settings.Default.FilePath = Path.GetDirectoryName(filePath);
+                        Properties.Settings.Default.Save();
+
+                        MessageBox.Show("Отчёт успешно сохранен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка при сохранении файла: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            
             }
+        }
+
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -33,25 +33,25 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.Size = new System.Drawing.Size(42, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ФИО";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 79);
+            this.label2.Location = new System.Drawing.Point(35, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.Size = new System.Drawing.Size(30, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "к.т.";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 111);
+            this.label3.Location = new System.Drawing.Point(16, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 16);
+            this.label3.Size = new System.Drawing.Size(47, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "адрес";
             // 
@@ -59,26 +59,26 @@
             // 
             this.fullName.Location = new System.Drawing.Point(91, 36);
             this.fullName.Name = "fullName";
-            this.fullName.Size = new System.Drawing.Size(169, 22);
+            this.fullName.Size = new System.Drawing.Size(236, 22);
             this.fullName.TabIndex = 3;
             // 
             // phoneNumber
             // 
-            this.phoneNumber.Location = new System.Drawing.Point(91, 72);
+            this.phoneNumber.Location = new System.Drawing.Point(91, 64);
             this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(169, 22);
+            this.phoneNumber.Size = new System.Drawing.Size(236, 22);
             this.phoneNumber.TabIndex = 4;
             // 
             // address
             // 
-            this.address.Location = new System.Drawing.Point(91, 111);
+            this.address.Location = new System.Drawing.Point(91, 92);
             this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(169, 22);
+            this.address.Size = new System.Drawing.Size(236, 22);
             this.address.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(184, 164);
+            this.button1.Location = new System.Drawing.Point(236, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 23);
             this.button1.TabIndex = 6;
@@ -88,7 +88,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(66, 164);
+            this.button3.Location = new System.Drawing.Point(155, 147);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -99,9 +99,9 @@
             // checkBoxBlackList
             // 
             this.checkBoxBlackList.AutoSize = true;
-            this.checkBoxBlackList.Location = new System.Drawing.Point(91, 139);
+            this.checkBoxBlackList.Location = new System.Drawing.Point(196, 120);
             this.checkBoxBlackList.Name = "checkBoxBlackList";
-            this.checkBoxBlackList.Size = new System.Drawing.Size(127, 20);
+            this.checkBoxBlackList.Size = new System.Drawing.Size(131, 21);
             this.checkBoxBlackList.TabIndex = 9;
             this.checkBoxBlackList.Text = "Чёрный список";
             this.checkBoxBlackList.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 219);
+            this.ClientSize = new System.Drawing.Size(374, 198);
             this.Controls.Add(this.checkBoxBlackList);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -121,7 +121,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddClient";
-            this.Text = "AddClient";
+            this.Text = "Добавить клиента";
             this.Load += new System.EventHandler(this.AddClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

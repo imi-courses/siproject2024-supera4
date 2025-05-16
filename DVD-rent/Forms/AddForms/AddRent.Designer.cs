@@ -29,6 +29,7 @@ namespace DVD_rent.AddForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRent));
             this.ButtonSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -84,6 +85,7 @@ namespace DVD_rent.AddForms
             this.rentDate.Name = "rentDate";
             this.rentDate.Size = new System.Drawing.Size(200, 22);
             this.rentDate.TabIndex = 16;
+            this.rentDate.ValueChanged += new System.EventHandler(this.rentDate_ValueChanged);
             // 
             // returnDate
             // 
@@ -91,11 +93,12 @@ namespace DVD_rent.AddForms
             this.returnDate.Name = "returnDate";
             this.returnDate.Size = new System.Drawing.Size(200, 22);
             this.returnDate.TabIndex = 17;
+            this.returnDate.ValueChanged += new System.EventHandler(this.returnDate_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(173, 119);
+            this.label6.Location = new System.Drawing.Point(173, 204);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
@@ -104,14 +107,15 @@ namespace DVD_rent.AddForms
             // 
             // money
             // 
-            this.money.Location = new System.Drawing.Point(225, 116);
+            this.money.Location = new System.Drawing.Point(225, 201);
             this.money.Name = "money";
+            this.money.ReadOnly = true;
             this.money.Size = new System.Drawing.Size(200, 22);
             this.money.TabIndex = 20;
             // 
             // client
             // 
-            this.client.Location = new System.Drawing.Point(225, 144);
+            this.client.Location = new System.Drawing.Point(225, 116);
             this.client.Name = "client";
             this.client.Size = new System.Drawing.Size(200, 22);
             this.client.TabIndex = 22;
@@ -119,7 +123,7 @@ namespace DVD_rent.AddForms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 147);
+            this.label1.Location = new System.Drawing.Point(160, 119);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
@@ -128,7 +132,7 @@ namespace DVD_rent.AddForms
             // 
             // chooseClient
             // 
-            this.chooseClient.Location = new System.Drawing.Point(431, 144);
+            this.chooseClient.Location = new System.Drawing.Point(431, 116);
             this.chooseClient.Name = "chooseClient";
             this.chooseClient.Size = new System.Drawing.Size(75, 23);
             this.chooseClient.TabIndex = 23;
@@ -138,7 +142,7 @@ namespace DVD_rent.AddForms
             // 
             // choosePledge
             // 
-            this.choosePledge.Location = new System.Drawing.Point(431, 173);
+            this.choosePledge.Location = new System.Drawing.Point(431, 145);
             this.choosePledge.Name = "choosePledge";
             this.choosePledge.Size = new System.Drawing.Size(75, 23);
             this.choosePledge.TabIndex = 29;
@@ -148,7 +152,7 @@ namespace DVD_rent.AddForms
             // 
             // pledge
             // 
-            this.pledge.Location = new System.Drawing.Point(225, 173);
+            this.pledge.Location = new System.Drawing.Point(225, 145);
             this.pledge.Name = "pledge";
             this.pledge.Size = new System.Drawing.Size(200, 22);
             this.pledge.TabIndex = 28;
@@ -156,7 +160,7 @@ namespace DVD_rent.AddForms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(170, 176);
+            this.label3.Location = new System.Drawing.Point(170, 148);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 17);
@@ -165,7 +169,7 @@ namespace DVD_rent.AddForms
             // 
             // chooseDisks
             // 
-            this.chooseDisks.Location = new System.Drawing.Point(431, 201);
+            this.chooseDisks.Location = new System.Drawing.Point(431, 173);
             this.chooseDisks.Name = "chooseDisks";
             this.chooseDisks.Size = new System.Drawing.Size(75, 23);
             this.chooseDisks.TabIndex = 32;
@@ -175,7 +179,7 @@ namespace DVD_rent.AddForms
             // 
             // dvds
             // 
-            this.dvds.Location = new System.Drawing.Point(225, 201);
+            this.dvds.Location = new System.Drawing.Point(225, 173);
             this.dvds.Name = "dvds";
             this.dvds.Size = new System.Drawing.Size(200, 22);
             this.dvds.TabIndex = 31;
@@ -183,7 +187,7 @@ namespace DVD_rent.AddForms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(167, 204);
+            this.label7.Location = new System.Drawing.Point(167, 176);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 17);
@@ -211,8 +215,9 @@ namespace DVD_rent.AddForms
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ButtonSave);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddRent";
-            this.Text = " ";
+            this.Text = " Добавить аренду";
             this.ResumeLayout(false);
             this.PerformLayout();
 

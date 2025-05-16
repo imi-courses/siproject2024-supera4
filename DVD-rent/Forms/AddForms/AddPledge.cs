@@ -45,6 +45,7 @@ namespace DVD_rent
         public AddPledge(int Id)
         {
             InitializeComponent();
+            this.Text = "Редактировать залог";
             pledge = PledgeController.GetPledgeById(Id);
             pledgeType.Text = pledge.PledgeType.ToString();
             series.Text = pledge.Series.ToString();

@@ -23,6 +23,8 @@ namespace DVD_rent
         public AddMovie(int id)
         {
             InitializeComponent();
+
+            this.Text = "Редактировать фильм";
             movie = MovieController.GetMovieById(id);
             name.Text = movie.Name;
         }

@@ -48,6 +48,17 @@ namespace DVD_rent.ListForms
                 {
                     dvds += dvd.Id.ToString() + " ";
                 }
+                string txt_pledge = "";
+                Pledge pledge = rent.Pledge;
+                if (pledge.PledgeType == PledgeType.cash)
+                {
+                    txt_pledge = pledge.Money.ToString() + "руб.";
+                }
+                else
+                {
+                    txt_pledge = pledge.Series.ToString() + " " + pledge.Number.ToString();
+                }
+
                 dataGridView1.Rows.Add(
                     rent.Id, 
                     rent.RentDate, 
@@ -55,8 +66,8 @@ namespace DVD_rent.ListForms
                     rent.State, 
                     rent.Money, 
                     rent.Client.FullName, 
-                    rent.Employee.FullName, 
-                    rent.Pledge.Id, 
+                    rent.Employee.FullName,
+                    txt_pledge, 
                     dvds);
             }
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -86,15 +97,32 @@ namespace DVD_rent.ListForms
 
         private void delete_Click(object sender, EventArgs e)
         {
-            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
-                for (int i = 0; i < selectedRowCount; i++)
+                MessageBox.Show("Выберите для удаления");
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите удалить?",
+                "Подтверждение удаления", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
                 {
-                    RentController.DeleteRentById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                    Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                    if (selectedRowCount > 0)
+                    {
+                        for (int i = 0; i < selectedRowCount; i++)
+                        {
+                            RentController.DeleteRentById(int.Parse(dataGridView1.SelectedRows[i].Cells["Id"].Value.ToString()));
+                        }
+                    }
+                    ReloadGridView(RentController.GetAllRents());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении: {ex.Message}");
                 }
             }
-            ReloadGridView(RentController.GetAllRents());
         }
 
         private void search_TextChanged(object sender, EventArgs e)
@@ -207,6 +235,12 @@ namespace DVD_rent.ListForms
 
         private void edit_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Выберите для редактирования");
+                return;
+            }
+
             Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount == 1)
             {

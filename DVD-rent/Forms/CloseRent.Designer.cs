@@ -57,6 +57,7 @@ namespace DVD_rent.Forms
             // 
             this.txt_Fullname.Location = new System.Drawing.Point(135, 6);
             this.txt_Fullname.Name = "txt_Fullname";
+            this.txt_Fullname.ReadOnly = true;
             this.txt_Fullname.Size = new System.Drawing.Size(212, 22);
             this.txt_Fullname.TabIndex = 1;
             // 
@@ -73,6 +74,7 @@ namespace DVD_rent.Forms
             // 
             this.txt_pledgeType.Location = new System.Drawing.Point(135, 62);
             this.txt_pledgeType.Name = "txt_pledgeType";
+            this.txt_pledgeType.ReadOnly = true;
             this.txt_pledgeType.Size = new System.Drawing.Size(212, 22);
             this.txt_pledgeType.TabIndex = 5;
             // 
@@ -89,6 +91,7 @@ namespace DVD_rent.Forms
             // 
             this.txt_PledgeData.Location = new System.Drawing.Point(353, 62);
             this.txt_PledgeData.Name = "txt_PledgeData";
+            this.txt_PledgeData.ReadOnly = true;
             this.txt_PledgeData.Size = new System.Drawing.Size(212, 22);
             this.txt_PledgeData.TabIndex = 6;
             // 
@@ -97,6 +100,7 @@ namespace DVD_rent.Forms
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 116);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 322);

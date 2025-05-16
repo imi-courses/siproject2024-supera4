@@ -46,7 +46,7 @@ namespace DVD_rent
             // 
             this.pledgeType.FormattingEnabled = true;
             this.pledgeType.Location = new System.Drawing.Point(123, 22);
-            this.pledgeType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pledgeType.Margin = new System.Windows.Forms.Padding(4);
             this.pledgeType.Name = "pledgeType";
             this.pledgeType.Size = new System.Drawing.Size(160, 24);
             this.pledgeType.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace DVD_rent
             // series
             // 
             this.series.Location = new System.Drawing.Point(123, 55);
-            this.series.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.series.Margin = new System.Windows.Forms.Padding(4);
             this.series.Name = "series";
             this.series.Size = new System.Drawing.Size(160, 22);
             this.series.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace DVD_rent
             // numbers
             // 
             this.numbers.Location = new System.Drawing.Point(123, 87);
-            this.numbers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numbers.Margin = new System.Windows.Forms.Padding(4);
             this.numbers.Name = "numbers";
             this.numbers.Size = new System.Drawing.Size(160, 22);
             this.numbers.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace DVD_rent
             // price
             // 
             this.price.Location = new System.Drawing.Point(123, 119);
-            this.price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.price.Margin = new System.Windows.Forms.Padding(4);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(160, 22);
             this.price.TabIndex = 3;
@@ -79,7 +79,7 @@ namespace DVD_rent
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(184, 151);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
@@ -130,7 +130,7 @@ namespace DVD_rent
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(76, 151);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 9;
@@ -154,9 +154,9 @@ namespace DVD_rent
             this.Controls.Add(this.series);
             this.Controls.Add(this.pledgeType);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddPledge";
-            this.Text = "AddPledge";
+            this.Text = "Добавить залог";
             this.Load += new System.EventHandler(this.AddPledge_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();

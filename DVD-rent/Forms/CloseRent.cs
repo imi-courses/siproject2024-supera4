@@ -24,7 +24,7 @@ namespace DVD_rent.Forms
             returnDate.Value = rent.ReturnDate;
             if (returnDate.Value < DateTime.Now)
             {
-                overdue.Text = "Просрочен";
+                overdue.Text = "Просрочен штраф = " + calculatePrice().ToString() + "руб.";
                 overdue.ForeColor = Color.Red;
             }
             txt_Fullname.Text = ClientController.GetClientById(rent.ClientId).FullName;
@@ -60,6 +60,21 @@ namespace DVD_rent.Forms
             {
                 DVDController.DeleteDVDById(dvd.Id);
             }
+            this.Dispose();
+        }
+
+        private float calculatePrice()
+        {
+            float price = 0;
+
+            foreach (DVD dvd in rent.DVDs)
+            {
+                price += dvd.Price;
+            }
+
+            price *= (int)(DateTime.Now - returnDate.Value).TotalDays;
+
+            return price;
         }
     }
 }
